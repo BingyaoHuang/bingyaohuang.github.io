@@ -159,10 +159,6 @@ extrinsics: $$RT = $$
 | 0.3312 | 0.1856 | 0.9251  | -21.0593 |
 
 $$
-\begin{table}[]
-\centering
-\caption{My caption}
-\label{my-label}
 \begin{tabular}{|l|l|l|l|}
 \hline
 r1     & r2     & r3      & t (mm)   \\ \hline
@@ -170,7 +166,6 @@ r1     & r2     & r3      & t (mm)   \\ \hline
 -0.004 & 0.9807 & -0.1953 & -92.0386 \\ \hline
 0.3312 & 0.1856 & 0.9251  & -21.0593 \\ \hline
 \end{tabular}
-\end{table}
 $$
 
 [1]:http://rgbdemo.org/index.php/Documentation/TutorialProjectorKinectCalibration
