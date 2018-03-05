@@ -146,7 +146,7 @@ $$
 1227.8 & 0      & 450.9 \\ \hline
 0      & 1214.9 & 606.1 \\ \hline
 0      & 0      & 1    
-\end{tabular}
+\end{array}
 $$
 
 projector intrinsic distortion coefficients $$Kc_p = $$
