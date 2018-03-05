@@ -112,7 +112,7 @@ The first two must be on the checkerboard plane and the third is the normal of t
 
 $$\mathbf{\Sigma} = (\mathbf{x}_i - \bar{\mathbf{x}})(\mathbf{x}_i - \bar{\mathbf{x}})^{T}$$
 
-, where $\mathbf{x}_i$ is the $i^{th}$ point, and $\bar{\mathbf{P}}^{3d}$ is the mean of $\mathbf{P}^{3d}$. 
+where $\mathbf{x}_i$ is the $i^{th}$ point, and $\bar{\mathbf{P}}^{3d}$ is the mean of $\mathbf{P}^{3d}$. 
 
 The eigen decomposition of $\mathbf{\Sigma}$ is given by:
 $\mathbf{\Sigma} = \mathbf{U}\mathbf{S}^{2}\mathbf{U}^T$, where $\mathbf{U}$'s columns are the eigenvectors of $\mathbf{\Sigma}$ and **they are also the left singular vectors of $(\mathbf{x}_i - \bar{\mathbf{x}})$**. 
