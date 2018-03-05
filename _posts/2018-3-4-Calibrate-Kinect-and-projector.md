@@ -21,7 +21,7 @@ where $$\mathbf{q}_i = [ u_i, v_i ]$$ is the 2D coordinate of the i<sup>th</sup>
 
 
 ```c++
-Mat generateCheckerboardImg(Size imgSize, Size boardSize, vector& cbPts2d) {	
+Mat generateCheckerboardImg(Size imgSize, Size boardSize, vector<Point2f>& cbPts2d) {	
 	int offset = 50; // opencv requires white boarders around checkerboard pattern
 
 	// checkerboard image
