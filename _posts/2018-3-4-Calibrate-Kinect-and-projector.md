@@ -17,7 +17,7 @@ We first generate a checkerboard image pattern in OpenCV, where `boardSize` cont
 
 $$ \mathbf{P}^{2d}_{p} = [ \mathbf{q}_0, \mathbf{q}_1,\dots \mathbf{q}_i, \dots \mathbf{q}_N ] $$
 
-where $\mathbf{q}_i = [ u_i, v_i ]$ is the 2D coordinate of the i<sup>th</sup> checkerboard corner in projector image space, *N = `boardSize.width`\*`boardSize.height`*.
+where $$\mathbf{q}_i = [ u_i, v_i ]$$ is the 2D coordinate of the i<sup>th</sup> checkerboard corner in projector image space, *N = `boardSize.width`\*`boardSize.height`*.
 
 
 ```c++
