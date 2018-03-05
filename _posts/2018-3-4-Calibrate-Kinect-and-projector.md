@@ -21,7 +21,7 @@ $$ \mathbf{P}^{2d}_{p} = [ \mathbf{q}_0, \mathbf{q}_1,\dots \mathbf{q}_i, \dots 
 \\(\mathbf{q}_i = \[ u_i, v_i \] \\) is the 2D coordinate of the *ith* checkerboard corner in projector image space, *N = `boardSize.width`\*`boardSize.height`*.
 
 
-```C++
+```c++
 Mat generateCheckerboardImg(Size imgSize, Size boardSize, vector& cbPts2d) {	
 	int offset = 50; // opencv requires white boarders around checkerboard pattern
 
@@ -75,7 +75,7 @@ $$ \mathbf{P}^{3d} = [ \mathbf{x}_0, \mathbf{x}_1,\dots \mathbf{x}_i, \dots \mat
 
 \\(\mathbf{x}_i = \[ X_i, Y_i, Z_i \] \\) is the 3D coordinate of the *ith* checkerboard corner in Kinect depth camera view space.
 
-We extract checkerboard corners \\(\mathbf{P}^{2d}_{c}\\) from Kinect color image using [findChessboardCorners][6] and their corresponding 3D locations \\(\mathbf{P}^{3d}\\) from Kinect depth image. I'll skip the details of this part, since this is very simple if you use Kinect Windows SDK v2.0. For more information please refer to [Kinect CoordinateMapper][4]. Note \\(\mathbf{P}^{2d}_{c}\\) is only used to extract \\(\mathbf{P}^{3d}\\) from depth image using [Kinect CoordinateMapper][4], but if you want to calibrate Kinect color camera keep  \\(\mathbf{P}^{2d}_{c}\\) for later use.
+We extract checkerboard corners $$ \mathbf{P}^{2d}_{c} $$ from Kinect color image using [findChessboardCorners][6] and their corresponding 3D locations \\(\mathbf{P}^{3d}\\) from Kinect depth image. I'll skip the details of this part, since this is very simple if you use Kinect Windows SDK v2.0. For more information please refer to [Kinect CoordinateMapper][4]. Note $$\mathbf{P}^{2d}_{c}$$ is only used to extract \\(\mathbf{P}^{3d}\\) from depth image using [Kinect CoordinateMapper][4], but if you want to calibrate Kinect color camera keep  \\(\mathbf{P}^{2d}_{c}\\) for later use.
 
 Now we have the 3D-2D point pairs (\\(\mathbf{P}^{3d}\\) and \\(\mathbf{P}^{2d}_{p}\\)) to calibrate the projector intrinsics. But if you send the point pairs directly to OpenCV's [calibrateCamera][5] an exception will be raised, because this function requires the Z values of `objectPoints` to be zeros, since [Zhang's method][5] assumes all `objectPoints` reside on the XY plane in checkerboard object space and thus the Z values are 0, then the 3x4 projection matrix **K[R\|T]**  is reduce to a 3x3 homography **H**. 
 
@@ -101,7 +101,7 @@ the covariance matrix of \\(\mathbf{P}^{3d}\\) is given by:
 
 $$ \mathbf{\Sigma} = (\mathbf{x}_i - \bar{\mathbf{x}})(\mathbf{x}_i - \bar{\mathbf{x}})^{T} $$, where 
 
-\\(\mathbf{x}_i\\) is the *ith* point, and \\(\bar{{\mathbf{P}}^{3d}\\) is the mean of \\(\mathbf{P}^{3d}\\). 
+\\(\mathbf{x}_i\\) is the *ith* point, and $$\bar{\mathbf{P}}^{3d}$$ is the mean of \\(\mathbf{P}^{3d}\\). 
 
 The eigen decomposition of \\(\mathbf{\Sigma}\\) is given by:
 $$ \mathbf{\Sigma} = \mathbf{U}\mathbf{S}^{2}\mathbf{U}^T $$, where \\(\mathbf{U}\\)'s columns are the eigenvectors of \\(\mathbf{\Sigma}\\) and **they are also the left singular vectors of \\( (\mathbf{x}_i - \bar{\mathbf{x}}) \\)**. 
