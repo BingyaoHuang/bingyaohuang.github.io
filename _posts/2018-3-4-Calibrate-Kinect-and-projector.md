@@ -16,9 +16,9 @@ In the following paragraphs we are going to talk about this simple calibration m
 ## Projected checkerboard image
 We first generate a checkerboard image pattern in OpenCV, where `boardSize` contains the number of squares in row and column, `cbPts2d` stores a list of inner corners of the checkerboard is given by:
 
-$$ \mathbf{P}^{2d}_{p} = [ \mathbf{q}_0, \mathbf{q}_1,\dots \mathbf{q}_i, \dots \mathbf{q}_N ] $$, where 
+$$ \mathbf{P}^{2d}_{p} = [ \mathbf{q}_0, \mathbf{q}_1,\dots \mathbf{q}_i, \dots \mathbf{q}_N ] $$
 
-\\(\mathbf{q}_i = \[ u_i, v_i \] \\) is the 2D coordinate of the *ith* checkerboard corner in projector image space, *N = `boardSize.width`\*`boardSize.height`*.
+, where $\mathbf{q}_i = \[ u_i, v_i \]$ is the 2D coordinate of the *ith* checkerboard corner in projector image space, *N = `boardSize.width`\*`boardSize.height`*.
 
 
 ```c++
