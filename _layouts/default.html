@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
-
+    {% include katex.html %}
     {% include meta.html %}
 
     <!--[if lt IE 9]>
@@ -46,6 +46,6 @@
     </div>
 
     {% include analytics.html %}
-    {% include katex.html %}
+    
   </body>
 </html>
