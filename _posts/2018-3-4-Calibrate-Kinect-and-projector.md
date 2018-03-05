@@ -132,16 +132,19 @@ Finally, we have 3D checkerboard corners $$\mathbf{P}^{3d}_{obj}$$  and 2D check
 
 
 The calibrated projector intrinsic projection matrix $$K_p = $$
+
 | 1227.8 | 0      | 450.9 |
 |--------|--------|-------|
 | 0      | 1214.9 | 606.1 |
 | 0      | 0      | 1     |
 
 projector intrinsic distortion coefficients $$Kc_p = $$
+
 | -0.1708 | 1.0518 | -0.0168 | 0.0065 | -2.8967 |
 |---------|--------|---------|--------|---------|
 
 extrinsics: $$RT = $$
+
 | r1     | r2     | r3      | t (mm)   |
 |--------|--------|---------|----------|
 | 0.9435 | -0.061 | -0.3256 | 177.72   |
