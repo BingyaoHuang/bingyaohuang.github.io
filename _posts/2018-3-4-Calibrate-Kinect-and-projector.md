@@ -149,7 +149,7 @@ $$
 \end{array}
 $$
 
-projector intrinsic distortion coefficients $$Kc_p = $$
+projector distortion coefficients $$Kc_p = $$
 
 $$
 \begin{array}{|l|l|l|l|l|}
