@@ -16,9 +16,9 @@ In the following paragraphs we are going to talk about this simple calibration m
 ## Projected checkerboard image
 We first generate a checkerboard image pattern in OpenCV, where `boardSize` contains the number of squares in row and column, `cbPts2d` stores a list of inner corners of the checkerboard is given by:
 
-$$ \mathbf{P}^{2d}_{p} = [ \mathbf{q}_0, \mathbf{q}_1,\dots \mathbf{q}_i, \dots \mathbf{q}_N ] $$
+$$ \mathbf{P}^{2d}_{p} = [ \mathbf{q}_0, \mathbf{q}_1,\dots \mathbf{q}_i, \dots \mathbf{q}_N ] $$,
 
-, where $\mathbf{q}_i = \[ u_i, v_i \]$ is the 2D coordinate of the *ith* checkerboard corner in projector image space, *N = `boardSize.width`\*`boardSize.height`*.
+where $\mathbf{q}_i = \[ u_i, v_i \]$ is the 2D coordinate of the *ith* checkerboard corner in projector image space, *N = `boardSize.width`\*`boardSize.height`*.
 
 
 ```c++
@@ -71,9 +71,9 @@ Then we project this image to a white flat wall using the projector. In the mean
 ## Getting the 3D-2D coordinates of the checkerboard corners
 Let \\(\mathbf{P}^{3d}\\) be a set of 3D locations of the projected checkerboard corners:
 
-$$ \mathbf{P}^{3d} = [ \mathbf{x}_0, \mathbf{x}_1,\dots \mathbf{x}_i, \dots \mathbf{x}_N ] $$, where 
+$$ \mathbf{P}^{3d} = [ \mathbf{x}_0, \mathbf{x}_1,\dots \mathbf{x}_i, \dots \mathbf{x}_N ] $$, 
 
-\\(\mathbf{x}_i = \[ X_i, Y_i, Z_i \] \\) is the 3D coordinate of the *ith* checkerboard corner in Kinect depth camera view space.
+where \\(\mathbf{x}_i = \[ X_i, Y_i, Z_i \] \\) is the 3D coordinate of the *ith* checkerboard corner in Kinect depth camera view space.
 
 We extract checkerboard corners $$ \mathbf{P}^{2d}_{c} $$ from Kinect color image using [findChessboardCorners][6] and their corresponding 3D locations \\(\mathbf{P}^{3d}\\) from Kinect depth image. I'll skip the details of this part, since this is very simple if you use Kinect Windows SDK v2.0. For more information please refer to [Kinect CoordinateMapper][4]. Note $$\mathbf{P}^{2d}_{c}$$ is only used to extract \\(\mathbf{P}^{3d}\\) from depth image using [Kinect CoordinateMapper][4], but if you want to calibrate Kinect color camera keep  \\(\mathbf{P}^{2d}_{c}\\) for later use.
 
@@ -99,9 +99,9 @@ If we draw the eigenvectors of \\(\mathbf{P}^{3d}\\)'s covariance matrix, what a
 
 the covariance matrix of \\(\mathbf{P}^{3d}\\) is given by:
 
-$$ \mathbf{\Sigma} = (\mathbf{x}_i - \bar{\mathbf{x}})(\mathbf{x}_i - \bar{\mathbf{x}})^{T} $$, where 
+$$ \mathbf{\Sigma} = (\mathbf{x}_i - \bar{\mathbf{x}})(\mathbf{x}_i - \bar{\mathbf{x}})^{T} $$
 
-\\(\mathbf{x}_i\\) is the *ith* point, and $$\bar{\mathbf{P}}^{3d}$$ is the mean of \\(\mathbf{P}^{3d}\\). 
+, where \\(\mathbf{x}_i\\) is the *ith* point, and $$\bar{\mathbf{P}}^{3d}$$ is the mean of \\(\mathbf{P}^{3d}\\). 
 
 The eigen decomposition of \\(\mathbf{\Sigma}\\) is given by:
 $$ \mathbf{\Sigma} = \mathbf{U}\mathbf{S}^{2}\mathbf{U}^T $$, where \\(\mathbf{U}\\)'s columns are the eigenvectors of \\(\mathbf{\Sigma}\\) and **they are also the left singular vectors of \\( (\mathbf{x}_i - \bar{\mathbf{x}}) \\)**. 
