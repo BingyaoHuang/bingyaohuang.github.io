@@ -140,23 +140,25 @@ We can also obtain the relative rotation and translation $RT$ by sending the cal
 
 The calibrated projector intrinsic projection matrix $$K_p = $$
 
-| 1227.8 | 0      | 450.9 |
-|--------|--------|-------|
-| 0      | 1214.9 | 606.1 |
-| 0      | 0      | 1     |
+$$
+\begin{array}{|l|l|l|}
+\hline
+1227.8 & 0      & 450.9 \\ \hline
+0      & 1214.9 & 606.1 \\ \hline
+0      & 0      & 1    
+\end{tabular}
+$$
 
 projector intrinsic distortion coefficients $$Kc_p = $$
 
-| -0.1708 | 1.0518 | -0.0168 | 0.0065 | -2.8967 |
-|---------|--------|---------|--------|---------|
+$$
+\begin{array}{|l|l|l|l|l|}
+\hline
+ -0.1708 & 1.0518 & -0.0168 & 0.0065 & -2.8967 \\ \hline
+\end{array}
+$$
 
 extrinsics: $$RT = $$
-
-| r1     | r2     | r3      | t (mm)   |
-|--------|--------|---------|----------|
-| 0.9435 | -0.061 | -0.3256 | 177.72   |
-| -0.004 | 0.9807 | -0.1953 | -92.0386 |
-| 0.3312 | 0.1856 | 0.9251  | -21.0593 |
 
 $$
 \begin{array}{|l|l|l|l|}
