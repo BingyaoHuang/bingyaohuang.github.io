@@ -126,7 +126,7 @@ $\bar{\mathbf{P}}^{3d} = \mathbf{P}^{3d} - mean(\mathbf{P}^{3d}) $
 
 Note in step 3, we do not constrain the sign of eigenvectors in this article because they do not affect projector **intrinsics** calibration.
 
-Finally, we have 3D checkerboard corners $\mathbf{P}^{3d}_{obj}$  and 2D checkerboard corners in projector image space $\mathbf{P}^{2d}_{p}$ to calibrate the projector intrinsics using [calibrateCamera][5].
+Finally, we have 3D checkerboard corners $$\mathbf{P}^{3d}_{obj}$$  and 2D checkerboard corners in projector image space $$\mathbf{P}^{2d}_{p}$$ to calibrate the projector intrinsics using [calibrateCamera][5].
 
 ![pts3d_rotated](../images/calibration/pts3d_rotated.png)
 
