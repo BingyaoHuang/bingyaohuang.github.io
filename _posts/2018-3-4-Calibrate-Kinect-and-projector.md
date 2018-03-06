@@ -136,7 +136,7 @@ Finally, we have 3D checkerboard corners $$\mathbf{P}^{3d}_{obj}$$  and 2D check
 ![pts3d_rotated](../images/calibration/pts3d_rotated.png)
 
 ### Projector and Kinect depth camera extrinsics
-We can also obtain the relative rotation and translation $RT$ by sending the calibrated projector intrinsics, known Kinect depth camera intrinsics, 3D checkerboard corners $$\mathbf{P}^{3d}_{obj}$$, 2D checkerboard corners in projector image space $$\mathbf{P}^{2d}_{p}$$ and 3D 2D checkerboard corners in depth camera image space $$\mathbf{P}^{2d}_{d}$$ to OpenCV function `stereoCalibrate`. 
+We can also obtain the relative rotation and translation $RT$ by sending the calibrated projector intrinsics, known Kinect depth camera intrinsics, 3D checkerboard corners $$\mathbf{P}^{3d}_{obj}$$, 2D checkerboard corners in projector image space $$\mathbf{P}^{2d}_{p}$$ and 3D checkerboard corners in depth camera image space $$\mathbf{P}^{2d}_{d}$$ to OpenCV function [stereoCalibrate][7]. 
 
 The calibrated projector intrinsic projection matrix $$K_p = $$
 
@@ -176,3 +176,4 @@ $$
 [4]:https://msdn.microsoft.com/en-us/library/windowspreview.kinect.coordinatemapper.aspx
 [5]:https://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html#calibratecamera
 [6]:https://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html#findchessboardcorners
+[7]:https://docs.opencv.org/3.0-beta/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html#stereocalibrate
