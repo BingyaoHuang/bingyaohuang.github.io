@@ -71,7 +71,7 @@ $$ \mathbf{P}^{2d}_{p} = [ \mathbf{q}_0, \mathbf{q}_1,\dots \mathbf{q}_i, \dots 
 
 where $\mathbf{q}_i = [ u_i, v_i ]$ is the 2D coordinate of the $i^{th}$ checkerboard corner in projector image space, *N = `boardSize.width`\*`boardSize.height`*.
 
-The generated checkerboard image is shown below, **since OpenCV `findChessboardCorners` requires white boarders around the checkerboard pattern, we need to add offset to both x and y directions**
+The generated checkerboard image is shown below, since OpenCV `findChessboardCorners` requires **white boarders** around the checkerboard pattern, we need to add offset to both x and y directions
 
 ![checkerboard](../images/calibration/checkerboard.png)
 
@@ -84,13 +84,13 @@ $$ \mathbf{P}^{3d} = [ \mathbf{x}_0, \mathbf{x}_1,\dots \mathbf{x}_i, \dots \mat
 
 where $\mathbf{x}_i = [ X_i, Y_i, Z_i ]$ is the 3D coordinate of the $i^{th}$ checkerboard corner in Kinect **depth camera view space**.
 
-We extract checkerboard corners $$\mathbf{P}^{2d}_{c}$$ from Kinect color image using [findChessboardCorners][6] and their corresponding 3D coordinates $\mathbf{P}^{3d}$ from Kinect depth image. This step is very simple if you use Kinect Windows SDK v2.0. For more information please refer to [Kinect CoordinateMapper][4]. Note $$\mathbf{P}^{2d}_{c}$$ is only used to extract $\mathbf{P}^{3d}$ from depth image using [Kinect CoordinateMapper][4], but if you want to calibrate Kinect color camera keep  $$\mathbf{P}^{2d}_{c}$$ for later use.
+We extract checkerboard corners $$\mathbf{P}^{2d}_{c}$$ from Kinect color image using [findChessboardCorners][6] and their corresponding 3D coordinates $\mathbf{P}^{3d}$ from Kinect depth image. This step is very simple if you use Kinect Windows SDK v2.0. For more information please refer to [Kinect CoordinateMapper][4]. Note $$\mathbf{P}^{2d}_{c}$$ is only used to extract $\mathbf{P}^{3d}$ from depth image using Kinect CoordinateMapper, but if you want to calibrate Kinect color camera keep  $$\mathbf{P}^{2d}_{c}$$ for later use.
 
 ![detected_corners](../images/calibration/detected_corners.png)
 
 Make sure the order of $$\mathbf{P}^{2d}_{c}$$ in the image above should match the order of those in $\mathbf{P}^{3d}$, basically the color of the corners represent the order of the poitns in $$\mathbf{P}^{2d}_{c}$$, red is the first and dark blue is the last.
 
-Now we have the 3D-2D point pairs ($\mathbf{P}^{3d}$ and $$\mathbf{P}^{2d}_{p}$$) to calibrate the projector intrinsics and extrinsics. But if you send the point pairs directly to OpenCV's [calibrateCamera][5] an exception will be raised, because this function requires the Z values of `objectPoints` to be zeros, since [Zhang's method][5] assumes all `objectPoints` reside on the XY plane of checkerboard object space, thus the 3x4 projection matrix $$\mathbf{K[RT]}$$  is reduce to a 3x3 homography $\mathbf{H}$. 
+Now we have the 3D-2D point pairs ($\mathbf{P}^{3d}$ and $$\mathbf{P}^{2d}_{p}$$) to calibrate the projector intrinsics and extrinsics. But if you send the point pairs directly to OpenCV's [calibrateCamera][5] an exception will be raised, because this function requires the Z values of `objectPoints` to be zeros, since [Zhang's method][5] assumes all `objectPoints` reside on the XY plane of checkerboard object space, thus the 3x4 projection matrix $$\mathbf{K[RT]}$$  is reduced to a 3x3 homography $\mathbf{H}$.
 
 If we plot $\mathbf{P}^{3d}$ we can see that they reside on the same plane but the Z values are nonzero, because their 3D coordinates are defined in Kinect **depth camera view space** rather than checkerboard object space. 
 
