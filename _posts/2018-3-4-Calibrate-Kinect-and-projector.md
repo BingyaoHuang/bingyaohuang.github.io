@@ -71,7 +71,7 @@ $$ \mathbf{P}^{2d}_{p} = [ \mathbf{q}_0, \mathbf{q}_1,\dots \mathbf{q}_i, \dots 
 
 where $\mathbf{q}_i = [ u_i, v_i ]$ is the 2D coordinate of the $i^{th}$ checkerboard corner in projector image space, *N = `boardSize.width`\*`boardSize.height`*.
 
-The generated checkerboard image is shown below, since OpenCV `findChessboardCorners` requires **white boarders** around the checkerboard pattern, we need to add offset to both x and y directions
+The generated checkerboard image is shown below, since OpenCV [findChessboardCorners][6] requires **white boarders** around the checkerboard pattern, we need to add offset to both x and y directions
 
 ![checkerboard](../images/calibration/checkerboard.png)
 
@@ -84,7 +84,7 @@ $$ \mathbf{P}^{3d} = [ \mathbf{x}_0, \mathbf{x}_1,\dots \mathbf{x}_i, \dots \mat
 
 where $\mathbf{x}_i = [ X_i, Y_i, Z_i ]$ is the 3D coordinate of the $i^{th}$ checkerboard corner in Kinect **depth camera view space**.
 
-We extract checkerboard corners $$\mathbf{P}^{2d}_{c}$$ from Kinect color image using [findChessboardCorners][6] and their corresponding 3D coordinates $\mathbf{P}^{3d}$ from Kinect depth image. This step is very simple if you use Kinect Windows SDK v2.0. For more information please refer to [Kinect CoordinateMapper][4]. Note $$\mathbf{P}^{2d}_{c}$$ is only used to extract $\mathbf{P}^{3d}$ from depth image using Kinect CoordinateMapper, but if you want to calibrate Kinect color camera keep  $$\mathbf{P}^{2d}_{c}$$ for later use.
+We extract checkerboard corners $$\mathbf{P}^{2d}_{c}$$ from Kinect color image using `findChessboardCorners ` and their corresponding 3D coordinates $\mathbf{P}^{3d}$ from Kinect depth image. This step is very simple if you use Kinect Windows SDK v2.0. For more information please refer to [Kinect CoordinateMapper][4]. Note $$\mathbf{P}^{2d}_{c}$$ is only used to extract $\mathbf{P}^{3d}$ from depth image using Kinect CoordinateMapper, but if you want to calibrate Kinect color camera keep  $$\mathbf{P}^{2d}_{c}$$ for later use.
 
 ![detected_corners](../images/calibration/detected_corners.png)
 
@@ -96,7 +96,7 @@ If we plot $\mathbf{P}^{3d}$ we can see that they reside on the same plane but t
 
 ![pts3d_original](../images/calibration/pts3d_original.png)
 
-One may ask **can we generate the 3D coordinates of these checkerboard corners like what we do to the printed checkerboard?** The answer is no, unlike a real checkerboard, the projected image is distorted and skewed due to the perspective projection. The distortion varies each time we change the projector's position/orientation in respect to the wall. So each projected checkerboard image on the wall has different unknown scales and geometries.
+One may ask *can we generate the 3D coordinates of these checkerboard corners like what we do to the printed checkerboard?* The answer is no, unlike a real checkerboard, the projected image is distorted and skewed due to the perspective projection. The distortion varies each time we change the projector's position/orientation in respect to the wall. So each projected checkerboard image on the wall has different unknown scales and geometries.
 
 ## Rotate 3D points using eigenvectors
 One workaround is to estimate a rotation and translation between Kinect depth camera view space and the checkerboard object space, then rotate and translate $\mathbf{P}^{3d}$ to the canonical view, so that they reside in the XY plane of Kinect depth camera view space. This requires the parameters of the checkerboard plane, luckily we know $\mathbf{P}^{3d}$ form a planar shape with arbitrary orientations and translations, we can estimate the plane by the following methods:
