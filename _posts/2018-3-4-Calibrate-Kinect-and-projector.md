@@ -3,6 +3,8 @@ layout: post
 title: Kinect and projector pair calibration
 author: Bingyao Huang
 published: true
+image: null
+paht: ../images/calibration/setup.jpg
 ---
 
 We want to combine Microsoft Kinect and a projector to create cool [Augmented Reality (AR) applications](http://genekogan.com/works/kinect-projector-toolkit/), one prerequisite is system calibration. Existing methods, such as [RGBDdemo][1] and [KinectProjectorToolkit][2] either requires printed checkerboard patterns or a large room to calibrate Kinect depth/color cameras and a projector. 
