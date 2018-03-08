@@ -126,7 +126,7 @@ $\mathbf{\Sigma} = \mathbf{U}\mathbf{S}^{2}\mathbf{U}^T$, where the diagnal of $
 So we use SVD to obtain eigenvectors instead of computing an expensive covariance matrix:
 1. Center $\bar{\mathbf{P}}^{3d}$ at depth camera view space's origin by:
 $\bar{\mathbf{P}}^{3d} = \mathbf{C}\mathbf{P}^{3d}} $, where $\mathbf{C} = \mathbf{I} - \frac{\mathbf{O}}{n}$ is a [centering matrix][8].
-2. Apply SVD to $\bar{\mathbf{P}}^{3d} \rightarrow \bar{\mathbf{P}}^{3d} = \mathbf{U}\mathbf{S}\mathbf{V}^T$. 
+2. Apply SVD to centered 3D points:  \bar{\mathbf{P}}^{3d} = \mathbf{U}\mathbf{S}\mathbf{V}^T$. 
 3. To rotate $\bar{\mathbf{P}}^{3d}$ to Kinect depth camera view space's XY plane, we only need to left multiply the inverse of $\mathbf{U}$, i.e.,  $\mathbf{U}^{T}$ to $\bar{\mathbf{P}}^{3d} \rightarrow \mathbf{P}^{3d}_{obj} = \mathbf{U}^{T}\bar{\mathbf{P}}^{3d}$.
 4. Due to projector and Kinect sensor noise and nonplanarity of the wall, the translated and rotated $\mathbf{P}^{3d}_{obj}$ may have very small Z values, we can orthogonal project the points to depth camera view space XY plane by manually setting Z = 0.
 
