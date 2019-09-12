@@ -100,13 +100,13 @@ If we plot $\mathbf{P}^{3d}$ we can see that they reside on the same plane but t
 One may ask *can we generate the 3D coordinates of these checkerboard corners like what we do to the printed checkerboard?* The answer is no, unlike a real checkerboard, the projected image is distorted and skewed due to the perspective projection. The distortion varies each time we change the projector's position/orientation in respect to the wall. So each projected checkerboard image on the wall has different unknown scales and geometries.
 
 ## Rotate 3D points using eigenvectors
-One workaround is to estimate a rotation and translation between Kinect depth camera view space and the checkerboard object space, then rotate and translate $\mathbf{P}^{3d}$ to the canonical view, so that they reside in the XY plane of Kinect depth camera view space. This requires the parameters of the checkerboard plane, luckily we know $\mathbf{P}^{3d}$ form a planar shape with arbitrary orientations and translations, we can estimate the plane by the following methods:
+One workaround is to estimate a rotation and translation between Kinect depth camera view space and the checkerboard object space, then rotate and translate $\mathbf{P}^{3d}$ to the canonical view, so that they reside in the XY plane of Kinect depth camera view space. This requires the parameters of the checkerboard plane, luckily we know $\mathbf{P}^{3d}$ form a planar shape with arbitrary orientations and translations, we can estimate the plane using one the following three methods:
 
 1. choose any **three non-collinear** points to calculate the plane's normal (Z) and X, Y axes directions in the checkerboard object space.
 2. use **all** the points to fit a plane subject to minimizing the linear least squares error. Then choose any two points to calculate X(or Y) axis and the other axis is the cross product of normal and X(or Y): Y = `cross`(X, Z).
 3. use the eigenvectors of $\mathbf{P}^{3d}$'s covariance matrix as the plane's XYZ axes.
 
-But for option 1, which three points should we choose to estimate the plane? The same question applies to option 2 too, which two points should we use to estimate X (or Y) axis? Statistically, we prefer option 3 since it makes use of the distribution of $\mathbf{P}^{3d}$ and it is simpler.
+But for method 1, which three points should we choose to estimate the plane? The same question applies to method 2 too, which two points should we use to estimate X (or Y) axis? We prefer method 3 since it considers all points in $\mathbf{P}^{3d}$ and it is simpler.
 
 ### Geometric interpretation of eigenvectors and Singular Value Decomposition (SVD)
 
