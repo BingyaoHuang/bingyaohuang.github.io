@@ -89,7 +89,7 @@ We extract checkerboard corners $$\mathbf{P}^{2d}_{c}$$ from Kinect color image 
 
 ![detected_corners](../images/calibration/detected_corners.png)
 
-Make sure the order of $$\mathbf{P}^{2d}_{c}$$ in the image above should match the order of those in $\mathbf{P}^{3d}$, basically the color of the corners represent the order of the poitns in $$\mathbf{P}^{2d}_{c}$$, red is the first and dark blue is the last.
+Make sure the order of $$\mathbf{P}^{2d}_{c}$$ in the image above matches the order of those in $\mathbf{P}^{3d}$, basically the corner colors represent the order of the poitns in $$\mathbf{P}^{2d}_{c}$$, red is the first element in $$\mathbf{P}^{2d}_{c}$$ vector and dark blue is the last one.
 
 Now we have the 3D-2D point pairs ($\mathbf{P}^{3d}$ and $$\mathbf{P}^{2d}_{p}$$) to calibrate the projector intrinsics and extrinsics. But if you send the point pairs directly to OpenCV's [calibrateCamera][5] an exception will be raised, because this function requires the Z values of `objectPoints` to be zeros, since [Zhang's method][5] assumes all `objectPoints` reside on the XY plane of checkerboard object space, thus the 3x4 projection matrix $$\mathbf{K[RT]}$$  is reduced to a 3x3 homography $\mathbf{H}$.
 
