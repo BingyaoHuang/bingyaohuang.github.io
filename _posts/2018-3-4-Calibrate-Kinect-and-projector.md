@@ -86,7 +86,7 @@ $$ \mathbf{P}^\text{3d} = [ \mathbf{x}_0, \mathbf{x}_1,\dots \mathbf{x}_i, \dots
 
 where $\mathbf{x}_i = [ X_i, Y_i, Z_i ]$ is the 3D coordinate of the $i^\text{th}$ checkerboard corner in Kinect **depth camera view space**.
 
-We extract checkerboard corners $$\mathbf{P}^\text{2d}_\text{c}$$ from Kinect color image using `findChessboardCorners ` and their corresponding 3D coordinates $\mathbf{P}^\text{3d}$ from Kinect depth image. This step is very simple if you use Kinect Windows SDK v2.0. For more information please refer to [Kinect CoordinateMapper][4]. Note $\mathbf{P}^\text{2d}_\text{c}$ is only used to extract $\mathbf{P}^\text{3d}$ from depth image using Kinect CoordinateMapper, but if you want to calibrate Kinect color camera keep $\mathbf{P}^\text{2d}_\text{c}$ for later use.
+We extract checkerboard corners $\mathbf{P}^{\text{2d}}_{\text{c}}$ from Kinect color image using `findChessboardCorners ` and their corresponding 3D coordinates $\mathbf{P}^\text{3d}$ from Kinect depth image. This step is very simple if you use Kinect Windows SDK v2.0. For more information please refer to [Kinect CoordinateMapper][4]. Note $\mathbf{P}^\text{2d}_\text{c}$ is only used to extract $\mathbf{P}^\text{3d}$ from depth image using Kinect CoordinateMapper, but if you want to calibrate Kinect color camera keep $\mathbf{P}^\text{2d}_\text{c}$ for later use.
 
 <p align="center"><img src="../images/calibration/detected_corners.png" alt="detected_corners" width="60%"/></p>
 
