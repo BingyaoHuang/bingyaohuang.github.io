@@ -1,6 +1,6 @@
 ---
-title: End-to-end Projector Photometric Compensation (CVPR'19 Oral)
 layout: post
+title: End-to-end Projector Photometric Compensation (CVPR'19 Oral)
 author: Bingyao Huang
 published: true
 #image: ../images/calibration/capture.gif   

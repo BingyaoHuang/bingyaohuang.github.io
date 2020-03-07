@@ -1,6 +1,6 @@
 ---
-title: A Single-shot-per-pose camera-projector calibration system for imperfect planar targets
 layout: post
+title: A Single-shot-per-pose camera-projector calibration system for imperfect planar targets
 author: Bingyao Huang
 published: true
 #image: ../images/calibration/capture.gif   

@@ -1,6 +1,6 @@
 ---
-title: CompenNet++ End-to-end Full Projector Compensation (ICCV'19)
 layout: post
+title: CompenNet++ End-to-end Full Projector Compensation (ICCV'19)
 author: Bingyao Huang
 published: true
 #image: ../images/calibration/capture.gif   
