@@ -16,11 +16,7 @@ In most simple AR applications, we bind the Kinect and the projector (their FOV 
 
 ![setup](../images/calibration/setup.jpg){:width="80%"}
 
-![setup](../images/calibration/setup.jpg){:width=80%}
-
-![setup](../images/calibration/setup.jpg){:.center_img, :width=80%}
-
-![capture](../images/calibration/capture.gif){:.center_img}
+![setup](../images/calibration/setup.jpg){:width="80%" :.center_img}
 
 
 In this case, neither a printed checkerboard pattern or a large room is needed. We can calibrate the system using  [Zhang's method][5] by projecting a checkerboard pattern to a white flat wall,  then move the whole Kinect-projector pair together to capture at least 3 shots from different position/orientations.
