@@ -14,9 +14,9 @@ In most simple AR applications, we bind the Kinect and the projector (their FOV 
 <img class="center_img" src="../images/calibration/setup.jpg" alt="setup" width="80%"/>
 
 
-![setup](../images/calibration/setup.jpg){:.center_img :width="80%"}
+![setup](../images/calibration/setup.jpg){:width="80%"}
 
-![setup](../images/calibration/setup.jpg){:.center_img :width=80%}
+![setup](../images/calibration/setup.jpg){:width=80%}
 
 ![setup](../images/calibration/setup.jpg){:.center_img, :width=80%}
 
