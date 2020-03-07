@@ -6,6 +6,7 @@ published: true
 #image: ../images/calibration/capture.gif
 # Note for inline math subscript, don't use '_', instead use '\_', since Markdown interpret it as italic.
 ---
+<p align="center"><img src="../images/calibration/capture.gif" alt="capture" width="60%"/></p>
 
 We want to combine Microsoft Kinect and a projector to create cool [Augmented Reality (AR) applications](http://genekogan.com/works/kinect-projector-toolkit/), one prerequisite is system calibration. Existing methods, such as [RGBDdemo][1] and [KinectProjectorToolkit][2] either requires printed checkerboard patterns or a large room to calibrate Kinect depth/color cameras and a projector. 
 
@@ -13,9 +14,7 @@ In most simple AR applications, the relative rotation and translation between th
 
 <p align="center"><img src="../images/calibration/setup.jpg" alt="setup" width="60%"/></p>
 
-In this article, we show that the system can be calibrated using  [Zhang's method][5] without a printed checkerboard pattern or a large room. Instead, we **project** a checkerboard pattern to a white flat wall, then move the bound  Kinect-projector pair to capture mages from at least three different poses.
-
-<p align="center"><img src="../images/calibration/capture.gif" alt="capture" width="60%"/></p>
+In this article, we show that the system can be calibrated using  [Zhang's method][5] without a printed checkerboard pattern or a large room. Instead, we **project** a checkerboard pattern to a white flat wall, then move the bound  Kinect-projector pair to capture mages from at least three different poses, as shown in the teaser image.
 
 In the rest of the article, we focus on calibrating the **intrinsic parameters of the projector** and the **extrinsic parameters between the projector and the Kinect depth camera**. The intrinsics of the Kinect color/depth cameras can either be obtained from Kinect Windows SDK or calibrated using a printed checkerboard.
 
