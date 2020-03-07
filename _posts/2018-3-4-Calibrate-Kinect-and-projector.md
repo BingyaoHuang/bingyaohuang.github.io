@@ -65,7 +65,7 @@ Mat generateCheckerboardImg(Size imgSize, Size boardSize, vector < Point2f > & c
 
 where `boardSize` contains the number of squares in row and column, `cbPts2d` stores a list of inner corners of the checkerboard and is given by:
 
-$$ \mathbf{P}^{\text{2d}}_{\text{p}} = [ \mathbf{q}_0, \mathbf{q}_1,\dots \mathbf{q}_i, \dots \mathbf{q}_N ] $$
+$$ \mathbf{P}^{\text{2d}}_{\text{p}} = [ \mathbf{q}_0, \mathbf{q}_1,\dots \mathbf{q}_i, \dots \mathbf{q}_{N-1} ] $$
 
 where $\mathbf{q}_i = [ u_i, v_i ]$ is the 2D coordinate of the $i^\text{th}$ checkerboard corner in the projector image space and *N = `boardSize.width`\*`boardSize.height`*.
 
@@ -78,9 +78,9 @@ Then we project this checkerboard to a white flat wall and in the meanwhile, cap
 ## Getting the 3D-2D coordinates of the checkerboard corners
 Given a Kinect-captured **color** checkerboard image, we first extract the 2D checkerboard corners $\mathbf{P}^{\text{2d}}\_{\text{c}}$ using OpenCV's `findChessboardCorners`. Then $\mathbf{P}^{\text{2d}}\_{\text{c}}$'s corresponding 3D coordinates in the Kinect **depth camera's view space** can be queried from the Kinect-captured **depth** image using $\mathbf{P}^{\text{2d}}\_{\text{c}}$ and [Kinect Windows SDK v2.0: CoordinateMapper][4]:
 
-$$ \mathbf{P}^\text{3d} = [ \mathbf{x}_0, \mathbf{x}_1,\dots \mathbf{x}_i, \dots \mathbf{x}_N ] $$
+$$ \mathbf{P}^\text{3d} = [ \mathbf{x}_0, \mathbf{x}_1,\dots \mathbf{x}_i, \dots \mathbf{x}_{N-1} ] $$
 
-where $\mathbf{x}_i = [ X_i, Y_i, Z_i ]$ as the corresponding 3D coordinate of $\mathbf{P}^{\text{2d}}\_{\text{c}}[i]$. Note $\mathbf{P}^{\text{2d}}\_{\text{c}}$ is only used to extract $\mathbf{P}^\text{3d}$ from the Kinect-capture **depth** image in this article, but if you want to calibrate Kinect color camera keep $\mathbf{P}^{\text{2d}}\_{\text{c}}$ for [Zhang's method][5].
+where $\mathbf{x}_i = [ x_i, y_i, z_i ]$ as the corresponding 3D coordinate of $\mathbf{P}^{\text{2d}}\_{\text{c}}[i]$. Note $\mathbf{P}^{\text{2d}}\_{\text{c}}$ is only used to extract $\mathbf{P}^\text{3d}$ from the Kinect-capture **depth** image in this article, but if you want to calibrate Kinect color camera keep $\mathbf{P}^{\text{2d}}\_{\text{c}}$ for [Zhang's method][5].
 
 <p align="center"><img src="../images/calibration/detected_corners.png" alt="detected_corners" width="60%"/></p>
 
@@ -120,8 +120,8 @@ So instead of computing an expensive covariance matrix, we compute eigenvectors 
 1. Obtain $\bar{\mathbf{x}}$ by
 $\bar{\mathbf{x}} = \mathbf{C}\mathbf{P}^\text{3d}$, where $\mathbf{C} = \mathbf{I} - \frac{\mathbf{O}}{n}$ is a [centering matrix][8]. If we plot $\bar{\mathbf{x}}$ we will find it is just $\mathbf{P}^\text{3d}$ translated and centered to the origin of the Kinect's depth camera's view space.
 2. Apply SVD to $\bar{\mathbf{x}}$:  $\mathbf{U}\mathbf{S}\mathbf{V}^T = \bar{\mathbf{x}}$. 
-3. Afterwards, to rotate $\bar{\mathbf{x}}$ to the XY plane of Kinect depth camera's view space, we only need to left multiply $\mathbf{U}^{-1}$, i.e.,  $\mathbf{U}^{T}$ to $\bar{\mathbf{x}}$.  Then we have $\mathbf{P}^\text{3d}_{\text{obj}} = \mathbf{U}^{T}\bar{\mathbf{x}}$, and $\mathbf{P}^\text{3d}_{\text{obj}}$ is almost aligned with XY plane.
-4. Due to projector and Kinect sensor noise and nonplanarity of the wall, the translated and rotated $\mathbf{P}^\text{3d}_{\text{obj}}$ may have very small Z values, we can orthogonally project $\mathbf{P}^\text{3d}_{\text{obj}}$ to the XY plane by setting the Z coordinate of $\mathbf{P}^\text{3d}_{\text{obj}}$ to 0, the final $\mathbf{P}^\text{3d}_{\text{obj}}$ is shown in the image below.
+3. Afterwards, to rotate $\bar{\mathbf{x}}$ to the XY plane of Kinect depth camera's view space, we only need to left multiply $\mathbf{U}^{-1}$, i.e.,  $\mathbf{U}^{T}$ to $\bar{\mathbf{x}}$.  Then we have $\mathbf{P}^\text{3d}\_{\text{obj}} = \mathbf{U}^{T}\bar{\mathbf{x}}$, and $\mathbf{P}^\text{3d}\_{\text{obj}}$ is almost aligned with XY plane.
+4. Due to projector and Kinect sensor noise and nonplanarity of the wall, the translated and rotated $\mathbf{P}^\text{3d}\_{\text{obj}}$ may have very small Z values, we can orthogonally project $\mathbf{P}^\text{3d}\_{\text{obj}}$ to the XY plane by setting the Z coordinate of $\mathbf{P}^\text{3d}\_{\text{obj}}$ to 0, the final $\mathbf{P}^\text{3d}\_{\text{obj}}$ is shown in the image below.
 
 <p align="center"><img src="../images/calibration/pts3d_rotated.png" alt="pts3d_rotated" width="60%"/></p>
 
