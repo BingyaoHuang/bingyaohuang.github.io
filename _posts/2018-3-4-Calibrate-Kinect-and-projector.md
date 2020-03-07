@@ -10,25 +10,18 @@ We want to combine Microsoft Kinect and a projector to create cool [Augmented Re
 
 In most simple AR applications, we bind the Kinect and the projector (their FOV overlaps), thus the relative rotation and translation between the two are fixed. 
 
-<style>
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-</style>
 
 <img class="center_img" src="../images/calibration/setup.jpg" alt="setup" width="80%"/>
 
-![capture](../images/calibration/capture.gif){:.center}
+
+![setup](../images/calibration/setup.jpg){:.center_img :width="80%"}
+
+![setup](../images/calibration/setup.jpg){:.center_img :width=80%}
+
+![setup](../images/calibration/setup.jpg){:.center_img, :width=80%}
 
 ![capture](../images/calibration/capture.gif){:.center_img}
 
-{:.center}
-![capture](../images/calibration/capture.gif)
-
-{:.center_img}
-![capture](../images/calibration/capture.gif)
 
 In this case, neither a printed checkerboard pattern or a large room is needed. We can calibrate the system using  [Zhang's method][5] by projecting a checkerboard pattern to a white flat wall,  then move the whole Kinect-projector pair together to capture at least 3 shots from different position/orientations.
 
