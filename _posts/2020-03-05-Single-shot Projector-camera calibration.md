@@ -36,5 +36,5 @@ ___
 ___
 ## Software video user guide
 <p align="center">
-<iframe width="80%" height=300 src="https://www.youtube.com/embed/fnrVDOhcu7I?mute=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width=630 height=370 src="https://www.youtube.com/embed/fnrVDOhcu7I?mute=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
