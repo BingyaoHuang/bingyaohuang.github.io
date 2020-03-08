@@ -38,6 +38,4 @@ ___
 
 ___
 ## Software video user guide
-<p align="center">
 <iframe width=630 height=370 src="https://www.youtube.com/embed/fnrVDOhcu7I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</p>
