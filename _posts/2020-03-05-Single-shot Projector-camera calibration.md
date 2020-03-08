@@ -1,10 +1,12 @@
 ---
 layout: project
-title: A Single-shot-per-pose camera-projector calibration system for imperfect planar targets
+title: >-
+  A Single-shot-per-pose camera-projector calibration system for imperfect
+  planar targets
 author: Bingyao Huang
 published: true
-teaser: "https://raw.githubusercontent.com/BingyaoHuang/single-shot-pro-cam-calib/master/doc/reconstruct.png"
-# Note for inline math subscript, don't use '_', instead use '\_', since Markdown interpret it as italic.
+teaser: >-
+  https://raw.githubusercontent.com/BingyaoHuang/single-shot-pro-cam-calib/master/doc/reconstruct.png
 ---
 
 #### Bingyao Huang, Samed Ozdemir, Ying Tang, Chunyuan Liao and [Haibin Ling](https://www3.cs.stonybrook.edu/~hling)
@@ -37,5 +39,5 @@ ___
 ___
 ## Software video user guide
 <p align="center">
-<iframe width=630 height=370 src="https://www.youtube.com/embed/fnrVDOhcu7I?mute=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width=630 height=370 src="https://www.youtube.com/embed/fnrVDOhcu7I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
