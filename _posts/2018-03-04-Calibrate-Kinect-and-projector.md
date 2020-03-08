@@ -4,9 +4,17 @@ title: Kinect and projector pair calibration
 author: Bingyao Huang
 published: true
 #image: ../images/calibration/capture.gif
-# Note for inline math subscript, don't use '_', instead use '\_', since Markdown interpret it as italic.
+#Note for inline math subscript, don't use '_', instead use '\_', since Markdown interpret it as italic.
 ---
+
 <p align="center"><img src="../images/calibration/capture.gif" alt="capture" width="60%"/></p>
+
+- [Projected checkerboard image](#projected-checkerboard-image)
+- [Getting the 3D-2D coordinates of the checkerboard corners](#getting-the-3d-2d-coordinates-of-the-checkerboard-corners)
+- [Rotate 3D points using eigenvectors](#rotate-3d-points-using-eigenvectors)
+- [Geometric interpretation of eigenvectors and Singular Value Decomposition (SVD)](#geometric-interpretation-of-eigenvectors-and-singular-value-decomposition-svd)
+- [Projector and Kinect depth camera extrinsics](#projector-and-kinect-depth-camera-extrinsics)
+
 
 We want to combine Microsoft Kinect and a projector to create cool [Augmented Reality (AR) applications](http://genekogan.com/works/kinect-projector-toolkit/), one prerequisite is system calibration. Existing methods, such as [RGBDdemo][1] and [KinectProjectorToolkit][2] either requires printed checkerboard patterns or a large room to calibrate Kinect depth/color cameras and a projector. 
 
@@ -18,7 +26,7 @@ In this article, we show that the system can be calibrated using  [Zhang's metho
 
 In the rest of the article, we focus on calibrating the **intrinsic parameters of the projector** and the **extrinsic parameters between the projector and the Kinect depth camera**. The intrinsics of the Kinect color/depth cameras can either be obtained from Kinect Windows SDK or calibrated using a printed checkerboard.
 
-## Projected checkerboard image
+### Projected checkerboard image
 
 We first generate a checkerboard image pattern using OpenCV:
 
@@ -74,7 +82,7 @@ The generated checkerboard image is shown below, since OpenCV [findChessboardCor
 
 Then we project this checkerboard to a white flat wall and in the meanwhile, capture a depth and a color frame of the projected checkerboard pattern using the Kinect. Note we need at least 3 different poses for [Zhang's method][5].
 
-## Getting the 3D-2D coordinates of the checkerboard corners
+### Getting the 3D-2D coordinates of the checkerboard corners
 Given a Kinect-captured **color** checkerboard image, we first extract the 2D checkerboard corners $\mathbf{P}^{\text{2d}}\_{\text{c}}$ using OpenCV's `findChessboardCorners`. Then $\mathbf{P}^{\text{2d}}\_{\text{c}}$'s corresponding 3D coordinates in the Kinect **depth camera's view space** can be queried from the Kinect-captured **depth** image using $\mathbf{P}^{\text{2d}}\_{\text{c}}$ and [Kinect Windows SDK v2.0: CoordinateMapper][4]:
 
 $$ \mathbf{P}^\text{3d} = [ \mathbf{x}_0, \mathbf{x}_1,\dots \mathbf{x}_i, \dots \mathbf{x}_{N-1} ] $$
@@ -93,7 +101,7 @@ If we plot $\mathbf{P}^\text{3d}$ we can see that although they reside on the sa
 
 One may ask *can we just generate the 3D coordinates of these checkerboard corners like what we did to the conventional printed checkerboard?* The answer is no, unlike a printed checkerboard, the projected one is distorted and skewed due to projector's perspective projection. The distortion varies each time we change the projector-Kinect pose in respect to the wall. So each projected checkerboard image on the wall has a different unknown scale and shape (e.g., a diamond).
 
-## Rotate 3D points using eigenvectors
+### Rotate 3D points using eigenvectors
 One workaround is to estimate a rotation and translation between the Kinect depth camera's view space and the checkerboard's object space and then transform $\mathbf{P}^\text{3d}$ to the canonical view, so that they reside in the Kinect depth camera's XY plane (centered at the origin). This needs the checkerboard plane parameters. Luckily, since we know that $\mathbf{P}^\text{3d}$ has a planar shape, its parameters can be estimated using one the three methods below:
 
 1. choose any **three non-collinear** points in $\mathbf{P}^\text{3d}$ to calculate the plane's normal (i.e., Z axis direction) and X, Y axes directions in the checkerboard's object space.
