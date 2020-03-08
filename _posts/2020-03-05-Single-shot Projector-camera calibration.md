@@ -33,6 +33,7 @@ experiments
 ___
 ## Single-shot-per-pose
 <p align="center"><img src="https://raw.githubusercontent.com/BingyaoHuang/single-shot-pro-cam-calib/master/doc/calib.gif" alt="calib" width="80%"/></p>
+
 ___
 ## Software video user guide
 <p align="center">
