@@ -2,6 +2,7 @@
 layout: post
 title: Kinect and projector pair calibration
 author: Bingyao Huang
+permalink: /kinect-projector-calib
 published: true
 teaser: "../images/calibration/capture.gif"
 #Note for inline math subscript, don't use '_', instead use '\_', since Markdown interpret it as italic.
