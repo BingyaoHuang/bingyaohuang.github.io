@@ -39,6 +39,10 @@ ___
 
 ___
 ## Software video user guide
-<p align="center">
-<iframe width="630" height="370" src="https://www.youtube.com/embed/fnrVDOhcu7I?mute=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</p>
+<!-- <p align="center"> -->
+<div class="container">
+<div class="responsive-video">
+<iframe width="100%" height="100%" src="https://www.youtube.com/embed/fnrVDOhcu7I?mute=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</div>
+<!-- </p> -->

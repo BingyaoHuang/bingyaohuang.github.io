@@ -327,6 +327,28 @@ footer {
   text-align: center;
 }
 
+// for video
+// https://community.adobe.com/t5/dreamweaver/setting-embedded-youtube-videos-to-fill-the-screen-on-any-resolution-with-media-queries/td-p/10459087?page=1
+.container {
+  width: 82%;
+  margin: 0 auto;
+}
+
+.responsive-video {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
+
+.responsive-video iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
 @import "highlights";
