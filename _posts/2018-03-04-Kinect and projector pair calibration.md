@@ -176,6 +176,7 @@ $$
 \end{array}
 $$
 
+___
 [1]:http://rgbdemo.org/index.php/Documentation/TutorialProjectorKinectCalibration
 [2]:https://github.com/genekogan/KinectProjectorToolkit
 [3]:http://answers.opencv.org/question/27917/how-to-create-a-chess-board/?answer=27943#post-id-27943
