@@ -2,7 +2,7 @@
 layout: project
 title: A Single-shot-per-pose camera-projector calibration system for imperfect planar targets
 author: Bingyao Huang
-permalink: /Calibrate-Kinect-and-projector/
+permalink: /single-shot-pro-cam-calib
 published: true
 teaser: https://raw.githubusercontent.com/BingyaoHuang/single-shot-pro-cam-calib/master/doc/reconstruct.png
 ---
