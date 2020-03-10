@@ -19,7 +19,7 @@ teaser: "https://raw.githubusercontent.com/BingyaoHuang/CompenNet-plusplus/maste
 Full projector compensation aims to modify a projector input image such that it can compensate for both geometric and photometric disturbance of the projection surface. Traditional methods usually solve the two parts separately, although they are known to correlate with each other. In this paper, we propose the first end-to-end solution, named CompenNet++, to solve the two problems jointly. Our work non-trivially extends CompenNet, which was recently proposed for photometric compensation with promising performance. First, we propose a novel geometric correction subnet, which is designed with a cascaded coarse-to-fine structure to learn the sampling grid directly from photometric sampling images. Second, by concatenating the geometric correction subset with CompenNet, CompenNet++ accomplishes full projector compensation and is end-to-end trainable. Third, after training, we significantly simplify both geometric and photometric compensation parts, and hence largely improves the running time efficiency. Moreover, we construct the first setup-independent full compensation benchmark to facilitate the study on this topic. In our thorough experiments, our method shows clear advantages over previous arts with promising compensation quality and meanwhile being practically convenient.
 
 ___
-## Network architecture
+## Network Architecture
 <p align="center"><img src="https://raw.githubusercontent.com/BingyaoHuang/CompenNet-plusplus/master/doc/net_train.png" alt="net_train" width="100%"/></p>
 <p align="center"><img src="https://raw.githubusercontent.com/BingyaoHuang/CompenNet-plusplus/master/doc/net_test.png" alt="net_test" width="100%"/></p>
 
