@@ -47,6 +47,6 @@ ___
 ## Related Work
 * Bingyao Huang and Haibin Ling. **End-to-end Projector Photometric Compensation**. CVPR. 2019. [[Paper](http://openaccess.thecvf.com/content_CVPR_2019/papers/Huang_End-To-End_Projector_Photometric_Compensation_CVPR_2019_paper.pdf)]  [[Supp. material](https://www3.cs.stonybrook.edu/~hling/publication/CompenNet_sup.pdf)]  [[GitHub](https://github.com/BingyaoHuang/CompenNet)] [[Webpage]({{site.baseurl}}/compennet)]
 * Bingyao Huang and Haibin Ling. **CompenNet++: End-to-end Full Projector Compensation**. ICCV. 2019. [[Paper](http://openaccess.thecvf.com/content_ICCV_2019/papers/Huang_CompenNet_End-to-End_Full_Projector_Compensation_ICCV_2019_paper.pdf)]  [[Supp. material](https://www3.cs.stonybrook.edu/~hling/publication/CompenNet++_sup-high-res.pdf)]  [[GitHub](https://github.com/BingyaoHuang/CompenNet-plusplus)] [[Webpage]({{site.baseurl}}/compennet++)]
-
+* Daniel Moreno and Gabriel Taubin. **Simple, accurate, and robust projector-camera calibration**. 3DIMPVT. 2012. [[Paper](http://mesh.brown.edu/calibration/files/Simple%2C%20Accurate%2C%20and%20Robust%20Projector-Camera%20Calibration.pdf)] [[Webpage](http://mesh.brown.edu/calibration/)]
 
 ___
