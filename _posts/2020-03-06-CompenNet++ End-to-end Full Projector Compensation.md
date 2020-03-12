@@ -29,8 +29,8 @@ ___
 
 ___
 ## Related Work
-* Bingyao Huang and Haibin Ling. **End-to-end Projector Photometric Compensation**. CVPR. [[Paper](http://openaccess.thecvf.com/content_CVPR_2019/papers/Huang_End-To-End_Projector_Photometric_Compensation_CVPR_2019_paper.pdf)]  [[Supp. material](https://www3.cs.stonybrook.edu/~hling/publication/CompenNet_sup.pdf)]  [[GitHub](https://github.com/BingyaoHuang/CompenNet)] [[Webpage]({{site.baseurl}}/compennet)]
-* Anselm Grundhöfer and Daisuke Iwai. **Robust, error-tolerant photometric projector compensation**. IEEE TIP 2015. [[Paper](http://daisukeiwai.org/share/paper/Grundhoefer_TIP15.pdf)]
+* Bingyao Huang and Haibin Ling. **End-to-end Projector Photometric Compensation**. CVPR. 2019. [[Paper](http://openaccess.thecvf.com/content_CVPR_2019/papers/Huang_End-To-End_Projector_Photometric_Compensation_CVPR_2019_paper.pdf)]  [[Supp. material](https://www3.cs.stonybrook.edu/~hling/publication/CompenNet_sup.pdf)]  [[GitHub](https://github.com/BingyaoHuang/CompenNet)] [[Webpage]({{site.baseurl}}/compennet)]
+* Anselm Grundhöfer and Daisuke Iwai. **Robust, error-tolerant photometric projector compensation**. IEEE TIP. 2015. [[Paper](http://daisukeiwai.org/share/paper/Grundhoefer_TIP15.pdf)]
 * Phillip Isola, Jun-Yan Zhu, Tinghui Zhou, and Alexei A. Efros. **Image-to-image translation with conditional adversarial networks**. CVPR. 2017. [[Paper](https://arxiv.org/abs/1611.07004)] [[Webpage](https://phillipi.github.io/pix2pix/)]
 * Shree K. Nayar, Harish Peri, Michael D. Grossberg, and Peter N. Belhumeur. **A projection system with radiometric compensation for screen imperfections**. ICCV workshop on projector-camera systems (PROCAMS). 2003. [[Paper](https://www1.cs.columbia.edu/CAVE/publications/pdfs/Nayar_PROCAMS03.pdf)] [[Webpage](https://www.cs.columbia.edu/CAVE/projects/pr_any/)]
 
