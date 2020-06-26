@@ -1,6 +1,6 @@
 ---
 layout: project
-title: CompenNet++ End-to-end Full Projector Compensation
+title: 'CompenNet++: End-to-end Full Projector Compensation'
 author: Bingyao Huang
 permalink: /compennet++
 published: true
