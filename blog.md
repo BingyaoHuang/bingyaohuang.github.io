@@ -13,7 +13,7 @@ permalink: /blog
 
       <div class="entry">
         {% comment %} {{ post.excerpt }}  {% endcomment %}
-        {% comment %} <p align="center"><img src="{{ post.teaser }}" alt="compennet" width="60%"/></p> {% endcomment %}
+        {% comment %} <p align="center"><img src="{{ post.teaser }}" width="60%"/></p> {% endcomment %}
         <a href="{{ site.baseurl }}{{ post.url }}"><img src="{{ post.teaser }}" alt="" width="60%"/></a>
       </div>
 
