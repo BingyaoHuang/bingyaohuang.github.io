@@ -128,6 +128,17 @@ img {
   max-width: 100%;
 }
 
+//  table 
+td {
+  padding-bottom: 1em;
+}
+
+// table, th, td {
+//   // border: 1px solid black;
+//   padding: 5px;
+//   border-spacing: 50px;
+// }
+
 // Fixes images in popup boxes from Google Translate
 .gmnoprint img {
   max-width: none;
@@ -183,8 +194,8 @@ img {
 
 .site-avatar {
   float: left;
-  width: 70px;
-  height: 70px;
+  width: 120px;
+  height: 120px;
   margin-right: 15px;
 
   @include mobile {
@@ -315,6 +326,8 @@ nav {
     text-align: center;
   }
 }
+
+
 .wrapper-footer {
   margin-top: 50px;
   border-top: 1px solid #ddd;

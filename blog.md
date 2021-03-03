@@ -1,6 +1,9 @@
 ---
 layout: default
+title: blog
+permalink: /blog
 ---
+
 
 <div class="posts">
   {% for post in site.posts %}
