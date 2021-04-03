@@ -10,7 +10,7 @@ Please see my research projects/code on [GitHub](https://github.com/BingyaoHuang
 
 ___
 ## News
-* 2021-04: [DeProCams (Deep Projector-Camera Systems)](https://vision.cs.stonybrook.edu/~bingyao/pub/DeProCams), won the IEEE VR 2021 - TVCG Best Journal Papers.
+* 2021-04: [DeProCams (Deep Projector-Camera Systems)](https://vision.cs.stonybrook.edu/~bingyao/pub/DeProCams), won the [IEEE VR 2021 - TVCG Best Journal Papers](https://ieeevr.org/2021/awards/conference-awards/#journal-best).
 * 2021-01: [DeProCams (Deep Projector-Camera Systems)](https://vision.cs.stonybrook.edu/~bingyao/pub/DeProCams), accepted by IEEE VR 2021/TVCG.
 * 2021-01: [CompenNeSt++](https://bingyaohuang.github.com/pub/CompenNeSt%2B%2B/), a system for projector compensation accepted by PAMI.
 * 2020-12: [Neural-STE (See-Though-Envelope)](https://arxiv.org/pdf/2012.11803.pdf), a work on physical mail privacy accepted by AAAI 2021.
