@@ -12,7 +12,7 @@ ___
 ## News
 * 2021-04: [DeProCams](https://vision.cs.stonybrook.edu/~bingyao/pub/DeProCams) received the [Best Journal Paper Award](https://ieeevr.org/2021/awards/conference-awards/#journal-best) at IEEE VR 2021.
 * 2021-01: [DeProCams (Deep Projector-Camera Systems)](https://vision.cs.stonybrook.edu/~bingyao/pub/DeProCams) accepted by IEEE VR 2021/TVCG.
-* 2021-01: [CompenNeSt++](https://bingyaohuang.github.com/pub/CompenNeSt%2B%2B/), a system for projector compensation accepted by PAMI.
+* 2021-01: [CompenNeSt++](https://bingyaohuang.github.io/pub/CompenNeSt%2B%2B/), a system for projector compensation accepted by PAMI.
 * 2020-12: [Neural-STE (See-Though-Envelope)](https://arxiv.org/pdf/2012.11803.pdf), a work on physical mail privacy accepted by AAAI 2021.
 <br><br>
 
