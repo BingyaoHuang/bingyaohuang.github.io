@@ -4,12 +4,15 @@ permalink: /
 ---
 
 ## About
-I'm a PhD candidate at [Computer Science Department, Stony Brook University, NY](https://www.cs.stonybrook.edu/). I'm interested in augmented/virtual reality, computational photography, computer vision/graphics, privacy and adversarial attacks, biomedical image analysis.
-Please see my research projects/code on [GitHub](https://github.com/BingyaoHuang).
+Bingyao Huang is currently a Professor of College of Computer and Information Science, Southwest University, China. He received B.S. from Tongji University, China, in 2013, and M.S. from Rowan University, USA, in 2015, and Ph.D. from Stony Brook University, USA, in 2021. His research interests include computer vision, augmented/virtual reality, computational photography, and medical image analysis. His work has been published in several top journals and conferences including IEEE TPAMI, IEEE TVCG, CVPR, ICCV and AAAI. He received the Best Journal Paper Award at IEEE VR (2021). 
+
+[中文主页](http://cis.swu.edu.cn/s/cis/js/20211019/4676020.html)
 <br><br>
 
 ___
 ## News
+* 2021-09: Joined Southwest University, China.
+* 2021-05: Got my Ph.D. from Stony Brook University. Sincere thanks to my family, advisor, committee, collaborators and friends, this Ph.D. journey would not be so joyous without their support.
 * 2021-04: [DeProCams](https://vision.cs.stonybrook.edu/~bingyao/pub/DeProCams) received the [Best Journal Paper Award](https://ieeevr.org/2021/awards/conference-awards/#journal-best) at IEEE VR 2021.
 * 2021-01: [DeProCams (Deep Projector-Camera Systems)](https://vision.cs.stonybrook.edu/~bingyao/pub/DeProCams) accepted by IEEE VR 2021/TVCG.
 * 2021-01: [CompenNeSt++](https://bingyaohuang.github.io/pub/CompenNeSt%2B%2B/), a system for projector compensation accepted by PAMI.
@@ -18,8 +21,8 @@ ___
 
 ___
 ## Selected Publications
-A full list of publications can be found at [Google Scholar](https://scholar.google.com/citations?hl=en&user=GyyV2lkAAAAJ&view_op=list_works&sortby=pubdate).
-<br>
+A full list of publications can be found at [Google Scholar](https://scholar.google.com/citations?hl=en&user=GyyV2lkAAAAJ&view_op=list_works&sortby=pubdate). Please see my research projects/code on [GitHub](https://github.com/BingyaoHuang).
+<br><br>
 
 |<i></i>|<i></i>| 
 :--- |:---
