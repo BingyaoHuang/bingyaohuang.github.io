@@ -6,7 +6,7 @@ permalink: /
 ## About
 Bingyao Huang is currently a Professor of College of Computer and Information Science, Southwest University, China. He received B.S. from Tongji University, China, in 2013, and M.S. from Rowan University, USA, in 2015, and Ph.D. from Stony Brook University, USA, in 2021. His research interests include computer vision, augmented/virtual reality, computational photography, and medical image analysis. His work has been published in several top journals and conferences including IEEE TPAMI, IEEE TVCG, CVPR, ICCV and AAAI. He received the Best Journal Paper Award at IEEE VR (2021). 
 
-[中文主页](http://cis.swu.edu.cn/s/cis/js/20211019/4676020.html)
+[中文主页](http://cis.swu.edu.cn/info/1013/1695.htm)
 <br><br>
 
 ___
