@@ -11,12 +11,14 @@ Bingyao Huang is currently a Professor of College of Computer and Information Sc
 
 ___
 ## News
+
+* 2022-01: [SPAA](https://bingyaohuang.github.io/pub/SPAA), a system to fool image classifiers using stealthy projector light accepted by IEEE VR 2022.
 * 2021-09: Joined Southwest University, China.
 * 2021-05: Got my Ph.D. from Stony Brook University. Sincere thanks to my family, advisor, committee, collaborators and friends, this Ph.D. journey would not be so joyous without their support.
 * 2021-04: [DeProCams](https://vision.cs.stonybrook.edu/~bingyao/pub/DeProCams) received the [Best Journal Paper Award](https://ieeevr.org/2021/awards/conference-awards/#journal-best) at IEEE VR 2021.
 * 2021-01: [DeProCams (Deep Projector-Camera Systems)](https://vision.cs.stonybrook.edu/~bingyao/pub/DeProCams) accepted by IEEE VR 2021/TVCG.
 * 2021-01: [CompenNeSt++](https://bingyaohuang.github.io/pub/CompenNeSt%2B%2B/), a system for projector compensation accepted by PAMI.
-* 2020-12: [Neural-STE (See-Though-Envelope)](https://arxiv.org/pdf/2012.11803.pdf), a work on physical mail privacy accepted by AAAI 2021.
+<!-- * 2020-12: [Neural-STE (See-Though-Envelope)](https://arxiv.org/pdf/2012.11803.pdf), a work on physical mail privacy accepted by AAAI 2021. -->
 <br><br>
 
 ___
@@ -26,7 +28,8 @@ A full list of publications can be found at [Google Scholar](https://scholar.goo
 
 |<i></i>|<i></i>| 
 :--- |:---
-<img src='/images/teasers/SPAA.png' width=120 height=80 style="vertical-align:top;padding-right:10px" > | [**SPAA: Stealthy Projector-based Adversarial Attacks on Deep Image Classifiers**](https://arxiv.org/pdf/2012.05858.pdf) <br> *Bingyao Huang* and Haibin Ling <br> Under review, 2021 <br>  [[supplementary](http://vision.cs.stonybrook.edu/~bingyao/pub/SPAA_supp)] 
+<img src='/images/teasers/SPAA.png' width=120 height=80 style="vertical-align:top;padding-right:10px" > | [**SPAA: Stealthy Projector-based Adversarial Attacks on Deep Image Classifiers**](https://bingyaohuang.github.io/pub/SPAA) <br> *Bingyao Huang* and Haibin Ling <br> IEEE Conference on Virtual Reality and 3D User Interfaces (**IEEE VR**), 2022 (accepted) <br>  [[supplementary](https://bingyaohuang.github.io/pub/SPAA/supp)] 
+<img src='/images/teasers/cryoEM-pose.jpg' width=120 height=120 style="vertical-align:top;padding-right:10px" > | [**End-to-end orientation estimation from 2D cryo-EM images**](https://scripts.iucr.org/cgi-bin/paper?S2059798321011761) <br> Ruyi Lian, *Bingyao Huang*, Liguo Wang, Qun Liu, Yuewei Lin, Haibin Ling <br>  Acta Crystallographica Section D - Structural Biology, 2022 (accepted).
 <img src='/images/teasers/DeProCams.gif' width=120 height=110 style="vertical-align:top;padding-right:10px" > |  [**DeProCams: Simultaneous Relighting, Compensation and Shape Reconstruction for Projector-Camera Systems**](https://vision.cs.stonybrook.edu/~bingyao/pub/DeProCams) <br> *Bingyao Huang* and Haibin Ling <br> IEEE Transactions  on Visualization and Computer Graphics (**TVCG**), 2021 <br> also in IEEE Conference on Virtual Reality and 3D User Interfaces (**IEEE VR**) (**Best Journal Paper Award**) <br> [[code](https://github.com/BingyaoHuang/DeProCams)], [[supplementary](https://vision.cs.stonybrook.edu/~bingyao/pub/DeProCams_supp)], [[slides](https://vision.cs.stonybrook.edu/~bingyao/pub/DeProCams_slides)], [[video](https://youtu.be/pQ8k4AOhwlU)]
 <img src='/images/teasers/Neural-STE.png' width=120 height=90 style="vertical-align:top;padding-right:10px" > | [**Modeling Deep Learning Based Privacy Attacks on Physical Mail**](https://arxiv.org/pdf/2012.11803.pdf) <br> *Bingyao Huang*, Ruyi Lian, Dimitris Samaras, and Haibin Ling <br> Proc. of AAAI Conference on Artificial Intelligence (**AAAI**), 2021 <br>  [[code](https://github.com/BingyaoHuang/Neural-STE)], [[supplementary](https://vision.cs.stonybrook.edu/~bingyao/pub/Neural-STE_supp)] 
 <img src='/images/teasers/CompenNeSt++.png' width=120 height=100 style="vertical-align:top;padding-right:10px" > |  [**End-to-end Full Projector Compensation**](https://bingyaohuang.github.io/pub/CompenNeSt%2B%2B/) <br> *Bingyao Huang*, Tao Sun and Haibin Ling <br> IEEE Transactions  on Pattern Analysis and Machine Intelligence (**PAMI**), 2021 <br>Some preliminary results appear in CVPR 2019 and ICCV 2019.  <br>  [[code](https://github.com/BingyaoHuang/CompenNeSt-plusplus)], [[supplementary](https://vision.cs.stonybrook.edu/~bingyao/pub/CompenNeSt_supp)] 
