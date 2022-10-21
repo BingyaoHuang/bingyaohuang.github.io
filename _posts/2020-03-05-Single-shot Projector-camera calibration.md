@@ -7,7 +7,7 @@ published: true
 teaser: https://raw.githubusercontent.com/BingyaoHuang/single-shot-pro-cam-calib/master/doc/reconstruct.png
 ---
 #### Bingyao Huang, Ying Tang, Samed Ozdemir, and [Haibin Ling](https://www3.cs.stonybrook.edu/~hling)
-#### [[IEEE T-ASE 2020 paper](http://vision.cs.stonybrook.edu/~bingyao/pub/calibration_TASE)] [[ISMAR-Adjunct 2018 paper](https://arxiv.org/pdf/1803.09058.pdf)]  [[GitHub](https://github.com/BingyaoHuang/single-shot-pro-cam-calib)]
+#### [[IEEE T-ASE 2020 paper](/pub/ProCamCalib/)] [[ISMAR-Adjunct 2018 paper](https://arxiv.org/pdf/1803.09058.pdf)]  [[GitHub](https://github.com/BingyaoHuang/single-shot-pro-cam-calib)]
 
 <p align="center"><img src="https://raw.githubusercontent.com/BingyaoHuang/single-shot-pro-cam-calib/master/doc/reconstruct.png" alt="procam-calib" width="80%"/></p>
 
