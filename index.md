@@ -11,7 +11,7 @@ Bingyao Huang is currently a Professor of College of Computer and Information Sc
 
 ___
 ## News
-
+* 2023-03: [CompenHR](/pub/CompenHR), a work on high resolution projector compensation accepted by IEEE VR 2023.
 * 2022-01: [SPAA](/pub/SPAA), a system to fool image classifiers using stealthy projector light accepted by IEEE VR 2022.
 * 2021-09: Joined Southwest University, China.
 * 2021-05: Got my Ph.D. from Stony Brook University. Sincere thanks to my family, advisor, committee, collaborators and friends, this Ph.D. journey would not be so joyous without their support.
@@ -28,6 +28,7 @@ A full list of publications can be found at [Google Scholar](https://scholar.goo
 
 |<i></i>|<i></i>| 
 :--- |:---
+<img src='/images/teasers/CompenHR.png' width=120 height=80 style="vertical-align:top;padding-right:10px" > | [**CompenHR: Efficient Full Compensation for High-resolution Projector**](/pub/CompenHR) <br> Yuixi Wang, Haibin Ling and *Bingyao Huang* <br> IEEE Conference on Virtual Reality and 3D User Interfaces (**IEEE VR**), 2023 <br> [[code](https://github.com/cyxwang/CompenHR)]
 <img src='/images/teasers/SPAA.png' width=120 height=80 style="vertical-align:top;padding-right:10px" > | [**SPAA: Stealthy Projector-based Adversarial Attacks on Deep Image Classifiers**](/pub/SPAA) <br> *Bingyao Huang* and Haibin Ling <br> IEEE Conference on Virtual Reality and 3D User Interfaces (**IEEE VR**), 2022 <br>  [[code](https://github.com/BingyaoHuang/SPAA)], [[supplementary](/pub/SPAA/supp)], [[video](https://youtu.be/7oSh5BmJDJ8?list=PLmkIPPvcHLZgWaBGqwiAe52PLDNnMtIA5&t=477)]
 <img src='/images/teasers/cryoEM-pose.jpg' width=120 height=120 style="vertical-align:top;padding-right:10px" > | [**End-to-end orientation estimation from 2D cryo-EM images**](https://scripts.iucr.org/cgi-bin/paper?S2059798321011761) <br> Ruyi Lian, *Bingyao Huang*, Liguo Wang, Qun Liu, Yuewei Lin, Haibin Ling <br>  Acta Crystallographica Section D - Structural Biology, 2022.
 <img src='/images/teasers/DeProCams.gif' width=120 height=110 style="vertical-align:top;padding-right:10px" > |  [**DeProCams: Simultaneous Relighting, Compensation and Shape Reconstruction for Projector-Camera Systems**](/pub/DeProCams) <br> *Bingyao Huang* and Haibin Ling <br> IEEE Transactions on Visualization and Computer Graphics (**TVCG**), 2021 <br> also in IEEE Conference on Virtual Reality and 3D User Interfaces (**IEEE VR**) (**Best Journal Paper Award**) <br> [[code](https://github.com/BingyaoHuang/DeProCams)], [[supplementary](/pub/DeProCams/supp)], [[video](https://youtu.be/pQ8k4AOhwlU)]
