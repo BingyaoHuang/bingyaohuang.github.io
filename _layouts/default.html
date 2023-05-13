@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
+    <!-- <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title> -->
+    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }}</title>
     <!-->{% include meta.html %}<!-->
 	  {% include analytics.html %}
     {% seo %}
@@ -32,6 +33,7 @@
           <nav>
             <a href="{{ site.baseurl }}/">About</a>
             <a href="{{ site.baseurl }}/blog">Blog</a>
+            <a href="{{ site.baseurl }}/data">Data</a>
             <!-- <a href="{{ site.baseurl }}/about">About</a> -->
           </nav>
         </header>
