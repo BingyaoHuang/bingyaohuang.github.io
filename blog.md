@@ -4,6 +4,8 @@ title: blog
 permalink: /blog
 ---
 
+## Blog
+---
 
 <div class="posts">
   {% for post in site.posts %}
