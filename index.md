@@ -28,7 +28,9 @@ A full list of publications can be found at [Google Scholar](https://scholar.goo
 
 |<i></i>|<i></i>| 
 :--- |:---
-<img src='/images/teasers/Adaptive_color_SL.png' width=120 height=90 style="vertical-align:top;padding-right:10px" > | [**Adaptive Color Structured Light for Calibration and Shape Reconstruction**](/pub/Adaptive_color_SL) <br> Xin Dong, Haibin Ling and *Bingyao Huang* <br> IEEE International Symposium on Mixed and Augmented Reality (**ISMAR**), 2023 (accepted) <br> [[code](https://github.com/Dongxin000/Adaptive-color-SL)], [[supplementary](/pub/Adaptive_color_SL/supp)]
+<img src='/images/teasers/ViComp-vr24s.png' width=120 height=90 style="vertical-align:top;padding-right:10px" > | [**ViComp: Video Compensation for Projector-Camera Systems**](/pub/ViComp) <br> Yuxi Wang, Haibin Ling, *Bingyao Huang* <br> IEEE Transactions on Visualization and Computer Graphics (**TVCG**), 2024 <br> also in IEEE Conference on Virtual Reality and 3D User Interfaces (**IEEE VR**) (accepted) <br> 
+
+<img src='/images/teasers/Adaptive_color_SL.png' width=120 height=90 style="vertical-align:top;padding-right:10px" > | [**Adaptive Color Structured Light for Calibration and Shape Reconstruction**](/pub/Adaptive_color_SL) <br> Xin Dong, Haibin Ling and *Bingyao Huang* <br> IEEE International Symposium on Mixed and Augmented Reality (**ISMAR**), 2023 <br> [[code](https://github.com/Dongxin000/Adaptive-color-SL)], [[supplementary](/pub/Adaptive_color_SL/supp)]
 
 <img src='/images/teasers/CompenHR.png' width=120 height=80 style="vertical-align:top;padding-right:10px" > | [**CompenHR: Efficient Full Compensation for High-resolution Projector**](/pub/CompenHR) <br> Yuxi Wang, Haibin Ling and *Bingyao Huang* <br> IEEE Conference on Virtual Reality and 3D User Interfaces (**IEEE VR**), 2023 <br> [[code](https://github.com/cyxwang/CompenHR)], [[supplementary](/pub/CompenHR/supp)]
 
