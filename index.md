@@ -10,14 +10,15 @@ Bingyao Huang is currently a Professor of College of Computer and Information Sc
 
 ___
 ## News
+* 2024-01: A work on video projector compensation accepted by TVCG/IEEE VR 2024.
 * 2023-09: A work on adaptive color structured light accepted by ISMAR 2023.
 * 2023-03: [CompenHR](/pub/CompenHR), a work on high resolution projector compensation accepted by IEEE VR 2023.
 * 2022-01: [SPAA](/pub/SPAA), a system to fool image classifiers using stealthy projector light accepted by IEEE VR 2022.
-* 2021-09: Joined Southwest University, China.
-* 2021-05: Got my Ph.D. from Stony Brook University. Sincere thanks to my family, advisor, committee, collaborators and friends, this Ph.D. journey would not be so joyous without their support.
-* 2021-04: [DeProCams](/pub/DeProCams) received the [Best Journal Paper Award](https://ieeevr.org/2021/awards/conference-awards/#journal-best) at IEEE VR 2021.
+<!-- * 2021-09: Joined Southwest University, China. -->
+<!-- * 2021-05: Got my Ph.D. from Stony Brook University. Sincere thanks to my family, advisor, committee, collaborators and friends, this Ph.D. journey would not be so joyous without their support. -->
+<!-- * 2021-04: [DeProCams](/pub/DeProCams) received the [Best Journal Paper Award](https://ieeevr.org/2021/awards/conference-awards/#journal-best) at IEEE VR 2021. -->
 <!-- * 2021-01: [DeProCams (Deep Projector-Camera Systems)](/pub/DeProCams) accepted by IEEE VR 2021/TVCG. -->
-* 2021-01: [CompenNeSt++](/pub/CompenNeSt%2B%2B/), a system for projector compensation accepted by TPAMI.
+<!-- * 2021-01: [CompenNeSt++](/pub/CompenNeSt%2B%2B/), a system for projector compensation accepted by TPAMI. -->
 <!-- * 2020-12: [Neural-STE (See-Though-Envelope)](https://arxiv.org/pdf/2012.11803.pdf), a work on physical mail privacy accepted by AAAI 2021. -->
 <br><br>
 
@@ -28,7 +29,8 @@ A full list of publications can be found at [Google Scholar](https://scholar.goo
 
 |<i></i>|<i></i>| 
 :--- |:---
-<img src='/images/teasers/ViComp-vr24s.png' width=120 height=90 style="vertical-align:top;padding-right:10px" > | [**ViComp: Video Compensation for Projector-Camera Systems**](/pub/ViComp) <br> Yuxi Wang, Haibin Ling, *Bingyao Huang* <br> IEEE Transactions on Visualization and Computer Graphics (**TVCG**), 2024 <br> also in IEEE Conference on Virtual Reality and 3D User Interfaces (**IEEE VR**) (accepted) <br> 
+<img src='/images/teasers/ViComp-vr24s.png' width=120 height=90 style="vertical-align:top;padding-right:10px" > | [**ViComp: Video Compensation for Projector-Camera Systems**](/pub/ViComp) <br> Yuxi Wang, Haibin Ling, *Bingyao Huang* <br> IEEE Transactions on Visualization and Computer Graphics (**TVCG**), 2024 <br> also in IEEE Conference on Virtual Reality and 3D User Interfaces (**IEEE VR**) <br> [[code](https://github.com/cyxwang/ViComp)]
+
 
 <img src='/images/teasers/Adaptive_color_SL.png' width=120 height=90 style="vertical-align:top;padding-right:10px" > | [**Adaptive Color Structured Light for Calibration and Shape Reconstruction**](/pub/Adaptive_color_SL) <br> Xin Dong, Haibin Ling and *Bingyao Huang* <br> IEEE International Symposium on Mixed and Augmented Reality (**ISMAR**), 2023 <br> [[code](https://github.com/Dongxin000/Adaptive-color-SL)], [[supplementary](/pub/Adaptive_color_SL/supp)]
 
