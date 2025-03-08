@@ -30,7 +30,7 @@ A full list of publications can be found at [Google Scholar](https://scholar.goo
 
 |<i></i>|<i></i>| 
 :--- |:---
-<img src='/images/teasers/animation2.gif' width=120 height=106 style="vertical-align:top;padding-right:10px" > | [**LAPIG: Language Guided Projector Image Generation with Surface Adaptation and Stylization**](/pub/LAPIG) <br> Yuchen Deng, Haibin Ling, *Bingyao Huang* <br> IEEE Transactions on Visualization and Computer Graphics (**TVCG**), 2025 <br> also in IEEE Conference on Virtual Reality and 3D User Interfaces (**IEEE VR**), 2025 <br> [[project & code & supplementary](https://yuchendeng.com/LAPIG/)]
+<img src='/images/teasers/LAPIG-vr25.gif' width=120 height=106 style="vertical-align:top;padding-right:10px" > | [**LAPIG: Language Guided Projector Image Generation with Surface Adaptation and Stylization**](/pub/LAPIG) <br> Yuchen Deng, Haibin Ling, *Bingyao Huang* <br> IEEE Transactions on Visualization and Computer Graphics (**TVCG**), 2025 <br> also in IEEE Conference on Virtual Reality and 3D User Interfaces (**IEEE VR**), 2025 <br> [[project & code & supplementary](https://yuchendeng.com/LAPIG/)]
 
 <img src='/images/teasers/DPCS-vr25.jpg' width=120 height=90 style="vertical-align:top;padding-right:10px" > | [**DPCS: Path Tracing-based Differentiable Projector-Camera Systems**](/pub/DPCS) <br> Jijiang Li, Qingyue Deng, Haibin Ling, *Bingyao Huang* <br> IEEE Transactions on Visualization and Computer Graphics (**TVCG**), 2025 <br> also in IEEE Conference on Virtual Reality and 3D User Interfaces (**IEEE VR**), 2025 <br> [[project/code/supplementary](https://jijiangli.github.io/DPCS/)]
 
