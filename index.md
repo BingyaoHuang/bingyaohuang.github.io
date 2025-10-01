@@ -33,12 +33,12 @@ A full list of publications can be found at [Google Scholar](https://scholar.goo
 
 |    |    | 
 |:---|:---|
-![](/images/teasers/GS-ProCams-ismar25.jpg){:.teaser-image} | [**GS-ProCams: Gaussian Splatting-Based Projector-Camera Systems**](https://arxiv.org/abs/2412.11762) <br> Qingyue Deng, Jijiang Li, Haibin Ling, **Bingyao Huang** <br> IEEE Transactions on Visualization and Computer Graphics (**TVCG**), 2025 <br> also in IEEE International Symposium on Mixed and Augmented Reality (**ISMAR**), 2025 <br> [[project](/pub/GS-ProCams)]
+![](/images/teasers/GS-ProCams-ismar25.jpg){:.teaser-image} | [**GS-ProCams: Gaussian Splatting-Based Projector-Camera Systems**](https://arxiv.org/abs/2412.11762) <br> Qingyue Deng, Jijiang Li, Haibin Ling, **Bingyao Huang** <br> IEEE Transactions on Visualization and Computer Graphics (**TVCG**), 2025 <br> also in IEEE International Symposium on Mixed and Augmented Reality (**ISMAR**), 2025 (accepted) <br> [[project](/pub/GS-ProCams)]
 
-![](/images/teasers/LPCE-vis25.jpg){:.teaser-image} | [**Mixture of Cluster-guided Experts for Retrieval-Augmented Label Placement**](https://jingweiqu.github.io/publication/VIS-2025.pdf) <br> Pingshun Zhang, Enyu Che, Yinan Chen, **Bingyao Huang**, Haibin Ling, Jingwei Qu <br> IEEE Transactions on Visualization and Computer Graphics (**TVCG**), 2025 <br> also in IEEE Visualization Conference (**IEEE VIS**), 2025 <br> [[project](/pub/LPCE)]
+![](/images/teasers/LPCE-vis25.jpg){:.teaser-image} | [**Mixture of Cluster-guided Experts for Retrieval-Augmented Label Placement**](https://jingweiqu.github.io/publication/VIS-2025.pdf) <br> Pingshun Zhang, Enyu Che, Yinan Chen, **Bingyao Huang**, Haibin Ling, Jingwei Qu <br> IEEE Transactions on Visualization and Computer Graphics (**TVCG**), 2025 <br> also in IEEE Visualization Conference (**IEEE VIS**), 2025 (accepted) <br> [[project](/pub/LPCE)]
 
 
-![](/images/teasers/NeuroPump-mm25.jpg){:.teaser-image} | [**NeuroPump: Simultaneous Geometric and Color Rectification for Underwater Images**](https://arxiv.org/abs/2412.15890) <br> Yue Guo, Haoxiang Liao, Haibin Ling, **Bingyao Huang** <br> ACM Multimedia Conference (**ACM MM**), 2025 <br> [[project](/pub/NeuroPump)]
+![](/images/teasers/NeuroPump-mm25.jpg){:.teaser-image} | [**NeuroPump: Simultaneous Geometric and Color Rectification for Underwater Images**](https://arxiv.org/abs/2412.15890) <br> Yue Guo, Haoxiang Liao, Haibin Ling, **Bingyao Huang** <br> ACM Multimedia Conference  (**ACM MM**), 2025 (accepted) <br> [[project](/pub/NeuroPump)]
 
 ![](/images/teasers/DPCS-vr25.jpg){:.teaser-image} | [**DPCS: Path Tracing-based Differentiable Projector-Camera Systems**](https://doi.org/10.1109/TVCG.2025.3549890) <br> Jijiang Li, Qingyue Deng, Haibin Ling, **Bingyao Huang** <br> IEEE Transactions on Visualization and Computer Graphics (**TVCG**), 2025 <br> also in IEEE Conference on Virtual Reality and 3D User Interfaces (**IEEE VR**), 2025 <br> [[project](/pub/DPCS)]
 
