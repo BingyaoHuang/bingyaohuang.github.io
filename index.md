@@ -12,7 +12,7 @@ Bingyao Huang is currently an Associate Professor of College of Computer and Inf
 ___
 ## News
 * 2026-03: [SIComp](/pub/SIComp) received [🏆IEEE VR 2026 Best Paper Award](https://ieeevr.org/2026/awards/conference-awards/#aa1), congratulations to Haibo, Qingyue, Jijiang, Haibin!
-* 2026-01: Works on setup-independent projector compensation [(SIComp)](/pub/SIComp), LLM projection captioning [(ProCap)](/pub/ProCap), and diffusion projector compensation [(DiffPC)](/pub/DiffPC) accepted by [IEEE VR 2026](https://ieeevr.org/2026) / IEEE TVCG.
+* 2026-01: Works on setup-independent projector compensation [(SIComp)](/pub/SIComp), LLM-based projection captioning [(ProCap)](/pub/ProCap), diffusion projector compensation [(DiffPC)](/pub/DiffPC) and even-based structured light [(E2SL)](/pub/E2SL) accepted by [IEEE VR 2026](https://ieeevr.org/2026) / IEEE TVCG.
 * 2025-07: Gaussian splatting-based projector-camera systems [(GS-ProCams)](/pub/GS-ProCams) accepted by [ISMAR 2025](https://www.ieeeismar.net/2025/) / IEEE TVCG
 * 2025-01: Path tracing-based differentiable projector-camera systems [(DPCS)](/pub/DPCS) and Language-guided projector surface stylization [(LAPIG)](/pub/LAPIG) accepted by [IEEE VR 2025](https://ieeevr.org/2025) / IEEE TVCG
 <!-- * 2024-07: Invited to serve as Program Committee for [IEEE VR 2025](https://ieeevr.org/2025) (Saint-Malo, France) -->
@@ -41,6 +41,8 @@ A full list of publications can be found at [Google Scholar](https://scholar.goo
 ![](/images/teasers/ProCap-vr26.jpg){:.teaser-image} | [**ProCap: Projection-Aware Captioning for Spatial Augmented Reality**](/pub/ProCap) <br> Zimo Cao, Yuchen Deng, Haibin Ling, **Bingyao Huang** <br> IEEE Conference on Virtual Reality and 3D User Interfaces (**IEEE VR**), 2026 (Accepted) <br> [[project](/pub/ProCap)]
 
 ![](/images/teasers/DiffPC-vr26.jpg){:.teaser-image} | [**DiffPC: Diffusion-Based Projector Photometric Compensation**](/pub/DiffPC) <br> Yuxi Wang, Haibin Ling, **Bingyao Huang** <br> IEEE Transactions on Visualization and Computer Graphics (**TVCG**), 2026 (Accepted) <br> also in IEEE Conference on Virtual Reality and 3D User Interfaces (**IEEE VR**), 2026 <br> [[project](/pub/DiffPC)]
+
+![](/images/teasers/E2SL-vr26.jpg){:.teaser-image} | [**E$^2$SL: Efficient Depth Sensing from Event-based Structured Light**](/pub/E2SL) <br> Xin Dong, Jiacheng Fu, Yue Li, Wenming Weng, Yueyi Zhang, **Bingyao Huang**, Zhiwei Xiong <br> IEEE Transactions on Visualization and Computer Graphics (**TVCG**), 2026 (Accepted) <br> also in IEEE Conference on Virtual Reality and 3D User Interfaces (**IEEE VR**), 2026 <br> [[project](/pub/E2SL)]
 
 
 ![](/images/teasers/GS-ProCams-ismar25.jpg){:.teaser-image} | [**GS-ProCams: Gaussian Splatting-Based Projector-Camera Systems**](https://doi.org/10.1109/TVCG.2025.3616841) <br> Qingyue Deng, Jijiang Li, Haibin Ling, **Bingyao Huang** <br> IEEE Transactions on Visualization and Computer Graphics (**TVCG**), 2025 <br> also in IEEE International Symposium on Mixed and Augmented Reality (**ISMAR**), 2025 <br> [[project](/pub/GS-ProCams)]
