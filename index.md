@@ -5,18 +5,21 @@ title:
 ---
 
 ## About
-Bingyao Huang is currently a Professor of College of Computer and Information Science, Southwest University, China. He received B.S. from Tongji University, China, in 2013, and M.S. from Rowan University, USA, in 2015, and Ph.D. from Stony Brook University, USA, in 2021. His research interests include augmented/virtual reality, computer vision, computational photography, and biomedical image analysis. His work has been published in several top journals and conferences including IEEE TPAMI, IEEE TVCG, CVPR, ICCV, IEEE VR, ISMAR and AAAI. He received the Best Journal Paper Award at IEEE VR (2021).
+Bingyao Huang is currently an Associate Professor of College of Computer and Information Science, Southwest University, China. He received B.S. from Tongji University, China, in 2013, and M.S. from Rowan University, USA, in 2015, and Ph.D. from Stony Brook University, USA, in 2021. His research interests include augmented/virtual reality, computer vision, computational photography, and biomedical image analysis. His work has been published in several top journals and conferences including IEEE TPAMI, IEEE TVCG, CVPR, ICCV, IEEE VR, ISMAR and AAAI. He received the Best Journal Paper Award at IEEE VR (2021) and the Best Paper Award at IEEE VR (2026).
 
 <br><br>
 
 ___
 ## News
-* 2025-01: Works on [projector-camera systems simulation](https://jijiangli.github.io/DPCS/) and [projector-based surface stylization](https://yuchendeng.com/LAPIG/) accepted by IEEE VR 2025/TVCG.
+* 2026-03: [SIComp](/pub/SIComp) received [🏆IEEE VR 2026 Best Paper Award](https://ieeevr.org/2026/awards/conference-awards/#aa1), congratulations to Haibo, Qingyue, Jijiang, Haibin!
+* 2026-01: Works on setup-independent projector compensation [(SIComp)](/pub/SIComp), LLM projection captioning [(ProCap)](/pub/ProCap), and diffusion projector compensation [(DiffPC)](/pub/DiffPC) accepted by [IEEE VR 2026](https://ieeevr.org/2026) / IEEE TVCG.
+* 2025-07: Gaussian splatting-based projector-camera systems [(GS-ProCams)](/pub/GS-ProCams) accepted by [ISMAR 2025](https://www.ieeeismar.net/2025/) / IEEE TVCG
+* 2025-01: Path tracing-based differentiable projector-camera systems [(DPCS)](/pub/DPCS) and Language-guided projector surface stylization [(LAPIG)](/pub/LAPIG) accepted by [IEEE VR 2025](https://ieeevr.org/2025) / IEEE TVCG
 <!-- * 2024-07: Invited to serve as Program Committee for [IEEE VR 2025](https://ieeevr.org/2025) (Saint-Malo, France) -->
-* 2024-01: A work on video projector compensation accepted by IEEE VR 2024/TVCG.
+* 2024-01: A work on video projector compensation accepted by [IEEE VR 2024](https://ieeevr.org/2024) / IEEE TVCG.
 * 2023-09: A work on adaptive color structured light accepted by ISMAR 2023.
-* 2023-03: [CompenHR](/pub/CompenHR), a work on high resolution projector compensation accepted by IEEE VR 2023.
-* 2022-01: [SPAA](/pub/SPAA), a system to fool image classifiers using stealthy projector light accepted by IEEE VR 2022.
+* 2023-03: [CompenHR](/pub/CompenHR), a work on high resolution projector compensation accepted by [IEEE VR 2023](https://ieeevr.org/2023).
+<!-- * 2022-01: [SPAA](/pub/SPAA), a system to fool image classifiers using stealthy projector light accepted by [IEEE VR 2022](https://ieeevr.org/2022). -->
 <!-- * 2021-09: Joined Southwest University, China. -->
 <!-- * 2021-05: Got my Ph.D. from Stony Brook University. Sincere thanks to my family, advisor, committee, collaborators and friends, this Ph.D. journey would not be so joyous without their support. -->
 <!-- * 2021-04: [DeProCams](/pub/DeProCams) received the [Best Journal Paper Award](https://ieeevr.org/2021/awards/conference-awards/#journal-best) at IEEE VR 2021. -->
@@ -33,12 +36,19 @@ A full list of publications can be found at [Google Scholar](https://scholar.goo
 
 |    |    | 
 |:---|:---|
+![](/images/teasers/SIComp-vr26.jpg){:.teaser-image} | [**Setup-Independent Full Projector Compensation**](/pub/SIComp) <br> Haibo Li, Qingyue Deng, Jijiang Li, Haibin Ling, **Bingyao Huang** <br> IEEE Transactions on Visualization and Computer Graphics (**TVCG**), 2026 (Accepted) <br> also in IEEE Conference on Virtual Reality and 3D User Interfaces (**IEEE VR**), 2026 (<span style="color:#FF5733">🏆Best Paper Award</span>) <br> [[project](/pub/SIComp)]
+
+![](/images/teasers/ProCap-vr26.jpg){:.teaser-image} | [**ProCap: Projection-Aware Captioning for Spatial Augmented Reality**](/pub/ProCap) <br> Zimo Cao, Yuchen Deng, Haibin Ling, **Bingyao Huang** <br> IEEE Conference on Virtual Reality and 3D User Interfaces (**IEEE VR**), 2026 (Accepted) <br> [[project](/pub/ProCap)]
+
+![](/images/teasers/DiffPC-vr26.jpg){:.teaser-image} | [**DiffPC: Diffusion-Based Projector Photometric Compensation**](/pub/DiffPC) <br> Yuxi Wang, Haibin Ling, **Bingyao Huang** <br> IEEE Transactions on Visualization and Computer Graphics (**TVCG**), 2026 (Accepted) <br> also in IEEE Conference on Virtual Reality and 3D User Interfaces (**IEEE VR**), 2026 <br> [[project](/pub/DiffPC)]
+
+
 ![](/images/teasers/GS-ProCams-ismar25.jpg){:.teaser-image} | [**GS-ProCams: Gaussian Splatting-Based Projector-Camera Systems**](https://doi.org/10.1109/TVCG.2025.3616841) <br> Qingyue Deng, Jijiang Li, Haibin Ling, **Bingyao Huang** <br> IEEE Transactions on Visualization and Computer Graphics (**TVCG**), 2025 <br> also in IEEE International Symposium on Mixed and Augmented Reality (**ISMAR**), 2025 <br> [[project](/pub/GS-ProCams)]
 
-![](/images/teasers/LPCE-vis25.jpg){:.teaser-image} | [**Mixture of Cluster-guided Experts for Retrieval-Augmented Label Placement**](https://jingweiqu.github.io/publication/VIS-2025.pdf) <br> Pingshun Zhang, Enyu Che, Yinan Chen, **Bingyao Huang**, Haibin Ling, Jingwei Qu <br> IEEE Transactions on Visualization and Computer Graphics (**TVCG**), 2025 <br> also in IEEE Visualization Conference (**IEEE VIS**), 2025 (accepted) <br> [[project](/pub/LPCE)]
+![](/images/teasers/LPCE-vis25.jpg){:.teaser-image} | [**Mixture of Cluster-guided Experts for Retrieval-Augmented Label Placement**](https://jingweiqu.github.io/publication/VIS-2025.pdf) <br> Pingshun Zhang, Enyu Che, Yinan Chen, **Bingyao Huang**, Haibin Ling, Jingwei Qu <br> IEEE Transactions on Visualization and Computer Graphics (**TVCG**), 2025 <br> also in IEEE Visualization Conference (**IEEE VIS**), 2025 <br> [[project](/pub/LPCE)]
 
 
-![](/images/teasers/NeuroPump-mm25.jpg){:.teaser-image} | [**NeuroPump: Simultaneous Geometric and Color Rectification for Underwater Images**](https://arxiv.org/abs/2412.15890) <br> Yue Guo, Haoxiang Liao, Haibin Ling, **Bingyao Huang** <br> ACM Multimedia Conference  (**ACM MM**), 2025 (accepted) <br> [[project](/pub/NeuroPump)]
+![](/images/teasers/NeuroPump-mm25.jpg){:.teaser-image} | [**NeuroPump: Simultaneous Geometric and Color Rectification for Underwater Images**](https://arxiv.org/abs/2412.15890) <br> Yue Guo, Haoxiang Liao, Haibin Ling, **Bingyao Huang** <br> ACM Multimedia Conference  (**ACM MM**), 2025 <br> [[project](/pub/NeuroPump)]
 
 ![](/images/teasers/DPCS-vr25.jpg){:.teaser-image} | [**DPCS: Path Tracing-based Differentiable Projector-Camera Systems**](https://doi.org/10.1109/TVCG.2025.3549890) <br> Jijiang Li, Qingyue Deng, Haibin Ling, **Bingyao Huang** <br> IEEE Transactions on Visualization and Computer Graphics (**TVCG**), 2025 <br> also in IEEE Conference on Virtual Reality and 3D User Interfaces (**IEEE VR**), 2025 <br> [[project](/pub/DPCS)]
 
@@ -57,7 +67,7 @@ A full list of publications can be found at [Google Scholar](https://scholar.goo
 
 ![](/images/teasers/cryoEM-pose.jpg){:.teaser-image} | [**End-to-end orientation estimation from 2D cryo-EM images**](https://scripts.iucr.org/cgi-bin/paper?S2059798321011761) <br> Ruyi Lian, **Bingyao Huang**, Liguo Wang, Qun Liu, Yuewei Lin, Haibin Ling <br>  Acta Crystallographica Section D - Structural Biology, 2022.
 
-![](/images/teasers/DeProCams.gif){:.teaser-image} | [**DeProCams: Simultaneous Relighting, Compensation and Shape Reconstruction for Projector-Camera Systems**](/pub/DeProCams) <br> **Bingyao Huang** and Haibin Ling <br> IEEE Transactions on Visualization and Computer Graphics (**TVCG**), 2021 <br> also in IEEE Conference on Virtual Reality and 3D User Interfaces (**IEEE VR**), 2021 (<span style="color:#FF5733">Best Journal Paper Award</span>) <br> [[code](https://github.com/BingyaoHuang/DeProCams)], [[supplementary](/pub/DeProCams/supp)], [[video](https://youtu.be/pQ8k4AOhwlU)]
+![](/images/teasers/DeProCams.gif){:.teaser-image} | [**DeProCams: Simultaneous Relighting, Compensation and Shape Reconstruction for Projector-Camera Systems**](/pub/DeProCams) <br> **Bingyao Huang** and Haibin Ling <br> IEEE Transactions on Visualization and Computer Graphics (**TVCG**), 2021 <br> also in IEEE Conference on Virtual Reality and 3D User Interfaces (**IEEE VR**), 2021 (<span style="color:#FF5733">🏆Best Journal Paper Award</span>) <br> [[code](https://github.com/BingyaoHuang/DeProCams)], [[supplementary](/pub/DeProCams/supp)], [[video](https://youtu.be/pQ8k4AOhwlU)]
 
 ![](/images/teasers/Neural-STE.png){:.teaser-image} | [**Modeling Deep Learning Based Privacy Attacks on Physical Mail**](https://arxiv.org/pdf/2012.11803.pdf) <br> **Bingyao Huang**, Ruyi Lian, Dimitris Samaras, and Haibin Ling <br> Proc. of AAAI Conference on Artificial Intelligence (**AAAI**), 2021 <br>  [[code](https://github.com/BingyaoHuang/Neural-STE)], [[supplementary](/pub/Neural-STE/supp)] 
 
