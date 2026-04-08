@@ -12,9 +12,9 @@ Bingyao Huang is currently an Associate Professor of College of Computer and Inf
 ___
 ## News
 * 2026-03: [SIComp](/pub/SIComp) received [🏆IEEE VR 2026 Best Paper Award](https://ieeevr.org/2026/awards/conference-awards/#aa1), congratulations to Haibo, Qingyue, Jijiang, Haibin!
-* 2026-01: Works on setup-independent projector compensation [(SIComp)](/pub/SIComp), LLM-based projection captioning [(ProCap)](/pub/ProCap), diffusion projector compensation [(DiffPC)](/pub/DiffPC) and even-based structured light [(E2SL)](/pub/E2SL) accepted by [IEEE VR 2026](https://ieeevr.org/2026) / IEEE TVCG.
-* 2025-07: Gaussian splatting-based projector-camera systems [(GS-ProCams)](/pub/GS-ProCams) accepted by [ISMAR 2025](https://www.ieeeismar.net/2025/) / IEEE TVCG
-* 2025-01: Path tracing-based differentiable projector-camera systems [(DPCS)](/pub/DPCS) and Language-guided projector surface stylization [(LAPIG)](/pub/LAPIG) accepted by [IEEE VR 2025](https://ieeevr.org/2025) / IEEE TVCG
+* 2026-01: Works on setup-independent projector compensation [(SIComp)](/pub/SIComp), LLM-based projection captioning [(ProCap)](/pub/ProCap), diffusion projector compensation [(DiffPC)](/pub/DiffPC) and event-based structured light [(E$^2$SL)](/pub/E2SL) accepted by [IEEE VR 2026](https://ieeevr.org/2026) / IEEE TVCG.
+* 2025-07: Gaussian splatting-based projector-camera systems [(GS-ProCams)](/pub/GS-ProCams) accepted by [ISMAR 2025](https://www.ieeeismar.net/2025/) / IEEE TVCG.
+* 2025-01: Path tracing-based differentiable projector-camera systems [(DPCS)](/pub/DPCS) and language-guided projector surface stylization [(LAPIG)](/pub/LAPIG) accepted by [IEEE VR 2025](https://ieeevr.org/2025) / IEEE TVCG.
 <!-- * 2024-07: Invited to serve as Program Committee for [IEEE VR 2025](https://ieeevr.org/2025) (Saint-Malo, France) -->
 * 2024-01: A work on video projector compensation accepted by [IEEE VR 2024](https://ieeevr.org/2024) / IEEE TVCG.
 * 2023-09: A work on adaptive color structured light accepted by ISMAR 2023.
