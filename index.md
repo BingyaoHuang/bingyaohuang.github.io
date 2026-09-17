@@ -11,6 +11,7 @@ Bingyao Huang is currently an Associate Professor of College of Computer and Inf
 
 ___
 ## News
+* 2026-07: View-Invariant Projector-based adversarial Attack [(VIPA)](/pub/VIPA) accepted by [ISMAR 2026](https://www.ieeeismar.net/2026/) / IEEE TVCG.
 * 2026-03: [SIComp](/pub/SIComp) received [🏆IEEE VR 2026 Best Paper Award](https://ieeevr.org/2026/awards/conference-awards/#aa1), congratulations to Haibo, Qingyue, Jijiang, Haibin!
 * 2026-01: Works on setup-independent projector compensation [(SIComp)](/pub/SIComp), LLM-based projection captioning [(ProCap)](/pub/ProCap), diffusion projector compensation [(DiffPC)](/pub/DiffPC) and event-based structured light [(E$^2$SL)](/pub/E2SL) accepted by [IEEE VR 2026](https://ieeevr.org/2026) / IEEE TVCG.
 * 2025-07: Gaussian splatting-based projector-camera systems [(GS-ProCams)](/pub/GS-ProCams) accepted by [ISMAR 2025](https://www.ieeeismar.net/2025/) / IEEE TVCG.
@@ -36,6 +37,8 @@ A full list of publications can be found at [Google Scholar](https://scholar.goo
 
 |    |    | 
 |:---|:---|
+![](/images/teasers/VIPA-ismar26.jpg){:.teaser-image} | [**VIPA: View-Invariant Projector-Based Adversarial Attack**](/pub/VIPA) <br> Jiyu Han, Qingyue Deng, **Bingyao Huang** <br> IEEE Transactions on Visualization and Computer Graphics (**TVCG**), 2026 <br> also in IEEE International Symposium on Mixed and Augmented Reality (**ISMAR**), 2026 (In press) <br> [[project](/pub/VIPA)]
+
 ![](/images/teasers/SIComp-vr26.jpg){:.teaser-image} | [**Setup-Independent Full Projector Compensation**](/pub/SIComp) <br> Haibo Li, Qingyue Deng, Jijiang Li, Haibin Ling, **Bingyao Huang** <br> IEEE Transactions on Visualization and Computer Graphics (**TVCG**), 2026 <br> also in IEEE Conference on Virtual Reality and 3D User Interfaces (**IEEE VR**), 2026 (<span style="color:#FF5733">🏆Best Paper Award</span>) <br> [[project](/pub/SIComp)]
 
 ![](/images/teasers/ProCap-vr26.jpg){:.teaser-image} | [**ProCap: Projection-Aware Captioning for Spatial Augmented Reality**](/pub/ProCap) <br> Zimo Cao, Yuchen Deng, Haibin Ling, **Bingyao Huang** <br> IEEE Conference on Virtual Reality and 3D User Interfaces (**IEEE VR**), 2026 <br> [[project](/pub/ProCap)]
