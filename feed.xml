@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://bingyaohuang.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://bingyaohuang.github.io/" rel="alternate" type="text/html" /><updated>2026-09-25T21:51:58+08:00</updated><id>https://bingyaohuang.github.io/feed.xml</id><title type="html">Bingyao Huang</title><subtitle>College of Computer and Information Science &lt;br&gt; Southwest University, China.</subtitle><entry><title type="html">End-to-end Projector Photometric Compensation</title><link href="https://bingyaohuang.github.io/compennet" rel="alternate" type="text/html" title="End-to-end Projector Photometric Compensation" /><published>2020-03-07T00:00:00+08:00</published><updated>2020-03-07T00:00:00+08:00</updated><id>https://bingyaohuang.github.io/End-to-end%20Projector%20Photometric%20Compensation</id><content type="html" xml:base="https://bingyaohuang.github.io/compennet">&lt;h3 id=&quot;bingyao-huang-and-haibin-ling&quot;&gt;Bingyao Huang and &lt;a href=&quot;https://www3.cs.stonybrook.edu/~hling&quot;&gt;Haibin Ling&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;cvpr-2019-oral&quot;&gt;CVPR 2019 oral&lt;/h3&gt;
+&lt;h3 id=&quot;paper--supp-material--github&quot;&gt;[&lt;a href=&quot;http://openaccess.thecvf.com/content_CVPR_2019/papers/Huang_End-To-End_Projector_Photometric_Compensation_CVPR_2019_paper.pdf&quot;&gt;Paper&lt;/a&gt;]  [&lt;a href=&quot;https://www3.cs.stonybrook.edu/~hling/publication/CompenNet_sup.pdf&quot;&gt;Supp. material&lt;/a&gt;]  [&lt;a href=&quot;https://github.com/BingyaoHuang/CompenNet&quot;&gt;GitHub&lt;/a&gt;]&lt;/h3&gt;
+
+&lt;!-- teaser --&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https://raw.githubusercontent.com/BingyaoHuang/CompenNet/master/doc/img_3.png&quot; alt=&quot;compennet&quot; width=&quot;80%&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;abstract&quot;&gt;Abstract&lt;/h2&gt;
+&lt;p&gt;Projector photometric compensation aims to modify a projector input image such that it can compensate for disturbance from the appearance of projection surface. In this paper, for the first time, we formulate the compensation problem as an end-to-end learning problem and propose a convolutional neural network, named CompenNet, to implicitly learn the complex compensation function. CompenNet consists of a UNet-like backbone network and an autoencoder subnet. Such architecture encourages rich multi-level interactions between the camera-captured projection surface image and the input image, and thus captures both photometric and environment information of the projection surface. In addition, the visual details and interaction information are carried to deeper layers along the multi-level skip convolution layers. The architecture is of particular importance for the projector compensation task, for which only a small training dataset is allowed in practice. Another contribution we make is a novel evaluation benchmark, which is independent of system setup and thus quantitatively verifiable. Such benchmark is not previously available, to our best knowledge, due to the fact that conventional evaluation requests the hardware system to actually project the final results. Our key idea, motivated from our end-to-end problem formulation, is to use a reasonable surrogate to avoid such projection process so as to be setup-independent. Our method is evaluated carefully on the benchmark, and the results show that our end-to-end learning solution outperforms state-of-the-arts both qualitatively and quantitatively by a significant margin.&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;h2 id=&quot;network-architecture&quot;&gt;Network Architecture&lt;/h2&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;../images/compennet/net.png&quot; alt=&quot;compennet&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;h2 id=&quot;qualitative-comparisons&quot;&gt;Qualitative Comparisons&lt;/h2&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https://raw.githubusercontent.com/BingyaoHuang/CompenNet/master/doc/img_1.png&quot; alt=&quot;compennet&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https://raw.githubusercontent.com/BingyaoHuang/CompenNet/master/doc/img_2.png&quot; alt=&quot;compennet&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;h2 id=&quot;related-work&quot;&gt;Related Work&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Bingyao Huang and Haibin Ling. &lt;strong&gt;CompenNet++: End-to-end Full Projector Compensation&lt;/strong&gt;. ICCV. 2019. [&lt;a href=&quot;http://openaccess.thecvf.com/content_ICCV_2019/papers/Huang_CompenNet_End-to-End_Full_Projector_Compensation_ICCV_2019_paper.pdf&quot;&gt;Paper&lt;/a&gt;]  [&lt;a href=&quot;https://www3.cs.stonybrook.edu/~hling/publication/CompenNet++_sup-high-res.pdf&quot;&gt;Supp. material&lt;/a&gt;]  [&lt;a href=&quot;https://github.com/BingyaoHuang/CompenNet-plusplus&quot;&gt;GitHub&lt;/a&gt;] [&lt;a href=&quot;/compennet++&quot;&gt;Webpage&lt;/a&gt;]&lt;/li&gt;
+  &lt;li&gt;Anselm Grundhöfer and Daisuke Iwai. &lt;strong&gt;Robust, error-tolerant photometric projector compensation&lt;/strong&gt;. IEEE TIP. 2015. [&lt;a href=&quot;http://daisukeiwai.org/share/paper/Grundhoefer_TIP15.pdf&quot;&gt;Paper&lt;/a&gt;]&lt;/li&gt;
+  &lt;li&gt;Phillip Isola, Jun-Yan Zhu, Tinghui Zhou, and Alexei A. Efros. &lt;strong&gt;Image-to-image translation with conditional adversarial networks&lt;/strong&gt;. CVPR. 2017. [&lt;a href=&quot;https://arxiv.org/abs/1611.07004&quot;&gt;Paper&lt;/a&gt;] [&lt;a href=&quot;https://phillipi.github.io/pix2pix/&quot;&gt;Webpage&lt;/a&gt;]&lt;/li&gt;
+  &lt;li&gt;Shree K. Nayar, Harish Peri, Michael D. Grossberg, and Peter N. Belhumeur. &lt;strong&gt;A projection system with radiometric compensation for screen imperfections&lt;/strong&gt;. ICCV workshop on projector-camera systems (PROCAMS). 2003. [&lt;a href=&quot;https://www1.cs.columbia.edu/CAVE/publications/pdfs/Nayar_PROCAMS03.pdf&quot;&gt;Paper&lt;/a&gt;] [&lt;a href=&quot;https://www.cs.columbia.edu/CAVE/projects/pr_any/&quot;&gt;Webpage&lt;/a&gt;]&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;</content><author><name>Bingyao Huang</name></author><summary type="html">Bingyao Huang and Haibin Ling CVPR 2019 oral [Paper] [Supp. material] [GitHub]</summary></entry><entry><title type="html">CompenNet++: End-to-end Full Projector Compensation</title><link href="https://bingyaohuang.github.io/compennet++" rel="alternate" type="text/html" title="CompenNet++: End-to-end Full Projector Compensation" /><published>2020-03-06T00:00:00+08:00</published><updated>2020-03-06T00:00:00+08:00</updated><id>https://bingyaohuang.github.io/CompenNet++%20End-to-end%20Full%20Projector%20Compensation</id><content type="html" xml:base="https://bingyaohuang.github.io/compennet++">&lt;h3 id=&quot;bingyao-huang-and-haibin-ling&quot;&gt;Bingyao Huang and &lt;a href=&quot;https://www3.cs.stonybrook.edu/~hling&quot;&gt;Haibin Ling&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;iccv-2019&quot;&gt;ICCV 2019&lt;/h3&gt;
+&lt;h3 id=&quot;paper--supp-material--github&quot;&gt;[&lt;a href=&quot;http://openaccess.thecvf.com/content_ICCV_2019/papers/Huang_CompenNet_End-to-End_Full_Projector_Compensation_ICCV_2019_paper.pdf&quot;&gt;Paper&lt;/a&gt;]  [&lt;a href=&quot;https://www3.cs.stonybrook.edu/~hling/publication/CompenNet++_sup-high-res.pdf&quot;&gt;Supp. material&lt;/a&gt;]  [&lt;a href=&quot;https://github.com/BingyaoHuang/CompenNet-plusplus&quot;&gt;GitHub&lt;/a&gt;]&lt;/h3&gt;
+
+&lt;!-- teaser --&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https://raw.githubusercontent.com/BingyaoHuang/CompenNet-plusplus/master/doc/real_projection.png&quot; alt=&quot;compennet++&quot; width=&quot;80%&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;abstract&quot;&gt;Abstract&lt;/h2&gt;
+&lt;p&gt;Full projector compensation aims to modify a projector input image such that it can compensate for both geometric and photometric disturbance of the projection surface. Traditional methods usually solve the two parts separately, although they are known to correlate with each other. In this paper, we propose the first end-to-end solution, named CompenNet++, to solve the two problems jointly. Our work non-trivially extends CompenNet, which was recently proposed for photometric compensation with promising performance. First, we propose a novel geometric correction subnet, which is designed with a cascaded coarse-to-fine structure to learn the sampling grid directly from photometric sampling images. Second, by concatenating the geometric correction subset with CompenNet, CompenNet++ accomplishes full projector compensation and is end-to-end trainable. Third, after training, we significantly simplify both geometric and photometric compensation parts, and hence largely improves the running time efficiency. Moreover, we construct the first setup-independent full compensation benchmark to facilitate the study on this topic. In our thorough experiments, our method shows clear advantages over previous arts with promising compensation quality and meanwhile being practically convenient.&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;h2 id=&quot;network-architecture&quot;&gt;Network Architecture&lt;/h2&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https://raw.githubusercontent.com/BingyaoHuang/CompenNet-plusplus/master/doc/net_train.png&quot; alt=&quot;net_train&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https://raw.githubusercontent.com/BingyaoHuang/CompenNet-plusplus/master/doc/net_test.png&quot; alt=&quot;net_test&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;h2 id=&quot;qualitative-comparisons&quot;&gt;Qualitative Comparisons&lt;/h2&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;../images/compennet/img_0107.png&quot; alt=&quot;img_0107&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;h2 id=&quot;related-work&quot;&gt;Related Work&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Bingyao Huang and Haibin Ling. &lt;strong&gt;End-to-end Projector Photometric Compensation&lt;/strong&gt;. CVPR. 2019. [&lt;a href=&quot;http://openaccess.thecvf.com/content_CVPR_2019/papers/Huang_End-To-End_Projector_Photometric_Compensation_CVPR_2019_paper.pdf&quot;&gt;Paper&lt;/a&gt;]  [&lt;a href=&quot;https://www3.cs.stonybrook.edu/~hling/publication/CompenNet_sup.pdf&quot;&gt;Supp. material&lt;/a&gt;]  [&lt;a href=&quot;https://github.com/BingyaoHuang/CompenNet&quot;&gt;GitHub&lt;/a&gt;] [&lt;a href=&quot;/compennet&quot;&gt;Webpage&lt;/a&gt;]&lt;/li&gt;
+  &lt;li&gt;Anselm Grundhöfer and Daisuke Iwai. &lt;strong&gt;Robust, error-tolerant photometric projector compensation&lt;/strong&gt;. IEEE TIP. 2015. [&lt;a href=&quot;http://daisukeiwai.org/share/paper/Grundhoefer_TIP15.pdf&quot;&gt;Paper&lt;/a&gt;]&lt;/li&gt;
+  &lt;li&gt;Phillip Isola, Jun-Yan Zhu, Tinghui Zhou, and Alexei A. Efros. &lt;strong&gt;Image-to-image translation with conditional adversarial networks&lt;/strong&gt;. CVPR. 2017. [&lt;a href=&quot;https://arxiv.org/abs/1611.07004&quot;&gt;Paper&lt;/a&gt;] [&lt;a href=&quot;https://phillipi.github.io/pix2pix/&quot;&gt;Webpage&lt;/a&gt;]&lt;/li&gt;
+  &lt;li&gt;Shree K. Nayar, Harish Peri, Michael D. Grossberg, and Peter N. Belhumeur. &lt;strong&gt;A projection system with radiometric compensation for screen imperfections&lt;/strong&gt;. ICCV workshop on projector-camera systems (PROCAMS). 2003. [&lt;a href=&quot;https://www1.cs.columbia.edu/CAVE/publications/pdfs/Nayar_PROCAMS03.pdf&quot;&gt;Paper&lt;/a&gt;] [&lt;a href=&quot;https://www.cs.columbia.edu/CAVE/projects/pr_any/&quot;&gt;Webpage&lt;/a&gt;]&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;</content><author><name>Bingyao Huang</name></author><summary type="html">Bingyao Huang and Haibin Ling ICCV 2019 [Paper] [Supp. material] [GitHub]</summary></entry><entry><title type="html">A Fast and Flexible Projector-Camera Calibration System</title><link href="https://bingyaohuang.github.io/single-shot-pro-cam-calib" rel="alternate" type="text/html" title="A Fast and Flexible Projector-Camera Calibration System" /><published>2020-03-05T00:00:00+08:00</published><updated>2020-03-05T00:00:00+08:00</updated><id>https://bingyaohuang.github.io/Single-shot%20Projector-camera%20calibration</id><content type="html" xml:base="https://bingyaohuang.github.io/single-shot-pro-cam-calib">&lt;h4 id=&quot;bingyao-huang-ying-tang-samed-ozdemir-and-haibin-ling&quot;&gt;Bingyao Huang, Ying Tang, Samed Ozdemir, and &lt;a href=&quot;https://www3.cs.stonybrook.edu/~hling&quot;&gt;Haibin Ling&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;ieee-t-ase-2020-paper-ismar-adjunct-2018-paper--github&quot;&gt;[&lt;a href=&quot;/pub/ProCamCalib/&quot;&gt;IEEE T-ASE 2020 paper&lt;/a&gt;] [&lt;a href=&quot;https://arxiv.org/pdf/1803.09058.pdf&quot;&gt;ISMAR-Adjunct 2018 paper&lt;/a&gt;]  [&lt;a href=&quot;https://github.com/BingyaoHuang/single-shot-pro-cam-calib&quot;&gt;GitHub&lt;/a&gt;]&lt;/h4&gt;
+
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https://raw.githubusercontent.com/BingyaoHuang/single-shot-pro-cam-calib/master/doc/reconstruct.png&quot; alt=&quot;procam-calib&quot; width=&quot;80%&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;abstract&quot;&gt;Abstract&lt;/h2&gt;
+&lt;p&gt;Existing projector-camera calibration methods typically warp keypoints from a camera image to a projector image using estimated homographies, and often suffer from errors in camera parameters and noises due to imperfect planarity of the calibration target. This paper proposes a practical and robust projector-camera calibration system that explicitly deals with these challenges. Firstly, a graph-theory-based correspondence algorithm is built on top of a color-coded spatial structured light (SL) pattern. Such SL correspondences are then used for a coarse projector-camera calibration. To gain more robustness against noises from an imperfect planar calibration board, we develop a bundle adjustment algorithm to jointly optimize the estimated projector-camera parameters and the correspondences’ coordinates. Moreover, our system requires only one shot of SL pattern for each calibration board pose, which is much more practical than multi-shot solutions. Comprehensive experimental validation is conducted on both synthetic and real datasets and our method clearly outperforms existing methods in all experiments. For the benefit of the society, a practical open source software with graphical user interface (GUI) of the developed system is publicly available at [&lt;a href=&quot;https://github.com/BingyaoHuang/single-shot-pro-cam-calib&quot;&gt;GitHub&lt;/a&gt;].&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;h2 id=&quot;single-shot-per-pose&quot;&gt;Single-shot-per-pose&lt;/h2&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https://raw.githubusercontent.com/BingyaoHuang/single-shot-pro-cam-calib/master/doc/calib.gif&quot; alt=&quot;calib&quot; width=&quot;80%&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;h2 id=&quot;software-video-user-guide&quot;&gt;Software video user guide&lt;/h2&gt;
+&lt;!-- &lt;p align=&quot;center&quot;&gt; --&gt;
+&lt;div class=&quot;video_wrapper&quot;&gt;
+&lt;div class=&quot;responsive-video&quot;&gt;
+&lt;iframe width=&quot;80%&quot; height=&quot;400px&quot; src=&quot;https://www.youtube.com/embed/fnrVDOhcu7I?mute=1&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+&lt;h2 id=&quot;related-work&quot;&gt;Related Work&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Bingyao Huang and Haibin Ling. &lt;strong&gt;End-to-end Projector Photometric Compensation&lt;/strong&gt;. CVPR. 2019. [&lt;a href=&quot;http://openaccess.thecvf.com/content_CVPR_2019/papers/Huang_End-To-End_Projector_Photometric_Compensation_CVPR_2019_paper.pdf&quot;&gt;Paper&lt;/a&gt;]  [&lt;a href=&quot;https://www3.cs.stonybrook.edu/~hling/publication/CompenNet_sup.pdf&quot;&gt;Supp. material&lt;/a&gt;]  [&lt;a href=&quot;https://github.com/BingyaoHuang/CompenNet&quot;&gt;GitHub&lt;/a&gt;] [&lt;a href=&quot;/compennet&quot;&gt;Webpage&lt;/a&gt;]&lt;/li&gt;
+  &lt;li&gt;Bingyao Huang and Haibin Ling. &lt;strong&gt;CompenNet++: End-to-end Full Projector Compensation&lt;/strong&gt;. ICCV. 2019. [&lt;a href=&quot;http://openaccess.thecvf.com/content_ICCV_2019/papers/Huang_CompenNet_End-to-End_Full_Projector_Compensation_ICCV_2019_paper.pdf&quot;&gt;Paper&lt;/a&gt;]  [&lt;a href=&quot;https://www3.cs.stonybrook.edu/~hling/publication/CompenNet++_sup-high-res.pdf&quot;&gt;Supp. material&lt;/a&gt;]  [&lt;a href=&quot;https://github.com/BingyaoHuang/CompenNet-plusplus&quot;&gt;GitHub&lt;/a&gt;] [&lt;a href=&quot;/compennet++&quot;&gt;Webpage&lt;/a&gt;]&lt;/li&gt;
+  &lt;li&gt;Daniel Moreno and Gabriel Taubin. &lt;strong&gt;Simple, accurate, and robust projector-camera calibration&lt;/strong&gt;. 3DIMPVT. 2012. [&lt;a href=&quot;http://mesh.brown.edu/calibration/files/Simple%2C%20Accurate%2C%20and%20Robust%20Projector-Camera%20Calibration.pdf&quot;&gt;Paper&lt;/a&gt;] [&lt;a href=&quot;http://mesh.brown.edu/calibration/&quot;&gt;Webpage&lt;/a&gt;]&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;</content><author><name>Bingyao Huang</name></author><summary type="html">Bingyao Huang, Ying Tang, Samed Ozdemir, and Haibin Ling [IEEE T-ASE 2020 paper] [ISMAR-Adjunct 2018 paper] [GitHub]</summary></entry><entry><title type="html">Kinect and projector pair calibration</title><link href="https://bingyaohuang.github.io/Calibrate-Kinect-and-projector/" rel="alternate" type="text/html" title="Kinect and projector pair calibration" /><published>2018-03-04T00:00:00+08:00</published><updated>2018-03-04T00:00:00+08:00</updated><id>https://bingyaohuang.github.io/Kinect%20and%20projector%20pair%20calibration</id><content type="html" xml:base="https://bingyaohuang.github.io/Calibrate-Kinect-and-projector/">&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;../images/calibration/capture.gif&quot; alt=&quot;capture&quot; width=&quot;60%&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#projected-checkerboard-image&quot;&gt;Projected checkerboard image&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#getting-the-3d-2d-coordinates-of-the-checkerboard-corners&quot;&gt;Getting the 3D-2D coordinates of the checkerboard corners&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#rotate-3d-points-using-eigenvectors&quot;&gt;Rotate 3D points using eigenvectors&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#geometric-interpretation-of-eigenvectors-and-singular-value-decomposition-svd&quot;&gt;Geometric interpretation of eigenvectors and Singular Value Decomposition (SVD)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#projector-and-kinect-depth-camera-extrinsics&quot;&gt;Projector and Kinect depth camera extrinsics&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We want to combine Microsoft Kinect and a projector to create cool &lt;a href=&quot;http://genekogan.com/works/kinect-projector-toolkit/&quot;&gt;Augmented Reality (AR) applications&lt;/a&gt;, one prerequisite is system calibration. Existing methods, such as &lt;a href=&quot;http://rgbdemo.org/index.php/Documentation/TutorialProjectorKinectCalibration&quot;&gt;RGBDdemo&lt;/a&gt; and &lt;a href=&quot;https://github.com/genekogan/KinectProjectorToolkit&quot;&gt;KinectProjectorToolkit&lt;/a&gt; either requires printed checkerboard patterns or a large room to calibrate Kinect depth/color cameras and a projector.&lt;/p&gt;
+
+&lt;p&gt;In most simple AR applications, the relative rotation and translation between the Kinect and the projector are fixed. As shown below, we bind them such that their FOVs overlap.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;../images/calibration/setup.jpg&quot; alt=&quot;setup&quot; width=&quot;60%&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In this article, we show that the system can be calibrated using  &lt;a href=&quot;https://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html#calibratecamera&quot;&gt;Zhang’s method&lt;/a&gt; without a printed checkerboard pattern or a large room. Instead, we &lt;strong&gt;project&lt;/strong&gt; a checkerboard pattern to a white flat wall, then move the bound  Kinect-projector pair to capture mages from at least three different poses, as shown in the teaser image.&lt;/p&gt;
+
+&lt;p&gt;In the rest of the article, we focus on calibrating the &lt;strong&gt;intrinsic parameters of the projector&lt;/strong&gt; and the &lt;strong&gt;extrinsic parameters between the projector and the Kinect depth camera&lt;/strong&gt;. The intrinsics of the Kinect color/depth cameras can either be obtained from Kinect Windows SDK or calibrated using a printed checkerboard.&lt;/p&gt;
+
+&lt;h3 id=&quot;projected-checkerboard-image&quot;&gt;Projected checkerboard image&lt;/h3&gt;
+
+&lt;p&gt;We first generate a checkerboard image pattern using OpenCV:&lt;/p&gt;
+
+&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Mat&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;generateCheckerboardImg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Size&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;imgSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Size&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;boardSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Point2f&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cbPts2d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;offset&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// opencv requires white boarders around checkerboard pattern&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// checkerboard image&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;Mat&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;imgCheckerboard&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;imgSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CV_8UC3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Scalar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// block size&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;squareWidth&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;floor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;imgSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;width&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;offset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;boardSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;squareHeight&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;floor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;imgSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;height&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;offset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;boardSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// block color&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;//! The order must be consistent with OpenCV order: &lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;//row first then column, each row sweep from left to right&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;offset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;imgSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;height&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;offset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;squareHeight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;~&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;squareHeight&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;imgSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;height&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;offset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;offset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;imgSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;width&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;offset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;squareWidth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;~&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;squareWidth&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;imgSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;width&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;offset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;// save checkerboard points&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;offset&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;offset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;cbPts2d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;push_back&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Point2f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;// color the block&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;Mat&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;block&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;imgCheckerboard&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Rect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;squareWidth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;squareHeight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;block&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Scalar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;imgCheckerboard&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;The code is inspired by &lt;a href=&quot;http://answers.opencv.org/question/27917/how-to-create-a-chess-board/?answer=27943#post-id-27943&quot;&gt;Haris&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;where &lt;code class=&quot;highlighter-rouge&quot;&gt;boardSize&lt;/code&gt; contains the number of squares in row and column, &lt;code class=&quot;highlighter-rouge&quot;&gt;cbPts2d&lt;/code&gt; stores a list of inner corners of the checkerboard and is given by:&lt;/p&gt;
+
+\[\mathbf{P}^{\text{2d}}_{\text{p}} = [ \mathbf{q}_0, \mathbf{q}_1,\dots \mathbf{q}_i, \dots \mathbf{q}_{N-1} ]\]
+
+&lt;p&gt;where $\mathbf{q}_i = [ u_i, v_i ]$ is the 2D coordinate of the $i^\text{th}$ checkerboard corner in the projector image space and &lt;em&gt;N = &lt;code class=&quot;highlighter-rouge&quot;&gt;boardSize.width&lt;/code&gt;*&lt;code class=&quot;highlighter-rouge&quot;&gt;boardSize.height&lt;/code&gt;&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;The generated checkerboard image is shown below, since OpenCV &lt;a href=&quot;https://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html#findchessboardcorners&quot;&gt;findChessboardCorners&lt;/a&gt; requires &lt;strong&gt;white boarders&lt;/strong&gt; around the checkerboard pattern, we need to add offset to both x and y directions&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;../images/calibration/checkerboard.png&quot; alt=&quot;checkerboard&quot; width=&quot;60%&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Then we project this checkerboard to a white flat wall and in the meanwhile, capture a depth and a color frame of the projected checkerboard pattern using the Kinect. Note we need at least 3 different poses for &lt;a href=&quot;https://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html#calibratecamera&quot;&gt;Zhang’s method&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;getting-the-3d-2d-coordinates-of-the-checkerboard-corners&quot;&gt;Getting the 3D-2D coordinates of the checkerboard corners&lt;/h3&gt;
+&lt;p&gt;Given a Kinect-captured &lt;strong&gt;color&lt;/strong&gt; checkerboard image, we first extract the 2D checkerboard corners $\mathbf{P}^{\text{2d}}_{\text{c}}$ using OpenCV’s &lt;code class=&quot;highlighter-rouge&quot;&gt;findChessboardCorners&lt;/code&gt;. Then $\mathbf{P}^{\text{2d}}_{\text{c}}$’s corresponding 3D coordinates in the Kinect &lt;strong&gt;depth camera’s view space&lt;/strong&gt; can be queried from the Kinect-captured &lt;strong&gt;depth&lt;/strong&gt; image using $\mathbf{P}^{\text{2d}}_{\text{c}}$ and &lt;a href=&quot;https://msdn.microsoft.com/en-us/library/windowspreview.kinect.coordinatemapper.aspx&quot;&gt;Kinect Windows SDK v2.0: CoordinateMapper&lt;/a&gt;:&lt;/p&gt;
+
+\[\mathbf{P}^\text{3d} = [ \mathbf{x}_0, \mathbf{x}_1,\dots \mathbf{x}_i, \dots \mathbf{x}_{N-1} ]\]
+
+&lt;p&gt;where $\mathbf{x}_i = [ x_i, y_i, z_i ]$ as the corresponding 3D coordinate of $\mathbf{P}^{\text{2d}}_{\text{c}}[i]$. Note $\mathbf{P}^{\text{2d}}_{\text{c}}$ is only used to extract $\mathbf{P}^\text{3d}$ from the Kinect-capture &lt;strong&gt;depth&lt;/strong&gt; image in this article, but if you want to calibrate Kinect color camera keep $\mathbf{P}^{\text{2d}}_{\text{c}}$ for &lt;a href=&quot;https://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html#calibratecamera&quot;&gt;Zhang’s method&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;../images/calibration/detected_corners.png&quot; alt=&quot;detected_corners&quot; width=&quot;60%&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Make sure the order of $\mathbf{P}^{\text{2d}}_{\text{c}}$ in the image above matches the order of those in $\mathbf{P}^\text{3d}$, basically the corner colors represent the order of the points in $\mathbf{P}^{\text{2d}}_{\text{c}}$, red is the first element in $\mathbf{P}^{\text{2d}}_{\text{c}}$ vector and dark blue is the last one.&lt;/p&gt;
+
+&lt;p&gt;Since $\mathbf{P}^{\text{2d}}_{\text{p}}$ is given by &lt;code class=&quot;highlighter-rouge&quot;&gt;generateCheckerboardImg&lt;/code&gt;, now we have the 3D-2D point pairs ($\mathbf{P}^\text{3d}$ and $\mathbf{P}^{\text{2d}}_{\text{p}}$) to calibrate the projector intrinsics and extrinsics. But if you send the point pairs directly to OpenCV’s &lt;a href=&quot;https://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html#calibratecamera&quot;&gt;calibrateCamera&lt;/a&gt;, it will raise an exception, because this function requires that the Z values of &lt;code class=&quot;highlighter-rouge&quot;&gt;objectPoints&lt;/code&gt; to be zeros, i.e., &lt;a href=&quot;https://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html#calibratecamera&quot;&gt;Zhang’s method&lt;/a&gt; assumes all &lt;code class=&quot;highlighter-rouge&quot;&gt;objectPoints&lt;/code&gt; reside on the XY plane of checkerboard’s object space, thus the 3x4 projection matrix $\mathbf{K[RT]}$  can be reduced to a 3x3 homography $\mathbf{H}$.&lt;/p&gt;
+
+&lt;p&gt;If we plot $\mathbf{P}^\text{3d}$ we can see that although they reside on the same plane, the Z values are nonzero, because $\mathbf{P}^\text{3d}$ are defined in the Kinect &lt;strong&gt;depth camera’s view space&lt;/strong&gt; rather than the projected checkerboard’s object space.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;../images/calibration/pts3d_original.png&quot; alt=&quot;pts3d_original&quot; width=&quot;60%&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;One may ask &lt;em&gt;can we just generate the 3D coordinates of these checkerboard corners like what we did to the conventional printed checkerboard?&lt;/em&gt; The answer is no, unlike a printed checkerboard, the projected one is distorted and skewed due to projector’s perspective projection. The distortion varies each time we change the projector-Kinect pose in respect to the wall. So each projected checkerboard image on the wall has a different unknown scale and shape (e.g., a diamond).&lt;/p&gt;
+
+&lt;h3 id=&quot;rotate-3d-points-using-eigenvectors&quot;&gt;Rotate 3D points using eigenvectors&lt;/h3&gt;
+&lt;p&gt;One workaround is to estimate a rotation and translation between the Kinect depth camera’s view space and the checkerboard’s object space and then transform $\mathbf{P}^\text{3d}$ to the canonical view, so that they reside in the Kinect depth camera’s XY plane (centered at the origin). This needs the checkerboard plane parameters. Luckily, since we know that $\mathbf{P}^\text{3d}$ has a planar shape, its parameters can be estimated using one the three methods below:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;choose any &lt;strong&gt;three non-collinear&lt;/strong&gt; points in $\mathbf{P}^\text{3d}$ to calculate the plane’s normal (i.e., Z axis direction) and X, Y axes directions in the checkerboard’s object space.&lt;/li&gt;
+  &lt;li&gt;use &lt;strong&gt;all&lt;/strong&gt; the points in $\mathbf{P}^\text{3d}$ to fit a plane by minimizing the least squares error, this will give us plane normal (Z direction). Then choose any two points in $\mathbf{P}^\text{3d}$ to calculate X (or Y) axis direction and the other axis is the cross product of normal and X (or Y), i.e., Y = &lt;code class=&quot;highlighter-rouge&quot;&gt;cross&lt;/code&gt;(X, Z).&lt;/li&gt;
+  &lt;li&gt;use the eigenvectors of $\mathbf{P}^\text{3d}$’s covariance matrix as the plane’s XYZ axes.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Here are the pros and cons. For method 1, which three points should we choose to estimate the plane? The same question applies to method 2 too, which two points should we use to estimate X (or Y) axis? We prefer method 3 since it considers all points in $\mathbf{P}^\text{3d}$ and it is simpler.&lt;/p&gt;
+
+&lt;h3 id=&quot;geometric-interpretation-of-eigenvectors-and-singular-value-decomposition-svd&quot;&gt;Geometric interpretation of eigenvectors and Singular Value Decomposition (SVD)&lt;/h3&gt;
+
+&lt;p&gt;If we draw the eigenvectors (their magnitudes are just the corresponding eigenvalues) of $\mathbf{P}^\text{3d}$’s covariance matrix, what are the directions of the three eigenvectors?&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;../images/calibration/eigenvectors.gif&quot; alt=&quot;eigenvectors&quot; width=&quot;60%&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The first two must be on the checkerboard plane and &lt;strong&gt;the third one is the normal of the plane&lt;/strong&gt;! Let us recall &lt;strong&gt;eigen decomposition&lt;/strong&gt;, denote $\mathbf{P}^\text{3d}$’s covariance matrix as:&lt;/p&gt;
+
+\[\mathbf{\Sigma} = (\mathbf{x}_i - \bar{\mathbf{x}})(\mathbf{x}_i - \bar{\mathbf{x}})^{T}, \quad \text{where}\ \mathbf{x}_i \in \mathbf{P}^\text{3d},\quad \bar{\mathbf{x}} = \mathbb{E}[\mathbf{P}^\text{3d}]\]
+
+&lt;p&gt;The eigen decomposition of $\mathbf{\Sigma}$ is given by:
+$\mathbf{\Sigma} = \mathbf{U}\mathbf{S}^{2}\mathbf{U}^T$, where the diagonal of $\mathbf{S}^{2}$ are eigenvalues and $\mathbf{U}$’s columns are the eigenvectors of $\mathbf{\Sigma}$ and &lt;strong&gt;they are also the left singular vectors of $(\mathbf{x}_i - \bar{\mathbf{x}})$&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;So instead of computing an expensive covariance matrix, we compute eigenvectors using SVD by:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Obtain $\bar{\mathbf{x}}$ by
+$\bar{\mathbf{x}} = \mathbf{C}\mathbf{P}^\text{3d}$, where $\mathbf{C} = \mathbf{I} - \frac{\mathbf{O}}{n}$ is a &lt;a href=&quot;https://en.wikipedia.org/wiki/Centering_matrix&quot;&gt;centering matrix&lt;/a&gt;. If we plot $\bar{\mathbf{x}}$ we will find it is just $\mathbf{P}^\text{3d}$ translated and centered to the origin of the Kinect’s depth camera’s view space.&lt;/li&gt;
+  &lt;li&gt;Apply SVD to $\bar{\mathbf{x}}$:  $\mathbf{U}\mathbf{S}\mathbf{V}^T = \bar{\mathbf{x}}$.&lt;/li&gt;
+  &lt;li&gt;Afterwards, to rotate $\bar{\mathbf{x}}$ to the XY plane of Kinect depth camera’s view space, we only need to left multiply $\mathbf{U}^{-1}$, i.e.,  $\mathbf{U}^{T}$ to $\bar{\mathbf{x}}$.  Then we have $\mathbf{P}^\text{3d}_{\text{obj}} = \mathbf{U}^{T}\bar{\mathbf{x}}$, and $\mathbf{P}^\text{3d}_{\text{obj}}$ is almost aligned with XY plane.&lt;/li&gt;
+  &lt;li&gt;Due to projector and Kinect sensor noise and nonplanarity of the wall, the translated and rotated $\mathbf{P}^\text{3d}_{\text{obj}}$ may have very small Z values, we can orthogonally project $\mathbf{P}^\text{3d}_{\text{obj}}$ to the XY plane by setting the Z coordinate of $\mathbf{P}^\text{3d}_{\text{obj}}$ to 0, the final $\mathbf{P}^\text{3d}_{\text{obj}}$ is shown in the image below.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;../images/calibration/pts3d_rotated.png&quot; alt=&quot;pts3d_rotated&quot; width=&quot;60%&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Note in step 3, we do not constrain the signs of eigenvectors since they do not affect the projector &lt;strong&gt;intrinsics&lt;/strong&gt; calibration.&lt;/p&gt;
+
+&lt;p&gt;Finally, we have $\mathbf{P}^{\text{3d}}_{\text{obj}}$, the 3D coordinates in the checkerboard’s object space and $\mathbf{P}^{\text{2d}}_{\text{p}}$, the corresponding 2D coordinates in the projector image space  to calibrate the projector intrinsics using &lt;a href=&quot;https://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html#calibratecamera&quot;&gt;calibrateCamera&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;projector-and-kinect-depth-camera-extrinsics&quot;&gt;Projector and Kinect depth camera extrinsics&lt;/h3&gt;
+&lt;p&gt;We can also obtain the relative rotation and translation $\mathbf{RT}$ between the Kinect depth camera and the project by sending the calibrated projector intrinsics, the known &lt;a href=&quot;https://msdn.microsoft.com/en-us/library/windowspreview.kinect.coordinatemapper.aspx&quot;&gt;Kinect depth camera intrinsics&lt;/a&gt;, the 3D coordinates of checkerboard corners $\mathbf{P}^{\text{3d}}_{\text{obj}}$, the 2D coordinates of checkerboard corners in projector image $\mathbf{P}^{\text{2d}}_{\text{p}}$ and the 2D checkerboard corners in the Kinect depth camera image $\mathbf{P}^\text{2d}_\text{d}$ to OpenCV function &lt;a href=&quot;https://docs.opencv.org/3.0-beta/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html#stereocalibrate&quot;&gt;stereoCalibrate&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The calibrated projector intrinsic projection matrix&lt;/p&gt;
+
+\[\mathbf{K}_\text{p} =
+\begin{array}{|l|l|l|}
+\hline
+1227.8 &amp;amp; 0      &amp;amp; 450.9 \\ \hline
+0      &amp;amp; 1214.9 &amp;amp; 606.1 \\ \hline
+0      &amp;amp; 0      &amp;amp; 1     \\ \hline
+\end{array}\]
+
+&lt;p&gt;projector distortion coefficients&lt;/p&gt;
+
+\[\mathbf{Kc}_\text{p} = 
+\begin{array}{|l|l|l|l|l|}
+\hline
+ -0.1708 &amp;amp; 1.0518 &amp;amp; -0.0168 &amp;amp; 0.0065 &amp;amp; -2.8967 \\ \hline
+\end{array}\]
+
+&lt;p&gt;projector-camera extrinsics&lt;/p&gt;
+
+\[\mathbf{RT} =
+\begin{array}{|l|l|l|l|}
+\hline
+\mathbf{r}_1     &amp;amp; \mathbf{r}_2     &amp;amp; \mathbf{r}_3      &amp;amp; \mathbf{t} (\text{mm})   \\ \hline
+0.9435 &amp;amp; -0.061 &amp;amp; -0.3256 &amp;amp; 177.72   \\ \hline
+-0.004 &amp;amp; 0.9807 &amp;amp; -0.1953 &amp;amp; -92.0386 \\ \hline
+0.3312 &amp;amp; 0.1856 &amp;amp; 0.9251  &amp;amp; -21.0593 \\ \hline
+\end{array}\]
+
+&lt;hr /&gt;</content><author><name>Bingyao Huang</name></author><summary type="html"></summary></entry></feed>
