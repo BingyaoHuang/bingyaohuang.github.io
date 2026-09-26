@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <!-- <title>Kinect 与投影仪联合标定 – Bingyao Huang – College of Computer and Information Science <br> Southwest University, China.</title> -->
+    <title>Kinect 与投影仪联合标定 – Bingyao Huang</title>
+    <!-->    <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="College of Computer and Information Science <br> Southwest University, China.">
+    <meta property="og:description" content="College of Computer and Information Science <br> Southwest University, China." />
+    
+    <meta name="author" content="Bingyao Huang" />
+
+    
+    <meta property="og:title" content="Kinect 与投影仪联合标定" />
+    <meta property="twitter:title" content="Kinect 与投影仪联合标定" />
+    <!-->
+	  
+	<!-- Google Analytics -->
+	<!-- <script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-115150248-1', 'auto');
+		ga('send', 'pageview', {
+		  'page': '/zh/Calibrate-Kinect-and-projector/',
+		  'title': 'Kinect 与投影仪联合标定'
+		});
+	</script> -->
+	<!-- End Google Analytics -->
+
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-WXYVJRQYVR"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-WXYVJRQYVR');
+</script>
+
+
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Kinect 与投影仪联合标定 | Bingyao Huang</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="Kinect 与投影仪联合标定" />
+<meta property="og:locale" content="zh" />
+<meta name="description" content="College of Computer and Information Science Southwest University, China." />
+<meta property="og:description" content="College of Computer and Information Science Southwest University, China." />
+<link rel="canonical" href="https://bingyaohuang.github.io/zh/Calibrate-Kinect-and-projector/" />
+<meta property="og:url" content="https://bingyaohuang.github.io/zh/Calibrate-Kinect-and-projector/" />
+<meta property="og:site_name" content="Bingyao Huang" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-03-04T00:00:00+08:00" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://bingyaohuang.github.io/zh/Calibrate-Kinect-and-projector/"},"url":"https://bingyaohuang.github.io/zh/Calibrate-Kinect-and-projector/","headline":"Kinect 与投影仪联合标定","dateModified":"2018-03-04T00:00:00+08:00","datePublished":"2018-03-04T00:00:00+08:00","description":"College of Computer and Information Science Southwest University, China.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Bingyao Huang - College of Computer and Information Science <br> Southwest University, China." href="/feed.xml" />
+  
+    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+       
+  </head>
+
+  
+  <body>
+    <div class="wrapper-masthead">
+      <div id="site_header" class="container">
+        <header class="masthead clearfix">
+          <a href="/zh/" class="site-avatar"><img src="https://avatars2.githubusercontent.com/u/6914041?s=460&v=4" alt="Bingyao Huang" /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="/zh/">黄兵姚</a></h1>
+            <p class="site-description">计算机与信息科学学院<br>西南大学，中国。<br>bhuang AT swu DOT edu DOT cn</p>
+          </div>
+
+          <nav>
+            
+            <a href="/zh/">简介</a>
+            <a href="/zh/blog/">博客</a>
+            <a href="/zh/data/">数据</a>
+            
+            
+            
+            <a class="language-switch" href="/Calibrate-Kinect-and-projector/" lang="en">English</a>
+            
+            <!-- <a href="/about">About</a> -->
+          </nav>
+        </header>
+      </div>
+    </div>
+
+    <div id="main" role="main" class="container">
+      <article class="post">
+  <h1 class="post_title">Kinect 与投影仪联合标定</h1>
+
+  <div class="entry">
+    <p align="center"><img src="/images/calibration/capture.gif" alt="capture" width="60%" /></p>
+
+<ul>
+  <li><a href="#投影棋盘格图像">投影棋盘格图像</a></li>
+  <li><a href="#获取棋盘格角点的三维二维坐标">获取棋盘格角点的三维—二维坐标</a></li>
+  <li><a href="#利用特征向量旋转三维点">利用特征向量旋转三维点</a></li>
+  <li><a href="#特征向量与奇异值分解的几何解释">特征向量与奇异值分解的几何解释</a></li>
+  <li><a href="#投影仪与-kinect-深度相机的外参">投影仪与 Kinect 深度相机的外参</a></li>
+</ul>
+
+<p>将 Microsoft Kinect 与投影仪结合，可以制作有趣的<a href="http://genekogan.com/works/kinect-projector-toolkit/">增强现实应用</a>，但首先需要完成系统标定。已有方案，例如 <a href="http://rgbdemo.org/index.php/Documentation/TutorialProjectorKinectCalibration">RGBDdemo</a> 和 <a href="https://github.com/genekogan/KinectProjectorToolkit">KinectProjectorToolkit</a>，通常需要打印棋盘格，或需要较大的空间来标定 Kinect 深度／彩色相机与投影仪。</p>
+
+<p>在许多简单的增强现实应用中，Kinect 与投影仪之间的旋转和平移是固定的。如下图所示，我们将二者固定在一起，使视场重叠。</p>
+
+<p align="center"><img src="/images/calibration/setup.jpg" alt="setup" width="60%" /></p>
+
+<p>本文介绍如何在无需打印棋盘格和大空间的情况下，使用<a href="https://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html#calibratecamera">张正友标定法</a>完成系统标定：将棋盘格<strong>投影</strong>到白色平面墙上，再移动固定在一起的 Kinect 与投影仪，从至少三个不同姿态采集图像，如文章开头的动图所示。</p>
+
+<p>以下重点讨论<strong>投影仪内参</strong>以及<strong>投影仪与 Kinect 深度相机之间的外参</strong>。Kinect 彩色／深度相机内参可从 Kinect Windows SDK 获取，也可用打印的棋盘格标定。</p>
+
+<h3 id="投影棋盘格图像">投影棋盘格图像</h3>
+
+<p>首先用 OpenCV 生成棋盘格图案：</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Mat</span> <span class="nf">generateCheckerboardImg</span><span class="p">(</span><span class="n">Size</span> <span class="n">imgSize</span><span class="p">,</span> <span class="n">Size</span> <span class="n">boardSize</span><span class="p">,</span> <span class="n">vector</span> <span class="o">&lt;</span> <span class="n">Point2f</span> <span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">cbPts2d</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">offset</span> <span class="o">=</span> <span class="mi">50</span><span class="p">;</span> <span class="c1">// opencv requires white boarders around checkerboard pattern</span>
+
+  <span class="c1">// checkerboard image</span>
+  <span class="n">Mat</span> <span class="n">imgCheckerboard</span><span class="p">(</span><span class="n">imgSize</span><span class="p">,</span> <span class="n">CV_8UC3</span><span class="p">,</span> <span class="n">Scalar</span><span class="o">::</span><span class="n">all</span><span class="p">(</span><span class="mi">255</span><span class="p">));</span>
+
+  <span class="c1">// block size</span>
+  <span class="kt">int</span> <span class="n">squareWidth</span> <span class="o">=</span> <span class="n">floor</span><span class="p">((</span><span class="n">imgSize</span><span class="p">.</span><span class="n">width</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">offset</span><span class="p">)</span> <span class="o">/</span> <span class="n">boardSize</span><span class="p">.</span><span class="n">width</span><span class="p">);</span>
+  <span class="kt">int</span> <span class="n">squareHeight</span> <span class="o">=</span> <span class="n">floor</span><span class="p">((</span><span class="n">imgSize</span><span class="p">.</span><span class="n">height</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">offset</span><span class="p">)</span> <span class="o">/</span> <span class="n">boardSize</span><span class="p">.</span><span class="n">height</span><span class="p">);</span>
+
+  <span class="c1">// block color</span>
+  <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">color</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+  <span class="c1">//! The order must be consistent with OpenCV order:</span>
+  <span class="c1">//row first then column, each row sweep from left to right</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="n">offset</span><span class="p">;</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="n">imgSize</span><span class="p">.</span><span class="n">height</span> <span class="o">-</span> <span class="n">offset</span><span class="p">;</span> <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">squareHeight</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="o">~</span><span class="n">color</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">y</span> <span class="o">+</span> <span class="n">squareHeight</span> <span class="o">&gt;</span> <span class="n">imgSize</span><span class="p">.</span><span class="n">height</span> <span class="o">-</span> <span class="n">offset</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">offset</span><span class="p">;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">imgSize</span><span class="p">.</span><span class="n">width</span> <span class="o">-</span> <span class="n">offset</span><span class="p">;</span> <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">squareWidth</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">color</span> <span class="o">=</span> <span class="o">~</span><span class="n">color</span><span class="p">;</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">squareWidth</span> <span class="o">&gt;</span> <span class="n">imgSize</span><span class="p">.</span><span class="n">width</span> <span class="o">-</span> <span class="n">offset</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">break</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="c1">// save checkerboard points</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">offset</span> <span class="o">&amp;&amp;</span> <span class="n">y</span> <span class="o">&gt;</span> <span class="n">offset</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">cbPts2d</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">Point2f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">));</span>
+      <span class="p">}</span>
+      <span class="c1">// color the block</span>
+      <span class="n">Mat</span> <span class="n">block</span> <span class="o">=</span> <span class="n">imgCheckerboard</span><span class="p">(</span><span class="n">Rect</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">squareWidth</span><span class="p">,</span> <span class="n">squareHeight</span><span class="p">));</span>
+      <span class="n">block</span><span class="p">.</span><span class="n">setTo</span><span class="p">(</span><span class="n">Scalar</span><span class="o">::</span><span class="n">all</span><span class="p">(</span><span class="n">color</span><span class="p">));</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="n">imgCheckerboard</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><em>代码参考 <a href="http://answers.opencv.org/question/27917/how-to-create-a-chess-board/?answer=27943#post-id-27943">Haris</a> 的实现。</em></p>
+
+<p>其中，<code class="highlighter-rouge">boardSize</code> 指定棋盘格在行、列方向的方格数；<code class="highlighter-rouge">cbPts2d</code> 存储内部角点：</p>
+
+\[\mathbf{P}^{\text{2d}}_{\text{p}} = [ \mathbf{q}_0, \mathbf{q}_1,\dots \mathbf{q}_i, \dots \mathbf{q}_{N-1} ]\]
+
+<p>这里 $\mathbf{q}_i=[u_i,v_i]$ 是第 $i$ 个角点在投影仪图像中的二维坐标，$N=\texttt{boardSize.width}\times\texttt{boardSize.height}$。</p>
+
+<p>生成的图像如下。OpenCV 的 <a href="https://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html#findchessboardcorners"><code class="highlighter-rouge">findChessboardCorners</code></a> 要求棋盘格周围留有<strong>白色边框</strong>，因此代码在横向和纵向均加入了边距。</p>
+
+<p align="center"><img src="/images/calibration/checkerboard.png" alt="checkerboard" width="60%" /></p>
+
+<p>随后将图案投向白色平面墙，并用 Kinect 同时获取深度帧和彩色帧。<a href="https://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html#calibratecamera">张正友标定法</a>至少需要三个不同姿态。</p>
+
+<h3 id="获取棋盘格角点的三维二维坐标">获取棋盘格角点的三维—二维坐标</h3>
+
+<p>对于 Kinect 拍摄的<strong>彩色</strong>棋盘格图像，先用 OpenCV 的 <code class="highlighter-rouge">findChessboardCorners</code> 提取二维角点 $\mathbf{P}^{\text{2d}}_{\text{c}}$。再通过彩色图像中的角点位置、Kinect 拍摄的<strong>深度</strong>图像以及 <a href="https://msdn.microsoft.com/en-us/library/windowspreview.kinect.coordinatemapper.aspx">Kinect Windows SDK v2.0 的 CoordinateMapper</a>，查询这些角点在 Kinect <strong>深度相机坐标系</strong>中的三维坐标：</p>
+
+\[\mathbf{P}^\text{3d} = [ \mathbf{x}_0, \mathbf{x}_1,\dots \mathbf{x}_i, \dots \mathbf{x}_{N-1} ]\]
+
+<p>其中 $\mathbf{x}<em>i=[x_i,y_i,z_i]$ 对应 $\mathbf{P}^{\text{2d}}</em>{\text{c}}[i]$。本文只用彩色图像角点从深度图中提取三维点；若还需要标定 Kinect 彩色相机，应保留这些二维角点用于<a href="https://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html#calibratecamera">张正友标定法</a>。</p>
+
+<p align="center"><img src="/images/calibration/detected_corners.png" alt="detected_corners" width="60%" /></p>
+
+<p>务必保证 $\mathbf{P}^{\text{2d}}_{\text{c}}$ 与 $\mathbf{P}^\text{3d}$ 中角点顺序一致。上图的颜色表示二维角点顺序：红色是第一个，深蓝色是最后一个。</p>
+
+<p>投影仪图像中的二维角点 $\mathbf{P}^{\text{2d}}<em>{\text{p}}$ 已由 <code class="highlighter-rouge">generateCheckerboardImg</code> 给出，因此现在有标定投影仪内、外参所需的三维—二维对应点 $\mathbf{P}^\text{3d}$ 与 $\mathbf{P}^{\text{2d}}</em>{\text{p}}$。但不能直接将它们送入 OpenCV 的 <a href="https://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html#calibratecamera"><code class="highlighter-rouge">calibrateCamera</code></a>：该函数要求 <code class="highlighter-rouge">objectPoints</code> 的 Z 坐标为零。<a href="https://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html#calibratecamera">张正友标定法</a>假设这些点位于棋盘格物体坐标系的 XY 平面，于是 $3\times4$ 投影矩阵 $\mathbf{K[RT]}$ 可化为 $3\times3$ 单应矩阵 $\mathbf{H}$。</p>
+
+<p>如下图所示，$\mathbf{P}^\text{3d}$ 虽然共面，但 Z 坐标不为零，因为它们定义在 Kinect <strong>深度相机坐标系</strong>中，而非投影棋盘格的物体坐标系中。</p>
+
+<p align="center"><img src="/images/calibration/pts3d_original.png" alt="pts3d_original" width="60%" /></p>
+
+<p>能否像使用打印棋盘格那样，直接生成角点的三维坐标？不能。投影棋盘格会受投影仪透视投影影响而变形、倾斜；每次改变投影仪与 Kinect 相对于墙面的姿态，图案的尺度和形状也随之变化，且事先未知。</p>
+
+<h3 id="利用特征向量旋转三维点">利用特征向量旋转三维点</h3>
+
+<p>一种办法是估计 Kinect 深度相机坐标系与棋盘格物体坐标系之间的旋转和平移，再将 $\mathbf{P}^\text{3d}$ 变换到标准视角，使点落在以原点为中心的 XY 平面。这需要先估计棋盘格所在平面。利用 $\mathbf{P}^\text{3d}$ 的共面性，可以采用以下三种方法：</p>
+
+<ol>
+  <li>从 $\mathbf{P}^\text{3d}$ 中选取<strong>三个不共线的点</strong>，求平面法向（Z 轴）以及物体坐标系中 X、Y 轴的方向。</li>
+  <li>使用<strong>全部</strong>点，通过最小二乘拟合平面并求其法向；再选取两个点确定 X 轴或 Y 轴，利用叉乘求另一轴，例如 <code class="highlighter-rouge">cross(X, Z)</code>。</li>
+  <li>使用 $\mathbf{P}^\text{3d}$ 协方差矩阵的特征向量作为平面的 XYZ 轴。</li>
+</ol>
+
+<p>前两种方法都需要决定选取哪些点；第三种方法利用全部点，且实现更简单，因此这里采用第三种。</p>
+
+<h3 id="特征向量与奇异值分解的几何解释">特征向量与奇异值分解的几何解释</h3>
+
+<p>如果画出 $\mathbf{P}^\text{3d}$ 的协方差矩阵的三个特征向量（长度用相应特征值表示），它们指向哪里？</p>
+
+<p align="center"><img src="/images/calibration/eigenvectors.gif" alt="eigenvectors" width="60%" /></p>
+
+<p>前两个特征向量位于棋盘格平面内，<strong>第三个是平面法向</strong>。将协方差矩阵记作：</p>
+
+\[\mathbf{\Sigma} = (\mathbf{x}_i - \bar{\mathbf{x}})(\mathbf{x}_i - \bar{\mathbf{x}})^{T}, \quad \text{where}\ \mathbf{x}_i \in \mathbf{P}^\text{3d},\quad \bar{\mathbf{x}} = \mathbb{E}[\mathbf{P}^\text{3d}]\]
+
+<p>其特征分解为 $\mathbf{\Sigma}=\mathbf{U}\mathbf{S}^{2}\mathbf{U}^{T}$。$\mathbf{S}^{2}$ 的对角元素是特征值，$\mathbf{U}$ 的列是 $\mathbf{\Sigma}$ 的特征向量，也是 $\mathbf{x}_i-\bar{\mathbf{x}}$ 的左奇异向量。</p>
+
+<p>无需显式计算协方差矩阵，可以按以下步骤通过奇异值分解得到这些向量：</p>
+
+<ol>
+  <li>用中心化矩阵 $\mathbf{C}=\mathbf{I}-\frac{\mathbf{O}}{n}$ 得到 $\bar{\mathbf{x}}=\mathbf{C}\mathbf{P}^{\text{3d}}$（参见<a href="https://en.wikipedia.org/wiki/Centering_matrix">中心化矩阵</a>）。这一操作将点集平移到 Kinect 深度相机坐标系的原点。</li>
+  <li>对中心化后的点集做奇异值分解：$\mathbf{U}\mathbf{S}\mathbf{V}^{T}=\bar{\mathbf{x}}$。</li>
+  <li>左乘 $\mathbf{U}^{-1}=\mathbf{U}^{T}$，将点集旋转至深度相机坐标系的 XY 平面附近，得到 $\mathbf{P}^{\text{3d}}_{\text{obj}}=\mathbf{U}^{T}\bar{\mathbf{x}}$。</li>
+  <li>受投影仪和 Kinect 噪声以及墙面不平整的影响，变换后的点可能仍有很小的 Z 坐标。将 Z 设为零，即把点正交投影到 XY 平面；结果见下图。</li>
+</ol>
+
+<p align="center"><img src="/images/calibration/pts3d_rotated.png" alt="pts3d_rotated" width="60%" /></p>
+
+<p>在第 3 步中，我们不约束特征向量的符号，因为它们不影响投影仪<strong>内参</strong>标定。最终得到棋盘格物体坐标系中的三维点 $\mathbf{P}^{\text{3d}}<em>{\text{obj}}$，以及投影仪图像中的对应二维点 $\mathbf{P}^{\text{2d}}</em>{\text{p}}$，可送入 <a href="https://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html#calibratecamera"><code class="highlighter-rouge">calibrateCamera</code></a> 标定投影仪内参。</p>
+
+<h3 id="投影仪与-kinect-深度相机的外参">投影仪与 Kinect 深度相机的外参</h3>
+
+<p>还可以将标定后的投影仪内参、已知的 <a href="https://msdn.microsoft.com/en-us/library/windowspreview.kinect.coordinatemapper.aspx">Kinect 深度相机内参</a>、物体坐标系中的角点 $\mathbf{P}^{\text{3d}}<em>{\text{obj}}$、投影仪图像中的角点 $\mathbf{P}^{\text{2d}}</em>{\text{p}}$，以及 Kinect 深度相机图像中的二维角点 $\mathbf{P}^{\text{2d}}_{\text{d}}$ 送入 OpenCV 的 <a href="https://docs.opencv.org/3.0-beta/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html#stereocalibrate"><code class="highlighter-rouge">stereoCalibrate</code></a>，求得相机与投影仪之间的相对旋转和平移 $\mathbf{RT}$。</p>
+
+<p>标定得到的投影仪内参矩阵为</p>
+
+\[\mathbf{K}_\text{p} =
+\begin{array}{|l|l|l|}
+\hline
+1227.8 &amp; 0      &amp; 450.9 \\ \hline
+0      &amp; 1214.9 &amp; 606.1 \\ \hline
+0      &amp; 0      &amp; 1     \\ \hline
+\end{array}\]
+
+<p>投影仪畸变系数为</p>
+
+\[\mathbf{Kc}_\text{p} =
+\begin{array}{|l|l|l|l|l|}
+\hline
+ -0.1708 &amp; 1.0518 &amp; -0.0168 &amp; 0.0065 &amp; -2.8967 \\ \hline
+\end{array}\]
+
+<p>投影仪与相机的外参为</p>
+
+\[\mathbf{RT} =
+\begin{array}{|l|l|l|l|}
+\hline
+\mathbf{r}_1     &amp; \mathbf{r}_2     &amp; \mathbf{r}_3      &amp; \mathbf{t} (\text{mm})   \\ \hline
+0.9435 &amp; -0.061 &amp; -0.3256 &amp; 177.72   \\ \hline
+-0.004 &amp; 0.9807 &amp; -0.1953 &amp; -92.0386 \\ \hline
+0.3312 &amp; 0.1856 &amp; 0.9251  &amp; -21.0593 \\ \hline
+\end{array}\]
+
+<hr />
+
+  </div>
+
+  <div class="date">
+    Written on March  4, 2018
+  </div>
+
+  
+<div class="comments">
+	<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://https-bingyaohuang-github-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                            
+
+
+
+</article>
+    </div>
+
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          
+
+
+
+<a href="https://github.com/BingyaoHuang"><i class="svg-icon github"></i></a>
+
+
+
+
+
+
+
+
+        </footer>
+      </div>
+    </div>
+
+  <!--Allow for single $ for inline math!-->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { fonts: ["TeX"] }
+  });
+</script>
+
+<!--Load MathJax 2 from CDN-->
+<script type="text/javascript" 
+  	src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
