@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- <title>End-to-end Projector Photometric Compensation – Bingyao Huang – College of Computer and Information Science <br> Southwest University, China.</title> -->
+    <title>End-to-end Projector Photometric Compensation – Bingyao Huang</title>
+    <!-->    <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="Bingyao Huang and Haibin Ling
+CVPR 2019 oral
+[Paper]  [Supp. material]  [GitHub]
+" />
+    <meta property="og:description" content="Bingyao Huang and Haibin Ling
+CVPR 2019 oral
+[Paper]  [Supp. material]  [GitHub]
+" />
+    
+    <meta name="author" content="Bingyao Huang" />
+
+    
+    <meta property="og:title" content="End-to-end Projector Photometric Compensation" />
+    <meta property="twitter:title" content="End-to-end Projector Photometric Compensation" />
+    <!-->
+	  
+	<!-- Google Analytics -->
+	<!-- <script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-115150248-1', 'auto');
+		ga('send', 'pageview', {
+		  'page': '/compennet',
+		  'title': 'End-to-end Projector Photometric Compensation'
+		});
+	</script> -->
+	<!-- End Google Analytics -->
+
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-WXYVJRQYVR"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-WXYVJRQYVR');
+</script>
+
+
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>End-to-end Projector Photometric Compensation | Bingyao Huang</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="End-to-end Projector Photometric Compensation" />
+<meta name="author" content="Bingyao Huang" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Bingyao Huang and Haibin Ling CVPR 2019 oral [Paper] [Supp. material] [GitHub]" />
+<meta property="og:description" content="Bingyao Huang and Haibin Ling CVPR 2019 oral [Paper] [Supp. material] [GitHub]" />
+<link rel="canonical" href="https://bingyaohuang.github.io/compennet" />
+<meta property="og:url" content="https://bingyaohuang.github.io/compennet" />
+<meta property="og:site_name" content="Bingyao Huang" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-03-07T00:00:00+08:00" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://bingyaohuang.github.io/compennet"},"url":"https://bingyaohuang.github.io/compennet","author":{"@type":"Person","name":"Bingyao Huang"},"headline":"End-to-end Projector Photometric Compensation","dateModified":"2020-03-07T00:00:00+08:00","datePublished":"2020-03-07T00:00:00+08:00","description":"Bingyao Huang and Haibin Ling CVPR 2019 oral [Paper] [Supp. material] [GitHub]","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Bingyao Huang - College of Computer and Information Science <br> Southwest University, China." href="/feed.xml" />
+  
+    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+       
+  </head>
+
+  
+  <body>
+    <div class="wrapper-masthead">
+      <div id="site_header" class="container">
+        <header class="masthead clearfix">
+          <a href="/" class="site-avatar"><img src="https://avatars2.githubusercontent.com/u/6914041?s=460&v=4" alt="Bingyao Huang" /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="/">Bingyao Huang</a></h1>
+            <p class="site-description">College of Computer and Information Science<br>Southwest University, China. <br>bhuang AT swu DOT edu DOT cn</p>
+          </div>
+
+          <nav>
+            
+            <a href="/">About</a>
+            <a href="/blog">Blog</a>
+            <a href="/data">Data</a>
+            
+            
+            
+            <a class="language-switch" href="/zh/compennet/" lang="zh-CN">中文</a>
+            
+            <!-- <a href="/about">About</a> -->
+          </nav>
+        </header>
+      </div>
+    </div>
+
+    <div id="main" role="main" class="container">
+      <article class="project">
+  <h1>End-to-end Projector Photometric Compensation</h1>
+
+  <div class="entry">
+    <h3 id="bingyao-huang-and-haibin-ling">Bingyao Huang and <a href="https://www3.cs.stonybrook.edu/~hling">Haibin Ling</a></h3>
+<h3 id="cvpr-2019-oral">CVPR 2019 oral</h3>
+<h3 id="paper--supp-material--github">[<a href="http://openaccess.thecvf.com/content_CVPR_2019/papers/Huang_End-To-End_Projector_Photometric_Compensation_CVPR_2019_paper.pdf">Paper</a>]  [<a href="https://www3.cs.stonybrook.edu/~hling/publication/CompenNet_sup.pdf">Supp. material</a>]  [<a href="https://github.com/BingyaoHuang/CompenNet">GitHub</a>]</h3>
+
+<!-- teaser -->
+<p align="center"><img src="https://raw.githubusercontent.com/BingyaoHuang/CompenNet/master/doc/img_3.png" alt="compennet" width="80%" /></p>
+
+<h2 id="abstract">Abstract</h2>
+<p>Projector photometric compensation aims to modify a projector input image such that it can compensate for disturbance from the appearance of projection surface. In this paper, for the first time, we formulate the compensation problem as an end-to-end learning problem and propose a convolutional neural network, named CompenNet, to implicitly learn the complex compensation function. CompenNet consists of a UNet-like backbone network and an autoencoder subnet. Such architecture encourages rich multi-level interactions between the camera-captured projection surface image and the input image, and thus captures both photometric and environment information of the projection surface. In addition, the visual details and interaction information are carried to deeper layers along the multi-level skip convolution layers. The architecture is of particular importance for the projector compensation task, for which only a small training dataset is allowed in practice. Another contribution we make is a novel evaluation benchmark, which is independent of system setup and thus quantitatively verifiable. Such benchmark is not previously available, to our best knowledge, due to the fact that conventional evaluation requests the hardware system to actually project the final results. Our key idea, motivated from our end-to-end problem formulation, is to use a reasonable surrogate to avoid such projection process so as to be setup-independent. Our method is evaluated carefully on the benchmark, and the results show that our end-to-end learning solution outperforms state-of-the-arts both qualitatively and quantitatively by a significant margin.</p>
+
+<hr />
+<h2 id="network-architecture">Network Architecture</h2>
+<p align="center"><img src="../images/compennet/net.png" alt="compennet" width="100%" /></p>
+
+<hr />
+<h2 id="qualitative-comparisons">Qualitative Comparisons</h2>
+<p align="center"><img src="https://raw.githubusercontent.com/BingyaoHuang/CompenNet/master/doc/img_1.png" alt="compennet" width="100%" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/BingyaoHuang/CompenNet/master/doc/img_2.png" alt="compennet" width="100%" /></p>
+
+<hr />
+<h2 id="related-work">Related Work</h2>
+<ul>
+  <li>Bingyao Huang and Haibin Ling. <strong>CompenNet++: End-to-end Full Projector Compensation</strong>. ICCV. 2019. [<a href="http://openaccess.thecvf.com/content_ICCV_2019/papers/Huang_CompenNet_End-to-End_Full_Projector_Compensation_ICCV_2019_paper.pdf">Paper</a>]  [<a href="https://www3.cs.stonybrook.edu/~hling/publication/CompenNet++_sup-high-res.pdf">Supp. material</a>]  [<a href="https://github.com/BingyaoHuang/CompenNet-plusplus">GitHub</a>] [<a href="/compennet++">Webpage</a>]</li>
+  <li>Anselm Grundhöfer and Daisuke Iwai. <strong>Robust, error-tolerant photometric projector compensation</strong>. IEEE TIP. 2015. [<a href="http://daisukeiwai.org/share/paper/Grundhoefer_TIP15.pdf">Paper</a>]</li>
+  <li>Phillip Isola, Jun-Yan Zhu, Tinghui Zhou, and Alexei A. Efros. <strong>Image-to-image translation with conditional adversarial networks</strong>. CVPR. 2017. [<a href="https://arxiv.org/abs/1611.07004">Paper</a>] [<a href="https://phillipi.github.io/pix2pix/">Webpage</a>]</li>
+  <li>Shree K. Nayar, Harish Peri, Michael D. Grossberg, and Peter N. Belhumeur. <strong>A projection system with radiometric compensation for screen imperfections</strong>. ICCV workshop on projector-camera systems (PROCAMS). 2003. [<a href="https://www1.cs.columbia.edu/CAVE/publications/pdfs/Nayar_PROCAMS03.pdf">Paper</a>] [<a href="https://www.cs.columbia.edu/CAVE/projects/pr_any/">Webpage</a>]</li>
+</ul>
+
+<hr />
+
+  </div>
+
+  
+
+  
+<div class="comments">
+	<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://https-bingyaohuang-github-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                            
+
+
+
+</article>
+    </div>
+
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          
+
+
+
+<a href="https://github.com/BingyaoHuang"><i class="svg-icon github"></i></a>
+
+
+
+
+
+
+
+
+        </footer>
+      </div>
+    </div>
+
+  <!--Allow for single $ for inline math!-->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { fonts: ["TeX"] }
+  });
+</script>
+
+<!--Load MathJax 2 from CDN-->
+<script type="text/javascript" 
+  	src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
