@@ -321,13 +321,6 @@ nav a {
   }
 }
 
-nav a.language-switch {
-  border: 1px solid #eee;
-  border-radius: 4px;
-  padding: 5px 9px;
-  white-space: nowrap;
-}
-
 .publication-item {
   margin: 0 0 1.25em;
   line-height: 1.45;
