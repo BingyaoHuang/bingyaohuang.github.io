@@ -393,6 +393,33 @@ nav a {
   padding-right: 10px;
 }
 
+.pub-links {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-top: 0.25rem;
+}
+
+.pub-link {
+  display: inline-block;
+  padding: 0.1rem 0.5rem;
+  border: 1px solid #b9cddd;
+  border-radius: 0.3rem;
+  background: #f2f7fb;
+  color: #245b78;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.pub-link:hover, .pub-link:focus {
+  background: #dcecf6;
+  border-color: #789fba;
+  color: #173e56;
+  text-decoration: none;
+}
+
 .wrapper-footer {
   margin-top: 50px;
   border-top: 1px solid #ddd;
