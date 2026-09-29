@@ -652,7 +652,7 @@ body.page-home #main > p:first-of-type {
 }
 
 body.page-home #main > ul {
-  list-style: none;
+  list-style: inside;
   padding: 0;
   margin: 0 0 1.5rem;
   display: grid;
@@ -660,10 +660,7 @@ body.page-home #main > ul {
 }
 
 body.page-home #main > ul li {
-  padding: .7rem .9rem;
-  background: #f8fbfd;
-  border-left: 3px solid #b6cfdf;
-  border-radius: 0 .35rem .35rem 0;
+  padding: .2rem .9rem;
 }
 
 body.page-home #main > table {
