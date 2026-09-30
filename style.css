@@ -790,6 +790,227 @@ body.page-data .data-intro h1 {
   background-color: #eee;
 }
 
+/* Article layouts share the site's masthead and reading surface. */
+body.page-blog #main:has(.article-page) {
+  padding: 0;
+  overflow: hidden;
+}
+
+.article-header {
+  padding: 2rem 3rem 1.8rem;
+  border-bottom: 1px solid #dce6ed;
+  background: linear-gradient(135deg, #edf5fa, #fbfdff);
+}
+
+.article-back {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  color: #477089;
+  font-size: .85rem;
+  font-weight: 600;
+}
+
+.article-eyebrow {
+  margin: 0 0 .5rem;
+  color: #477f9e;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.article-header h1 {
+  max-width: 28ch;
+  margin: 0;
+  color: #173e56;
+  font-size: clamp(1.8rem, 3.5vw, 2.65rem);
+  font-weight: 650;
+  line-height: 1.18;
+  letter-spacing: -.025em;
+}
+
+.article-meta {
+  margin: 1rem 0 0;
+  color: #607b8d;
+  font-size: .9rem;
+}
+
+.article-meta span {
+  padding: 0 .45rem;
+}
+
+.article-content {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2rem 2.5rem 1rem;
+  font-size: 1rem;
+  line-height: 1.8;
+  text-align: left;
+  overflow-wrap: break-word;
+}
+
+.article-content p {
+  margin: 1.1rem 0;
+}
+
+.article-content h2, .article-content h3 {
+  margin: 2.3rem 0 .9rem;
+  color: #214f6b;
+  font-weight: 600;
+  line-height: 1.3;
+  scroll-margin-top: 1rem;
+}
+
+.article-content h2 {
+  padding-bottom: .65rem;
+  border-bottom: 1px solid #dce6ed;
+  font-size: 1.5rem;
+}
+
+.article-content h3 {
+  font-size: 1.25rem;
+}
+
+.article-content hr {
+  margin: 2rem 0;
+  border: 0;
+  border-top: 1px solid #e2ebf0;
+}
+
+.article-content ul, .article-content ol {
+  margin: 1.2rem 0;
+}
+
+.article-content li {
+  margin: .4rem 0;
+}
+
+.article-content > ul:first-of-type {
+  padding: 1rem 1.4rem 1rem 2.5rem;
+  background: #f3f8fb;
+  border: 1px solid #dce6ed;
+  border-radius: .6rem;
+}
+
+.article-content .article-authors {
+  margin: 0 0 .3rem;
+  font-size: 1.06rem;
+  font-weight: 600;
+}
+
+.article-content .article-venue {
+  margin: 0 0 .7rem;
+  color: #607b8d;
+  font-size: .92rem;
+}
+
+.article-resources {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+  padding-bottom: 1rem;
+}
+
+.article-resources a {
+  padding: .42rem .8rem;
+  border: 1px solid #b9cddd;
+  border-radius: .4rem;
+  background: #f2f7fb;
+  color: #245b78;
+  font-size: .88rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.article-resources a:hover, .article-resources a:focus {
+  background: #dcecf6;
+  border-color: #789fba;
+}
+
+.article-content a:focus-visible, .article-footer a:focus-visible, .article-back:focus-visible {
+  outline: 2px solid #477f9e;
+  outline-offset: 3px;
+}
+
+.article-content img {
+  height: auto;
+  border-radius: .4rem;
+}
+
+.article-content pre {
+  margin: 0;
+  white-space: pre;
+}
+
+.article-content .highlight {
+  padding: 1.1rem 1.25rem;
+  border: 1px solid #d8e4eb;
+  border-radius: .6rem;
+  background: #f4f7fa;
+  box-shadow: none;
+  line-height: 1.6;
+}
+
+.article-content .highlight .n, .article-content .highlight .p, .article-content .highlight .nn {
+  color: #435467;
+}
+
+.article-content .highlight .k, .article-content .highlight .o {
+  color: #626f00;
+}
+
+.article-content p > code, .article-content li > code {
+  padding: .12em .3em;
+  border-radius: .2rem;
+  background: #eef3f7;
+  font-size: .88em;
+}
+
+.article-content .MathJax_Display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: .5rem 0;
+}
+
+.article-content .video_wrapper {
+  width: 100%;
+}
+
+.article-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0 3rem;
+  padding: 1.3rem 0 1.6rem;
+  border-top: 1px solid #dce6ed;
+  font-size: .9rem;
+  font-weight: 600;
+}
+
+@media (max-width: 650px) {
+  .article-header {
+    padding: 1.5rem 1.1rem;
+  }
+  .article-content {
+    padding: 1.25rem 1.1rem;
+    font-size: .95rem;
+    line-height: 1.75;
+  }
+  .article-content h2 {
+    font-size: 1.3rem;
+  }
+  .article-content h3 {
+    font-size: 1.15rem;
+  }
+  .article-content img[width="60%"], .article-content img[width="80%"] {
+    width: 100%;
+  }
+  .article-footer {
+    margin: 0 1.1rem;
+    font-size: .85rem;
+  }
+}
+
 footer {
   padding: 20px 0;
   text-align: center;

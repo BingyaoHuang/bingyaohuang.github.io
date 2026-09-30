@@ -77,7 +77,7 @@
   </head>
 
   
-  <body class="page-standard">
+  <body class="page-blog">
     <div class="wrapper-masthead">
       <div id="site_header" class="container">
         <header class="masthead clearfix">
@@ -90,7 +90,7 @@
 
           <nav>
             <a href="/" >About</a>
-            <a href="/blog" >Blog</a>
+            <a href="/blog" class="is-active" aria-current="page">Blog</a>
             <a href="/data" >Data</a>
             <!-- <a href="/about">About</a> -->
           </nav>
@@ -99,10 +99,14 @@
     </div>
 
     <div id="main" role="main" class="container">
-      <article class="post">
-  <h1 class="post_title">Calibration of a Kinect-Projector Pair</h1>
-
-  <div class="entry">
+      <article class="article-page">
+  <header class="article-header">
+    <a class="article-back" href="/blog">&larr; All articles</a>
+    <p class="article-eyebrow">Tutorial</p>
+    <h1 id="article-title">Calibration of a Kinect-Projector Pair</h1>
+    <p class="article-meta">Bingyao Huang <span aria-hidden="true">&middot;</span> Posted <time datetime="2018-03-04T00:00:00+08:00">March 4, 2018</time></p>
+  </header>
+  <div class="entry article-content">
     <p align="center"><img src="../images/calibration/capture.gif" alt="capture" width="60%" /></p>
 
 <ul>
@@ -271,11 +275,10 @@ $\bar{\mathbf{x}} = \mathbf{C}\mathbf{P}^\text{3d}$, where $\mathbf{C} = \mathbf
 <hr />
 
   </div>
-
-  <div class="date">
-    Written on March  4, 2018
-  </div>
-
+  <footer class="article-footer">
+    <a href="/blog">&larr; More articles</a>
+    <a href="#article-title">Back to top &uarr;</a>
+  </footer>
   
 <div class="comments">
 	<div id="disqus_thread"></div>
@@ -303,6 +306,8 @@ s.setAttribute('data-timestamp', +new Date());
 
 
 </article>
+
+
     </div>
 
     <div class="wrapper-footer">
