@@ -58,11 +58,11 @@
   </head>
 
   
-  <body class="page-blog">
+  <body class="page-projects">
     <div class="wrapper-masthead">
       <div id="site_header" class="container">
         <header class="masthead clearfix">
-          <a href="/" class="site-avatar"><img src="https://avatars2.githubusercontent.com/u/6914041?s=460&v=4" alt="Bingyao Huang" /></a>
+          <a href="/" class="site-avatar"><img src="/images/avatar.jpg" alt="Bingyao Huang" /></a>
 
           <div class="site-info">
             <h1 class="site-name"><a href="/">Bingyao Huang</a></h1>
@@ -73,9 +73,9 @@
             <a href="/" >Home</a>
             <a href="/research/" >Research</a>
             <a href="/publications/" >Publications</a>
+            <a href="/projects/" class="is-active" aria-current="page">Projects</a>
+            <a href="/data/" >Datasets</a>
             <a href="/service/" >Service</a>
-            <a href="/blog" class="is-active" aria-current="page">Blog</a>
-            <a href="/data" >Data</a>
             <!-- <a href="/about">About</a> -->
           </nav>
         </header>
@@ -83,9 +83,10 @@
     </div>
 
     <div id="main" role="main" class="container">
-      <article class="article-page">
+      
+<article class="article-page">
   <header class="article-header">
-    <a class="article-back" href="/blog">&larr; All articles</a>
+    <a class="article-back" href="/projects/">&larr; All projects</a>
     <p class="article-eyebrow">Tutorial</p>
     <h1 id="article-title">Calibration of a Kinect-Projector Pair</h1>
     <p class="article-meta">Bingyao Huang <span aria-hidden="true">&middot;</span> Posted <time datetime="2018-03-04T00:00:00+08:00">March 4, 2018</time></p>
@@ -101,22 +102,22 @@
   <li><a href="#projector-and-kinect-depth-camera-extrinsics">Projector and Kinect depth camera extrinsics</a></li>
 </ul>
 
-<p>We want to combine Microsoft Kinect and a projector to create cool <a href="http://genekogan.com/works/kinect-projector-toolkit/">Augmented Reality (AR) applications</a>, one prerequisite is system calibration. Existing methods, such as <a href="http://rgbdemo.org/index.php/Documentation/TutorialProjectorKinectCalibration">RGBDdemo</a> and <a href="https://github.com/genekogan/KinectProjectorToolkit">KinectProjectorToolkit</a> either requires printed checkerboard patterns or a large room to calibrate Kinect depth/color cameras and a projector.</p>
+<p>Combining a Microsoft Kinect with a projector enables <a href="http://genekogan.com/works/kinect-projector-toolkit/">augmented reality (AR) applications</a>. This requires system calibration. Existing methods, such as <a href="http://rgbdemo.org/index.php/Documentation/TutorialProjectorKinectCalibration">RGBDdemo</a> and <a href="https://github.com/genekogan/KinectProjectorToolkit">KinectProjectorToolkit</a>, require either printed checkerboard patterns or a large room to calibrate the Kinect depth and color cameras and the projector.</p>
 
-<p>In most simple AR applications, the relative rotation and translation between the Kinect and the projector are fixed. As shown below, we bind them such that their FOVs overlap.</p>
+<p>In many AR applications, the relative rotation and translation between the Kinect and the projector are fixed. As shown below, we mount them together so that their fields of view (FOVs) overlap.</p>
 
 <p align="center"><img src="../images/calibration/setup.jpg" alt="setup" width="60%" /></p>
 
-<p>In this article, we show that the system can be calibrated using  <a href="https://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html#calibratecamera">Zhang’s method</a> without a printed checkerboard pattern or a large room. Instead, we <strong>project</strong> a checkerboard pattern to a white flat wall, then move the bound  Kinect-projector pair to capture mages from at least three different poses, as shown in the teaser image.</p>
+<p>In this tutorial, we calibrate the system using <a href="https://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html#calibratecamera">Zhang’s method</a> without a printed checkerboard pattern or a large room. We <strong>project</strong> a checkerboard pattern onto a flat white wall, then move the mounted Kinect-projector pair to capture images from at least three different poses, as shown in the demonstration above.</p>
 
-<p>In the rest of the article, we focus on calibrating the <strong>intrinsic parameters of the projector</strong> and the <strong>extrinsic parameters between the projector and the Kinect depth camera</strong>. The intrinsics of the Kinect color/depth cameras can either be obtained from Kinect Windows SDK or calibrated using a printed checkerboard.</p>
+<p>The rest of this tutorial focuses on calibrating the <strong>intrinsic parameters of the projector</strong> and the <strong>extrinsic parameters between the projector and the Kinect depth camera</strong>. The intrinsics of the Kinect color and depth cameras can be obtained from the Kinect for Windows SDK or calibrated using a printed checkerboard.</p>
 
 <h3 id="projected-checkerboard-image">Projected checkerboard image</h3>
 
 <p>We first generate a checkerboard image pattern using OpenCV:</p>
 
 <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Mat</span> <span class="nf">generateCheckerboardImg</span><span class="p">(</span><span class="n">Size</span> <span class="n">imgSize</span><span class="p">,</span> <span class="n">Size</span> <span class="n">boardSize</span><span class="p">,</span> <span class="n">vector</span> <span class="o">&lt;</span> <span class="n">Point2f</span> <span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">cbPts2d</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kt">int</span> <span class="n">offset</span> <span class="o">=</span> <span class="mi">50</span><span class="p">;</span> <span class="c1">// opencv requires white boarders around checkerboard pattern</span>
+  <span class="kt">int</span> <span class="n">offset</span> <span class="o">=</span> <span class="mi">50</span><span class="p">;</span> <span class="c1">// OpenCV requires white borders around the checkerboard pattern</span>
 
   <span class="c1">// checkerboard image</span>
   <span class="n">Mat</span> <span class="n">imgCheckerboard</span><span class="p">(</span><span class="n">imgSize</span><span class="p">,</span> <span class="n">CV_8UC3</span><span class="p">,</span> <span class="n">Scalar</span><span class="o">::</span><span class="n">all</span><span class="p">(</span><span class="mi">255</span><span class="p">));</span>
@@ -160,11 +161,11 @@
 
 <p>where $\mathbf{q}_i = [ u_i, v_i ]$ is the 2D coordinate of the $i^\text{th}$ checkerboard corner in the projector image space and <em>N = <code class="highlighter-rouge">boardSize.width</code>*<code class="highlighter-rouge">boardSize.height</code></em>.</p>
 
-<p>The generated checkerboard image is shown below, since OpenCV <a href="https://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html#findchessboardcorners">findChessboardCorners</a> requires <strong>white boarders</strong> around the checkerboard pattern, we need to add offset to both x and y directions</p>
+<p>The generated checkerboard image is shown below. OpenCV’s <a href="https://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html#findchessboardcorners">findChessboardCorners</a> requires <strong>white borders</strong> around the checkerboard pattern, so we add an offset in both the x and y directions.</p>
 
 <p align="center"><img src="../images/calibration/checkerboard.png" alt="checkerboard" width="60%" /></p>
 
-<p>Then we project this checkerboard to a white flat wall and in the meanwhile, capture a depth and a color frame of the projected checkerboard pattern using the Kinect. Note we need at least 3 different poses for <a href="https://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html#calibratecamera">Zhang’s method</a>.</p>
+<p>We project this checkerboard onto a flat white wall and capture depth and color frames using the Kinect. <a href="https://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html#calibratecamera">Zhang’s method</a> requires at least three different poses.</p>
 
 <h3 id="getting-the-3d-2d-coordinates-of-the-checkerboard-corners">Getting the 3D-2D coordinates of the checkerboard corners</h3>
 <p>Given a Kinect-captured <strong>color</strong> checkerboard image, we first extract the 2D checkerboard corners $\mathbf{P}^{\text{2d}}_{\text{c}}$ using OpenCV’s <code class="highlighter-rouge">findChessboardCorners</code>. Then $\mathbf{P}^{\text{2d}}_{\text{c}}$’s corresponding 3D coordinates in the Kinect <strong>depth camera’s view space</strong> can be queried from the Kinect-captured <strong>depth</strong> image using $\mathbf{P}^{\text{2d}}_{\text{c}}$ and <a href="https://msdn.microsoft.com/en-us/library/windowspreview.kinect.coordinatemapper.aspx">Kinect Windows SDK v2.0: CoordinateMapper</a>:</p>
@@ -179,11 +180,11 @@
 
 <p>Since $\mathbf{P}^{\text{2d}}_{\text{p}}$ is given by <code class="highlighter-rouge">generateCheckerboardImg</code>, now we have the 3D-2D point pairs ($\mathbf{P}^\text{3d}$ and $\mathbf{P}^{\text{2d}}_{\text{p}}$) to calibrate the projector intrinsics and extrinsics. But if you send the point pairs directly to OpenCV’s <a href="https://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html#calibratecamera">calibrateCamera</a>, it will raise an exception, because this function requires that the Z values of <code class="highlighter-rouge">objectPoints</code> to be zeros, i.e., <a href="https://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html#calibratecamera">Zhang’s method</a> assumes all <code class="highlighter-rouge">objectPoints</code> reside on the XY plane of checkerboard’s object space, thus the 3x4 projection matrix $\mathbf{K[RT]}$  can be reduced to a 3x3 homography $\mathbf{H}$.</p>
 
-<p>If we plot $\mathbf{P}^\text{3d}$ we can see that although they reside on the same plane, the Z values are nonzero, because $\mathbf{P}^\text{3d}$ are defined in the Kinect <strong>depth camera’s view space</strong> rather than the projected checkerboard’s object space.</p>
+<p>The plotted points $\mathbf{P}^\text{3d}$ lie on a plane, but their Z coordinates are nonzero because they are expressed in the Kinect <strong>depth camera’s coordinate system</strong> rather than the projected checkerboard’s coordinate system.</p>
 
 <p align="center"><img src="../images/calibration/pts3d_original.png" alt="pts3d_original" width="60%" /></p>
 
-<p>One may ask <em>can we just generate the 3D coordinates of these checkerboard corners like what we did to the conventional printed checkerboard?</em> The answer is no, unlike a printed checkerboard, the projected one is distorted and skewed due to projector’s perspective projection. The distortion varies each time we change the projector-Kinect pose in respect to the wall. So each projected checkerboard image on the wall has a different unknown scale and shape (e.g., a diamond).</p>
+<p>For a printed checkerboard, the 3D corner coordinates are known from the board’s geometry. A projected checkerboard is distorted by perspective projection, and its geometry changes with the pose of the projector-Kinect pair relative to the wall. Each projected pattern therefore has an unknown scale and shape.</p>
 
 <h3 id="rotate-3d-points-using-eigenvectors">Rotate 3D points using eigenvectors</h3>
 <p>One workaround is to estimate a rotation and translation between the Kinect depth camera’s view space and the checkerboard’s object space and then transform $\mathbf{P}^\text{3d}$ to the canonical view, so that they reside in the Kinect depth camera’s XY plane (centered at the origin). This needs the checkerboard plane parameters. Luckily, since we know that $\mathbf{P}^\text{3d}$ has a planar shape, its parameters can be estimated using one the three methods below:</p>
@@ -225,7 +226,7 @@ $\bar{\mathbf{x}} = \mathbf{C}\mathbf{P}^\text{3d}$, where $\mathbf{C} = \mathbf
 <p>Finally, we have $\mathbf{P}^{\text{3d}}_{\text{obj}}$, the 3D coordinates in the checkerboard’s object space and $\mathbf{P}^{\text{2d}}_{\text{p}}$, the corresponding 2D coordinates in the projector image space  to calibrate the projector intrinsics using <a href="https://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html#calibratecamera">calibrateCamera</a>.</p>
 
 <h3 id="projector-and-kinect-depth-camera-extrinsics">Projector and Kinect depth camera extrinsics</h3>
-<p>We can also obtain the relative rotation and translation $\mathbf{RT}$ between the Kinect depth camera and the project by sending the calibrated projector intrinsics, the known <a href="https://msdn.microsoft.com/en-us/library/windowspreview.kinect.coordinatemapper.aspx">Kinect depth camera intrinsics</a>, the 3D coordinates of checkerboard corners $\mathbf{P}^{\text{3d}}_{\text{obj}}$, the 2D coordinates of checkerboard corners in projector image $\mathbf{P}^{\text{2d}}_{\text{p}}$ and the 2D checkerboard corners in the Kinect depth camera image $\mathbf{P}^\text{2d}_\text{d}$ to OpenCV function <a href="https://docs.opencv.org/3.0-beta/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html#stereocalibrate">stereoCalibrate</a>.</p>
+<p>We can also obtain the relative rotation and translation $\mathbf{RT}$ between the Kinect depth camera and the projector by passing the calibrated projector intrinsics, the known <a href="https://msdn.microsoft.com/en-us/library/windowspreview.kinect.coordinatemapper.aspx">Kinect depth camera intrinsics</a>, the 3D checkerboard corners $\mathbf{P}^{\text{3d}}_{\text{obj}}$, the 2D corners in the projector image $\mathbf{P}^{\text{2d}}_{\text{p}}$, and the 2D corners in the Kinect depth camera image $\mathbf{P}^\text{2d}_\text{d}$ to OpenCV’s <a href="https://docs.opencv.org/3.0-beta/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html#stereocalibrate">stereoCalibrate</a>.</p>
 
 <p>The calibrated projector intrinsic projection matrix</p>
 
@@ -258,9 +259,10 @@ $\bar{\mathbf{x}} = \mathbf{C}\mathbf{P}^\text{3d}$, where $\mathbf{C} = \mathbf
 
 <hr />
 
+    
   </div>
   <footer class="article-footer">
-    <a href="/blog">&larr; More articles</a>
+    <a href="/projects/">&larr; More projects</a>
     <a href="#article-title">Back to top &uarr;</a>
   </footer>
   

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- <title>Intelligent Spatial AR – Bingyao Huang – College of Computer and Information Science <br> Southwest University, China.</title> -->
+    <title>Intelligent Spatial AR – Bingyao Huang</title>
+    <!-->    <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+    
+    <meta name="description" content="College of Computer and Information Science <br> Southwest University, China.">
+    <meta property="og:description" content="College of Computer and Information Science <br> Southwest University, China." />
+    
+    <meta name="author" content="Bingyao Huang" />
+
+    
+    <meta property="og:title" content="Intelligent Spatial AR" />
+    <meta property="twitter:title" content="Intelligent Spatial AR" />
+    
+<!-->
+	  
+<script src="/analytics.js" defer
+  data-measurement-id="G-WXYVJRQYVR"
+  data-require-consent="false"
+  data-debug="false"></script>
+
+
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Intelligent Spatial AR | Bingyao Huang</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="Intelligent Spatial AR" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="College of Computer and Information Science Southwest University, China." />
+<meta property="og:description" content="College of Computer and Information Science Southwest University, China." />
+<link rel="canonical" href="https://bingyaohuang.github.io/projects/intelligent-spatial-ar/" />
+<meta property="og:url" content="https://bingyaohuang.github.io/projects/intelligent-spatial-ar/" />
+<meta property="og:site_name" content="Bingyao Huang" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"College of Computer and Information Science Southwest University, China.","headline":"Intelligent Spatial AR","url":"https://bingyaohuang.github.io/projects/intelligent-spatial-ar/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Bingyao Huang - College of Computer and Information Science <br> Southwest University, China." href="/feed.xml" />
+  
+    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+       
+  </head>
+
+  
+  <body class="page-projects">
+    <div class="wrapper-masthead">
+      <div id="site_header" class="container">
+        <header class="masthead clearfix">
+          <a href="/" class="site-avatar"><img src="/images/avatar.jpg" alt="Bingyao Huang" /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="/">Bingyao Huang</a></h1>
+            <p class="site-description">College of Computer and Information Science<br>Southwest University, China. <br>bhuang AT swu DOT edu DOT cn</p>
+          </div>
+
+          <nav>
+            <a href="/" >Home</a>
+            <a href="/research/" >Research</a>
+            <a href="/publications/" >Publications</a>
+            <a href="/projects/" class="is-active" aria-current="page">Projects</a>
+            <a href="/data/" >Datasets</a>
+            <a href="/service/" >Service</a>
+            <!-- <a href="/about">About</a> -->
+          </nav>
+        </header>
+      </div>
+    </div>
+
+    <div id="main" role="main" class="container">
+      
+<article class="article-page" data-project-id="intelligent-spatial-ar">
+  <header class="article-header">
+    <a class="article-back" href="/projects/">&larr; All projects</a>
+    <p class="article-eyebrow">Research project</p>
+    <h1 id="article-title">Intelligent Spatial AR</h1>
+    <p class="project-goal">Generate surface-aware projected content and distinguish its meaning from the physical scene it augments.</p>
+  </header>
+  <div class="entry article-content">
+    
+<h2 id="the-problem">The problem</h2>
+
+<p>Spatial Augmented Reality projects digital content directly onto physical scenes. Visual fidelity is only part of an intelligent system: it must also choose suitable content and understand which visible information belongs to the projection and which belongs to the real scene. Surface texture and projector brightness constrain generation, while their visual mixture creates ambiguity for scene interpretation.</p>
+
+<figure class="project-figure">
+  
+  <video autoplay="" muted="" loop="" playsinline="" controls="" preload="metadata" aria-label="Surface-aware projection generation and projection-aware semantic scene understanding."><source src="/images/research-teasers/intelligent-sar.webm" type="video/webm" /><source src="/images/research-teasers/intelligent-sar.mp4" type="video/mp4" />Surface-aware projection generation and projection-aware semantic scene understanding.</video>
+  
+  <figcaption>Intelligent SAR connects language-guided generation with separate understanding of projected and physical content.</figcaption>
+</figure>
+
+<h2 id="from-surface-aware-generation-to-semantic-understanding">From surface-aware generation to semantic understanding</h2>
+
+<ol class="project-development project-development-2" aria-label="Development of Intelligent Spatial AR">
+  
+  <li>
+    <h3>1. Generate content for the surface</h3>
+    <p>Turn a language prompt into projected stylization while accounting for surface texture and projector limits.</p>
+    <div class="project-phase-papers"><a href="#surface-generation">LAPIG (TVCG'25)</a></div>
+  </li>
+  
+  <li>
+    <h3>2. Understand projection and scene separately</h3>
+    <p>Separate physical and projected layers, then describe each with projection-aware captioning.</p>
+    <div class="project-phase-papers"><a href="#projection-understanding">ProCap (IEEE VR'26)</a></div>
+  </li>
+  
+</ol>
+
+<h3 id="surface-generation">Generating a style the surface can display</h3>
+
+<p><strong>LAPIG</strong> takes a language prompt and generates a projector image that changes the style of a textured surface. Simply generating a desired image and compensating it can leave saturation and texture artifacts because the projector cannot produce every requested appearance.</p>
+
+<p>Projection surface adaptation addresses this constraint during generation. Learned compensation and project-and-capture models make it possible to optimize the image without physically projecting every candidate. Content and saturation losses guide the result toward the requested style while reducing surface-related artifacts. The generated image is then projected to produce the surface stylization.</p>
+
+<p>The system therefore couples semantic intent with the physical display process: the surface and projector influence what should be generated, rather than appearing only as a final correction step.</p>
+
+<h3 id="projection-understanding">Distinguishing the projection from the physical scene</h3>
+
+<p><strong>ProCap</strong> studies the complementary interpretation problem. A standard vision-language model may describe projected content as if it were part of the physical scene. ProCap separates virtual and physical layers through automated segmentation, then uses region-aware retrieval to reduce ambiguous semantic context caused by projection distortion.</p>
+
+<p>The framework produces descriptions of the physical scene and projected content separately. Its RGBP benchmark and dual-captioning evaluation support this distinction explicitly, with annotations for the two layers. The source code, models, and dataset are linked in the resources below.</p>
+
+<h2 id="system-and-demonstrations">System and demonstrations</h2>
+
+<p>The two systems address different sides of the interaction loop. LAPIG connects a user prompt to surface-aware image generation and physical projection. ProCap connects a captured augmented scene to separated physical and projection descriptions. They share the need to account for the real surface and the digital layer, while providing different generation and understanding pipelines.</p>
+
+<p>The demonstration above introduces both tasks. The individual project websites provide the detailed generation examples, semantic comparisons, and experimental results.</p>
+
+<section class="project-papers" aria-labelledby="project-papers-title">
+  <h2 id="project-papers-title">Papers and implementations</h2>
+  <p>These papers document the methods and developments described above. Their authors, publication details, and available resources are listed together here.</p>
+  
+<div class="project-publication" data-publication-key="deng2025lapig">
+  <p><a href="https://yuchendeng.com/LAPIG/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="deng2025lapig" data-resource-action="project_page" data-research-area="spatial-augmented-reality"><strong>LAPIG: Language Guided Projector Image Generation with Surface Adaptation and Stylization</strong></a> <br /> Yuchen Deng, Haibin Ling, <strong>Bingyao Huang</strong> <br /> IEEE Transactions on Visualization and Computer Graphics (<strong>TVCG</strong>), 2025 <br /> Also in IEEE Conference on Virtual Reality and 3D User Interfaces (<strong>IEEE VR</strong>), 2025 <br /> <span class="pub-links"><a class="pub-link" href="https://doi.org/10.1109/TVCG.2025.3549859" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="deng2025lapig" data-resource-action="paper" data-research-area="spatial-augmented-reality">Paper</a> <a class="pub-link" href="https://yuchendeng.com/LAPIG/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="deng2025lapig" data-resource-action="project_page" data-research-area="spatial-augmented-reality">Project</a> <a class="pub-link" href="https://github.com/Yu-chen-Deng/LAPIG" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="deng2025lapig" data-resource-action="code" data-research-area="spatial-augmented-reality">Code</a></span></p>
+
+</div>
+
+<div class="project-publication" data-publication-key="cao2026procap">
+  <p><a href="https://zimocao.github.io/ProCap/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="cao2026procap" data-resource-action="project_page" data-research-area="spatial-augmented-reality"><strong>ProCap: Projection-Aware Captioning for Spatial Augmented Reality</strong></a> <br /> Zimo Cao, Yuchen Deng, Haibin Ling, <strong>Bingyao Huang</strong> <br /> IEEE Conference on Virtual Reality and 3D User Interfaces (<strong>IEEE VR</strong>), 2026 <br /> <span class="pub-links"><a class="pub-link" href="https://arxiv.org/abs/2604.00912" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="cao2026procap" data-resource-action="paper" data-research-area="spatial-augmented-reality">Paper</a> <a class="pub-link" href="https://zimocao.github.io/ProCap/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="cao2026procap" data-resource-action="project_page" data-research-area="spatial-augmented-reality">Project</a> <a class="pub-link" href="https://github.com/ZimoCao/ProCap" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="cao2026procap" data-resource-action="code" data-research-area="spatial-augmented-reality">Code</a></span></p>
+
+</div>
+
+  
+  <h3>Datasets</h3>
+  <ul class="project-datasets"><li><a href="https://huggingface.co/datasets/yuchendeng/RGBP" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="cao2026procap" data-resource-action="dataset" data-research-area="spatial-augmented-reality">ProCap dataset</a></li></ul>
+  
+</section>
+
+<h2 id="related-work">Related work</h2>
+
+<p>Projector Compensation provides methods for controlling captured appearance on real surfaces. Differentiable &amp; 3D ProCam Systems supplies forward models of projection, surface geometry, and light transport. These physical foundations support intelligent SAR, where the goals also involve language, content generation, and semantic distinction.</p>
+
+    <section class="project-connections" aria-labelledby="project-connections-title">
+  <h2 id="project-connections-title">Related research topics and projects</h2>
+  <p class="project-directions">Research topics: <a href="/research/#procam-spatial-ar">ProCam &amp; SAR</a></p>
+  <ul class="project-related-families"><li><a href="/compennet">Projector Compensation</a><p>Project a desired appearance onto non-planar, textured surfaces by compensating for geometric and photometric distortions.</p></li><li><a href="/projects/differentiable-3d-procams/">Differentiable &amp; 3D ProCam Systems</a><p>Build differentiable scene models that connect projector inputs, light transport, surface geometry, and captured appearance.</p></li></ul>
+</section>
+
+  </div>
+  <footer class="article-footer">
+    <a href="/projects/">&larr; More projects</a>
+    <a href="#article-title">Back to top &uarr;</a>
+  </footer>
+  
+<div class="comments">
+	<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://https-bingyaohuang-github-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                            
+
+
+
+</article>
+
+
+    </div>
+
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          
+
+
+
+<a href="https://github.com/BingyaoHuang"><i class="svg-icon github"></i></a>
+
+
+
+
+
+
+
+
+        </footer>
+      </div>
+    </div>
+
+  <!--Allow for single $ for inline math!-->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { fonts: ["TeX"] }
+  });
+</script>
+
+<!--Load MathJax 2 from CDN-->
+<script type="text/javascript" 
+  	src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>

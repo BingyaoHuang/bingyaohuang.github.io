@@ -57,7 +57,7 @@
     <div class="wrapper-masthead">
       <div id="site_header" class="container">
         <header class="masthead clearfix">
-          <a href="/" class="site-avatar"><img src="https://avatars2.githubusercontent.com/u/6914041?s=460&v=4" alt="Bingyao Huang" /></a>
+          <a href="/" class="site-avatar"><img src="/images/avatar.jpg" alt="Bingyao Huang" /></a>
 
           <div class="site-info">
             <h1 class="site-name"><a href="/">Bingyao Huang</a></h1>
@@ -68,9 +68,9 @@
             <a href="/" >Home</a>
             <a href="/research/" class="is-active" aria-current="page">Research</a>
             <a href="/publications/" >Publications</a>
+            <a href="/projects/" >Projects</a>
+            <a href="/data/" >Datasets</a>
             <a href="/service/" >Service</a>
-            <a href="/blog" >Blog</a>
-            <a href="/data" >Data</a>
             <!-- <a href="/about">About</a> -->
           </nav>
         </header>
@@ -84,34 +84,35 @@
 <article class="research-page" lang="en">
   <header class="research-intro" id="research-top">
     <h1>Research</h1>
-    <div class="research-intro-text"><p>My research lies at the intersection of <strong>computer vision, computational imaging, and AR/VR/MR</strong>. A central theme is modeling how light, geometry, materials, imaging devices, and learned representations interact with the physical world. I develop projector-camera and <strong>Spatial Augmented Reality (SAR)</strong> systems that can perceive, simulate, and modify real-world appearance, together with related methods in 3D vision, physical-world visual security, and interdisciplinary visual computing.</p>
+    <div class="research-intro-text"><p>My research focuses on <strong>computer vision, computational imaging, and AR/VR/MR</strong>. I study how light, geometry, materials, imaging devices, and learned representations interact with the physical world. I develop projector-camera (ProCam) and <strong>spatial augmented reality (SAR)</strong> systems that can perceive, simulate, and modify the appearance of real scenes. Related research addresses 3D vision, visual privacy and security, and interdisciplinary visual computing.</p>
 </div>
-    <p class="research-bridge">These programs share a focus on physical image formation: using it to control appearance, recover scene structure, understand visual vulnerabilities, and interpret specialized observations.</p>
+    <p class="research-bridge">This research uses physical image formation to control appearance, recover scene structure, study privacy and security risks, and analyze scientific and biomedical images.</p>
   </header>
-  <nav class="research-index" aria-label="Research directions">
+  <nav class="research-index" aria-label="Research topics">
     <a href="#procam-spatial-ar">ProCam &amp; SAR</a><a href="#3d-vision-computational-imaging">3D Vision &amp; Computational Imaging</a><a href="#visual-privacy-security">Visual Privacy &amp; Security</a><a href="#scientific-biomedical-vision">Scientific &amp; Biomedical Visual Computing</a>
   </nav>
   
   <section class="research-direction" id="procam-spatial-ar" aria-labelledby="procam-spatial-ar-title">
     <header class="research-direction-header">
         
-        <h2 id="procam-spatial-ar-title"><span class="research-number" aria-hidden="true">01.</span> Projector-Camera Systems &amp; SAR</h2>
-        <p class="research-question"><span class="research-question-label">Research question</span>How can projected light become a reliable computational interface between digital content and arbitrary physical environments?</p>
+        <h2 id="procam-spatial-ar-title"><span class="research-number" aria-hidden="true">1.</span> Projector-Camera Systems (ProCams) &amp; Spatial Augmented Reality (SAR)</h2>
+        <p class="research-question"><span class="research-question-label">Research question</span>How can projected light become a reliable computational interface between digital content and real-world environments?</p>
     </header>
-    <div class="research-summary"><p>We study <strong>projector-camera systems</strong> as a computational interface between digital content and the physical world. Our work spans <strong>geometric and radiometric calibration</strong>, projector compensation, relighting and project-and-capture simulation, and increasingly general scene representations. It has progressed from learning-based photometric and full compensation to <strong>unified geometric-photometric modeling</strong>, efficient and <strong>setup-independent compensation</strong>, and physically based, 3D-aware ProCam simulation. Recent work extends SAR from visual fidelity toward intelligent interaction through <strong>language-guided projection</strong> and <strong>projection-aware scene understanding</strong>.</p>
+    <div class="research-summary"><p>We study <strong>projector-camera systems</strong> as a computational interface for modifying and augmenting the appearance of the physical world. Our work spans <strong>projector compensation</strong>, relighting, project-and-capture modeling, and <strong>Spatial Augmented Reality (SAR)</strong>. It has progressed from learning-based photometric compensation to <strong>unified geometric-photometric modeling</strong>, efficient and setup-independent deployment, physically based and <strong>3D-aware ProCam simulation</strong>, and <strong>intelligent SAR</strong>. Across these stages, the central goal is to determine how projected light should be generated and adapted so that digital content can interact reliably with real surfaces, scenes, and users.</p>
 </div>
+    <nav class="research-projects" aria-label="Projects for Projector-Camera Systems (ProCams) &amp; Spatial Augmented Reality (SAR)"><strong>Explore projects:</strong> <a href="/compennet">Projector Compensation</a><a href="/projects/differentiable-3d-procams/">Differentiable &amp; 3D ProCam Systems</a><a href="/projects/intelligent-spatial-ar/">Intelligent Spatial AR</a></nav>
     
 <h3>Research trajectory</h3>
 <figure class="research-figure research-trajectory-diagram">
-  <figcaption>From learning-based compensation to unified, practical, physics-aware, and intelligent SAR systems.</figcaption>
+  <figcaption>Compensation → Unified ProCam Modeling → Practical Deployment → Physics/3D-Aware ProCams → Generalization → Intelligent SAR</figcaption>
   <ol class="trajectory-grid trajectory-flow trajectory-count-6" aria-label="Research trajectory">
     
     <li class="trajectory-stage">
-      <header><h4><span class="trajectory-number" aria-hidden="true">01.</span> Learning-based compensation</h4></header>
+      <header><h4><span class="trajectory-number" aria-hidden="true">1.</span> Learning-based compensation</h4></header>
       <div class="trajectory-media">
         
         
-        <video autoplay muted loop playsinline controls preload="auto" aria-label="Demonstration of learned projector compensation on physical surfaces."><source src="/images/research-teasers/learning-based-compensation.mp4" type="video/mp4">Demonstration of learned projector compensation on physical surfaces.</video>
+        <video autoplay muted loop playsinline controls preload="auto" aria-label="Demonstration of learned projector compensation on physical surfaces."><source src="/images/research-teasers/learning-based-compensation.webm" type="video/webm"><source src="/images/research-teasers/learning-based-compensation.mp4" type="video/mp4">Demonstration of learned projector compensation on physical surfaces.</video>
         
       </div>
       
@@ -119,17 +120,17 @@
       
         <a href="/compennet" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2019endtoend" data-resource-action="project_page" data-research-area="projector-compensation"><strong>CompenNet</strong> <span>(CVPR'19)</span></a>
       
-        <a href="/compennet++" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2019compennet++" data-resource-action="project_page" data-research-area="projector-compensation"><strong>CompenNet++</strong> <span>(ICCV'19)</span></a>
+        <a href="/compennet" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2019compennet++" data-resource-action="project_page" data-research-area="projector-compensation"><strong>CompenNet++</strong> <span>(ICCV'19)</span></a>
       
       </div>
     </li>
     
     <li class="trajectory-stage">
-      <header><h4><span class="trajectory-number" aria-hidden="true">02.</span> Unified ProCam modeling</h4></header>
+      <header><h4><span class="trajectory-number" aria-hidden="true">2.</span> Unified ProCam modeling</h4></header>
       <div class="trajectory-media">
         
         
-        <video autoplay muted loop playsinline controls preload="auto" aria-label="Unified projector-camera modeling and reconstruction demonstration."><source src="/images/research-teasers/unified-procam-modeling.mp4" type="video/mp4">Unified projector-camera modeling and reconstruction demonstration.</video>
+        <video autoplay muted loop playsinline controls preload="auto" aria-label="Unified projector-camera modeling and reconstruction demonstration."><source src="/images/research-teasers/unified-procam-modeling.webm" type="video/webm"><source src="/images/research-teasers/unified-procam-modeling.mp4" type="video/mp4">Unified projector-camera modeling and reconstruction demonstration.</video>
         
       </div>
       
@@ -141,7 +142,7 @@
     </li>
     
     <li class="trajectory-stage">
-      <header><h4><span class="trajectory-number" aria-hidden="true">03.</span> Efficient / practical compensation</h4></header>
+      <header><h4><span class="trajectory-number" aria-hidden="true">3.</span> Efficient / practical compensation</h4></header>
       <div class="trajectory-media">
         
         
@@ -151,17 +152,19 @@
       
       <div class="trajectory-papers">
       
-        <a href="https://arxiv.org/pdf/2008.00965.pdf" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2022endtoend" data-resource-action="paper" data-research-area="projector-compensation"><strong>CompenNeSt++</strong> <span>(TPAMI'22)</span></a>
+        <a href="/compennet" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2022endtoend" data-resource-action="project_page" data-research-area="projector-compensation"><strong>CompenNeSt++</strong> <span>(TPAMI'22)</span></a>
       
         <a href="https://ieeexplore.ieee.org/document/10458313" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="wang2024vicomp" data-resource-action="paper" data-research-area="projector-compensation"><strong>ViComp</strong> <span>(TVCG'24)</span></a>
       
         <a href="https://haibinling.github.io/publication/CompenHR.pdf" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="wang2023compenhr" data-resource-action="paper" data-research-area="projector-compensation"><strong>CompenHR</strong> <span>(IEEE VR'23)</span></a>
       
+        <a href="https://doi.org/10.1109/ICME59968.2025.11209810" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="chen2025compenrt" data-resource-action="paper" data-research-area="projector-compensation"><strong>CompenRT</strong> <span>(ICME'25)</span></a>
+      
       </div>
     </li>
     
     <li class="trajectory-stage">
-      <header><h4><span class="trajectory-number" aria-hidden="true">04.</span> Physics- and 3D-aware ProCams</h4></header>
+      <header><h4><span class="trajectory-number" aria-hidden="true">4.</span> Physics- and 3D-aware ProCams</h4></header>
       <div class="trajectory-media">
         
         
@@ -179,7 +182,7 @@
     </li>
     
     <li class="trajectory-stage">
-      <header><h4><span class="trajectory-number" aria-hidden="true">05.</span> Generalization / modern generative modeling</h4></header>
+      <header><h4><span class="trajectory-number" aria-hidden="true">5.</span> Generalization / modern generative modeling</h4></header>
       <div class="trajectory-media">
         
         
@@ -197,11 +200,11 @@
     </li>
     
     <li class="trajectory-stage">
-      <header><h4><span class="trajectory-number" aria-hidden="true">06.</span> Intelligent SAR</h4></header>
+      <header><h4><span class="trajectory-number" aria-hidden="true">6.</span> Intelligent SAR</h4></header>
       <div class="trajectory-media">
         
         
-        <video autoplay muted loop playsinline controls preload="auto" aria-label="Projection-aware and semantic spatial augmented reality demonstration."><source src="/images/research-teasers/intelligent-sar.mp4" type="video/mp4">Projection-aware and semantic spatial augmented reality demonstration.</video>
+        <video autoplay muted loop playsinline controls preload="auto" aria-label="Projection-aware and semantic spatial augmented reality demonstration."><source src="/images/research-teasers/intelligent-sar.webm" type="video/webm"><source src="/images/research-teasers/intelligent-sar.mp4" type="video/mp4">Projection-aware and semantic spatial augmented reality demonstration.</video>
         
       </div>
       
@@ -218,22 +221,18 @@
 </figure>
 
     <details class="research-selected">
-      <summary>Selected publications <span>(9)</span></summary>
+      <summary>Publications <span>(12)</span></summary>
       <ul class="research-publications">
-        <li class="research-publication" data-publication-key="huang2019endtoend">
-  <p><a href="/compennet" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2019endtoend" data-resource-action="project_page" data-research-area="projector-compensation"><strong>End-To-End Projector Photometric Compensation</strong></a> <br /> <strong>Bingyao Huang</strong>, Haibin Ling <br /> IEEE Conference on Computer Vision and Pattern Recognition (<strong>CVPR</strong>) (<strong>oral</strong>), 2019 <br /> <span class="pub-links"><a class="pub-link" href="https://doi.org/10.1109/CVPR.2019.00697" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2019endtoend" data-resource-action="paper" data-research-area="projector-compensation">Paper</a> <a class="pub-link" href="/compennet" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2019endtoend" data-resource-action="project_page" data-research-area="projector-compensation">Project</a> <a class="pub-link" href="https://github.com/BingyaoHuang/CompenNet" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2019endtoend" data-resource-action="code" data-research-area="projector-compensation">Code</a> <a class="pub-link" href="/data/#huang2019endtoend" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2019endtoend" data-resource-action="dataset" data-research-area="projector-compensation">Data</a> <a class="pub-link" href="https://openaccess.thecvf.com/content_CVPR_2019/supplemental/Huang_End-To-End_Projector_Photometric_CVPR_2019_supplemental.pdf" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2019endtoend" data-resource-action="supplementary" data-research-area="projector-compensation">Supplementary</a></span></p>
+        <li class="research-publication" data-publication-key="li2026sicomp">
+  <p><a href="https://hai-bo-li.github.io/SIComp/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="li2026sicomp" data-resource-action="project_page" data-research-area="projector-compensation"><strong>Setup-Independent Full Projector Compensation</strong></a> <br /> Haibo Li, Qingyue Deng, Jijiang Li, Haibin Ling, <strong>Bingyao Huang</strong> <br /> IEEE Transactions on Visualization and Computer Graphics (<strong>TVCG</strong>), 2026 <br /> Also in IEEE Conference on Virtual Reality and 3D User Interfaces (<strong>IEEE VR</strong>), 2026 (<a class="publication-award" href="https://ieeevr.org/2026/awards/conference-awards/#aa1">🏆Best Paper Award</a>) <br /> <span class="pub-links"><a class="pub-link" href="https://doi.org/10.1109/TVCG.2026.3680736" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="li2026sicomp" data-resource-action="paper" data-research-area="projector-compensation">Paper</a> <a class="pub-link" href="https://hai-bo-li.github.io/SIComp/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="li2026sicomp" data-resource-action="project_page" data-research-area="projector-compensation">Project</a> <a class="pub-link" href="https://github.com/hai-bo-li/SIComp" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="li2026sicomp" data-resource-action="code" data-research-area="projector-compensation">Code</a></span></p>
 
 </li>
-<li class="research-publication" data-publication-key="huang2021deprocams">
-  <p><a href="https://arxiv.org/pdf/2003.03040.pdf" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2021deprocams" data-resource-action="paper" data-research-area="projector-compensation"><strong>DeProCams: Simultaneous Relighting, Compensation and Shape Reconstruction for Projector-Camera Systems</strong></a> <br /> <strong>Bingyao Huang</strong>, Haibin Ling <br /> IEEE Transactions on Visualization and Computer Graphics (<strong>TVCG</strong>), 2021 <br /> Also in IEEE Conference on Virtual Reality and 3D User Interfaces (<strong>IEEE VR</strong>), 2021 (<a class="publication-award" href="https://ieeevr.org/2021/awards/conference-awards/#journal-best">🏆Best Journal Paper Award</a>) <br /> <span class="pub-links"><a class="pub-link" href="https://arxiv.org/pdf/2003.03040.pdf" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2021deprocams" data-resource-action="paper" data-research-area="projector-compensation">Paper</a> <a class="pub-link" href="https://github.com/BingyaoHuang/DeProCams" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2021deprocams" data-resource-action="code" data-research-area="projector-compensation">Code</a> <a class="pub-link" href="/data/#huang2021deprocams" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2021deprocams" data-resource-action="dataset" data-research-area="projector-compensation">Data</a> <a class="pub-link" href="https://drive.google.com/file/d/1kLYa51pW251Qg-OBMmdhcfn_b4GQZ1OV/view?usp=sharing" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2021deprocams" data-resource-action="supplementary" data-research-area="projector-compensation">Supplementary</a> <a class="pub-link" href="https://youtu.be/pQ8k4AOhwlU" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2021deprocams" data-resource-action="video" data-research-area="projector-compensation">Video</a></span></p>
+<li class="research-publication" data-publication-key="cao2026procap">
+  <p><a href="https://zimocao.github.io/ProCap/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="cao2026procap" data-resource-action="project_page" data-research-area="spatial-augmented-reality"><strong>ProCap: Projection-Aware Captioning for Spatial Augmented Reality</strong></a> <br /> Zimo Cao, Yuchen Deng, Haibin Ling, <strong>Bingyao Huang</strong> <br /> IEEE Conference on Virtual Reality and 3D User Interfaces (<strong>IEEE VR</strong>), 2026 <br /> <span class="pub-links"><a class="pub-link" href="https://arxiv.org/abs/2604.00912" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="cao2026procap" data-resource-action="paper" data-research-area="spatial-augmented-reality">Paper</a> <a class="pub-link" href="https://zimocao.github.io/ProCap/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="cao2026procap" data-resource-action="project_page" data-research-area="spatial-augmented-reality">Project</a> <a class="pub-link" href="https://github.com/ZimoCao/ProCap" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="cao2026procap" data-resource-action="code" data-research-area="spatial-augmented-reality">Code</a></span></p>
 
 </li>
-<li class="research-publication" data-publication-key="huang2022endtoend">
-  <p><a href="https://arxiv.org/pdf/2008.00965.pdf" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2022endtoend" data-resource-action="paper" data-research-area="projector-compensation"><strong>End-to-End Full Projector Compensation</strong></a> <br /> <strong>Bingyao Huang</strong>, Tao Sun, Haibin Ling <br /> IEEE Transactions on Pattern Analysis and Machine Intelligence (<strong>TPAMI</strong>), 2022 <br /> Some preliminary results appear in CVPR 2019 and ICCV 2019. <br /> <span class="pub-links"><a class="pub-link" href="https://arxiv.org/pdf/2008.00965.pdf" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2022endtoend" data-resource-action="paper" data-research-area="projector-compensation">Paper</a> <a class="pub-link" href="https://github.com/BingyaoHuang/CompenNeSt-plusplus" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2022endtoend" data-resource-action="code" data-research-area="projector-compensation">Code</a> <a class="pub-link" href="/data/#huang2022endtoend" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2022endtoend" data-resource-action="dataset" data-research-area="projector-compensation">Data</a> <a class="pub-link" href="https://drive.google.com/file/d/1Z-fO0EN07yyjRWIfqC0azRMFRU7n8wXE/view?usp=sharing" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2022endtoend" data-resource-action="supplementary" data-research-area="projector-compensation">Supplementary</a></span></p>
-
-</li>
-<li class="research-publication" data-publication-key="wang2023compenhr">
-  <p><a href="https://haibinling.github.io/publication/CompenHR.pdf" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="wang2023compenhr" data-resource-action="paper" data-research-area="projector-compensation"><strong>CompenHR: Efficient Full Compensation for High-Resolution Projector</strong></a> <br /> Yuxi Wang, Haibin Ling, <strong>Bingyao Huang</strong> <br /> IEEE Conference on Virtual Reality and 3D User Interfaces (<strong>IEEE VR</strong>), 2023 <br /> <span class="pub-links"><a class="pub-link" href="https://haibinling.github.io/publication/CompenHR.pdf" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="wang2023compenhr" data-resource-action="paper" data-research-area="projector-compensation">Paper</a> <a class="pub-link" href="https://github.com/cyxwang/CompenHR" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="wang2023compenhr" data-resource-action="code" data-research-area="projector-compensation">Code</a> <a class="pub-link" href="https://github.com/cyxwang/CompenHR#datasets" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="wang2023compenhr" data-resource-action="dataset" data-research-area="projector-compensation">Data</a> <a class="pub-link" href="https://drive.google.com/file/d/1gPNXTwgwTAF5L3cc_YB1PiVeD-pTHWMU/view?usp=share_link" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="wang2023compenhr" data-resource-action="supplementary" data-research-area="projector-compensation">Supplementary</a></span></p>
+<li class="research-publication" data-publication-key="chen2025compenrt">
+  <p><a href="https://doi.org/10.1109/ICME59968.2025.11209810" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="chen2025compenrt" data-resource-action="paper" data-research-area="projector-compensation"><strong>Real-Time High-Resolution Projector Compensation</strong></a> <br /> Mingjie Chen, <strong>Bingyao Huang</strong> <br /> IEEE International Conference on Multimedia and Expo (<strong>ICME</strong>), 2025 <br /> <span class="pub-links"><a class="pub-link" href="https://doi.org/10.1109/ICME59968.2025.11209810" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="chen2025compenrt" data-resource-action="paper" data-research-area="projector-compensation">Paper</a> <a class="pub-link" href="https://github.com/ming-jie-chen/CompenRT/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="chen2025compenrt" data-resource-action="code" data-research-area="projector-compensation">Code</a></span></p>
 
 </li>
 <li class="research-publication" data-publication-key="li2025dpcs">
@@ -241,19 +240,35 @@
 
 </li>
 <li class="research-publication" data-publication-key="deng2025gsprocams">
-  <p><a href="https://realqingyue.github.io/GS-ProCams/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="deng2025gsprocams" data-resource-action="project_page" data-research-area="projector-compensation"><strong>GS-ProCams: Gaussian Splatting-Based Projector-Camera Systems</strong></a> <br /> Qingyue Deng, Jijiang Li, Haibin Ling, <strong>Bingyao Huang</strong> <br /> IEEE Transactions on Visualization and Computer Graphics (<strong>TVCG</strong>), 2025 <br /> Also in IEEE International Symposium on Mixed and Augmented Reality (<strong>ISMAR</strong>), 2025 <br /> <span class="pub-links"><a class="pub-link" href="https://doi.org/10.1109/TVCG.2025.3616841" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="deng2025gsprocams" data-resource-action="paper" data-research-area="projector-compensation">Paper</a> <a class="pub-link" href="https://realqingyue.github.io/GS-ProCams/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="deng2025gsprocams" data-resource-action="project_page" data-research-area="projector-compensation">Project</a> <a class="pub-link" href="https://github.com/realqingyue/GS-ProCams" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="deng2025gsprocams" data-resource-action="code" data-research-area="projector-compensation">Code</a> <a class="pub-link" href="https://westlakeu-my.sharepoint.com/:f:/g/personal/dengqingyue_westlake_edu_cn/EojpBYrI3HFMicy9ggZ6zv8BHlG8AlV26FZYQH3vqdBjUA?e=KEKl4x" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="deng2025gsprocams" data-resource-action="dataset" data-research-area="projector-compensation">Data</a></span></p>
+  <p><a href="https://realqingyue.github.io/GS-ProCams/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="deng2025gsprocams" data-resource-action="project_page" data-research-area="projector-compensation"><strong>GS-ProCams: Gaussian Splatting-Based Projector-Camera Systems</strong></a> <br /> Qingyue Deng, Jijiang Li, Haibin Ling, <strong>Bingyao Huang</strong> <br /> IEEE Transactions on Visualization and Computer Graphics (<strong>TVCG</strong>), 2025 <br /> Also in IEEE International Symposium on Mixed and Augmented Reality (<strong>ISMAR</strong>), 2025 <br /> <span class="pub-links"><a class="pub-link" href="https://doi.org/10.1109/TVCG.2025.3616841" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="deng2025gsprocams" data-resource-action="paper" data-research-area="projector-compensation">Paper</a> <a class="pub-link" href="https://realqingyue.github.io/GS-ProCams/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="deng2025gsprocams" data-resource-action="project_page" data-research-area="projector-compensation">Project</a> <a class="pub-link" href="https://github.com/realqingyue/GS-ProCams" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="deng2025gsprocams" data-resource-action="code" data-research-area="projector-compensation">Code</a></span></p>
 
 </li>
 <li class="research-publication" data-publication-key="deng2025lapig">
   <p><a href="https://yuchendeng.com/LAPIG/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="deng2025lapig" data-resource-action="project_page" data-research-area="spatial-augmented-reality"><strong>LAPIG: Language Guided Projector Image Generation with Surface Adaptation and Stylization</strong></a> <br /> Yuchen Deng, Haibin Ling, <strong>Bingyao Huang</strong> <br /> IEEE Transactions on Visualization and Computer Graphics (<strong>TVCG</strong>), 2025 <br /> Also in IEEE Conference on Virtual Reality and 3D User Interfaces (<strong>IEEE VR</strong>), 2025 <br /> <span class="pub-links"><a class="pub-link" href="https://doi.org/10.1109/TVCG.2025.3549859" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="deng2025lapig" data-resource-action="paper" data-research-area="spatial-augmented-reality">Paper</a> <a class="pub-link" href="https://yuchendeng.com/LAPIG/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="deng2025lapig" data-resource-action="project_page" data-research-area="spatial-augmented-reality">Project</a> <a class="pub-link" href="https://github.com/Yu-chen-Deng/LAPIG" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="deng2025lapig" data-resource-action="code" data-research-area="spatial-augmented-reality">Code</a></span></p>
 
 </li>
-<li class="research-publication" data-publication-key="li2026sicomp">
-  <p><a href="https://hai-bo-li.github.io/SIComp/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="li2026sicomp" data-resource-action="project_page" data-research-area="projector-compensation"><strong>Setup-Independent Full Projector Compensation</strong></a> <br /> Haibo Li, Qingyue Deng, Jijiang Li, Haibin Ling, <strong>Bingyao Huang</strong> <br /> IEEE Transactions on Visualization and Computer Graphics (<strong>TVCG</strong>), 2026 <br /> Also in IEEE Conference on Virtual Reality and 3D User Interfaces (<strong>IEEE VR</strong>), 2026 (<a class="publication-award" href="https://ieeevr.org/2026/awards/conference-awards/#aa1">🏆Best Paper Award</a>) <br /> <span class="pub-links"><a class="pub-link" href="https://doi.org/10.1109/TVCG.2026.3680736" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="li2026sicomp" data-resource-action="paper" data-research-area="projector-compensation">Paper</a> <a class="pub-link" href="https://hai-bo-li.github.io/SIComp/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="li2026sicomp" data-resource-action="project_page" data-research-area="projector-compensation">Project</a> <a class="pub-link" href="https://github.com/hai-bo-li/SIComp" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="li2026sicomp" data-resource-action="code" data-research-area="projector-compensation">Code</a> <a class="pub-link" href="https://pan.baidu.com/s/1WYFhOsGlgVD5uP41hqPg5A?pwd=1122" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="li2026sicomp" data-resource-action="dataset" data-research-area="projector-compensation">Data</a></span></p>
+<li class="research-publication" data-publication-key="wang2024vicomp">
+  <p><a href="https://ieeexplore.ieee.org/document/10458313" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="wang2024vicomp" data-resource-action="paper" data-research-area="projector-compensation"><strong>ViComp: Video Compensation for Projector-Camera Systems</strong></a> <br /> Yuxi Wang, Haibin Ling, <strong>Bingyao Huang</strong> <br /> IEEE Transactions on Visualization and Computer Graphics (<strong>TVCG</strong>), 2024 <br /> Also in IEEE Conference on Virtual Reality and 3D User Interfaces (<strong>IEEE VR</strong>), 2024 <br /> <span class="pub-links"><a class="pub-link" href="https://ieeexplore.ieee.org/document/10458313" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="wang2024vicomp" data-resource-action="paper" data-research-area="projector-compensation">Paper</a> <a class="pub-link" href="https://github.com/cyxwang/ViComp" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="wang2024vicomp" data-resource-action="code" data-research-area="projector-compensation">Code</a></span></p>
 
 </li>
-<li class="research-publication" data-publication-key="cao2026procap">
-  <p><a href="https://zimocao.github.io/ProCap/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="cao2026procap" data-resource-action="project_page" data-research-area="spatial-augmented-reality"><strong>ProCap: Projection-Aware Captioning for Spatial Augmented Reality</strong></a> <br /> Zimo Cao, Yuchen Deng, Haibin Ling, <strong>Bingyao Huang</strong> <br /> IEEE Conference on Virtual Reality and 3D User Interfaces (<strong>IEEE VR</strong>), 2026 <br /> <span class="pub-links"><a class="pub-link" href="https://arxiv.org/abs/2604.00912" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="cao2026procap" data-resource-action="paper" data-research-area="spatial-augmented-reality">Paper</a> <a class="pub-link" href="https://zimocao.github.io/ProCap/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="cao2026procap" data-resource-action="project_page" data-research-area="spatial-augmented-reality">Project</a> <a class="pub-link" href="https://github.com/ZimoCao/ProCap" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="cao2026procap" data-resource-action="code" data-research-area="spatial-augmented-reality">Code</a> <a class="pub-link" href="https://huggingface.co/datasets/yuchendeng/RGBP" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="cao2026procap" data-resource-action="dataset" data-research-area="spatial-augmented-reality">Data</a></span></p>
+<li class="research-publication" data-publication-key="wang2023compenhr">
+  <p><a href="https://haibinling.github.io/publication/CompenHR.pdf" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="wang2023compenhr" data-resource-action="paper" data-research-area="projector-compensation"><strong>CompenHR: Efficient Full Compensation for High-Resolution Projector</strong></a> <br /> Yuxi Wang, Haibin Ling, <strong>Bingyao Huang</strong> <br /> IEEE Conference on Virtual Reality and 3D User Interfaces (<strong>IEEE VR</strong>), 2023 <br /> <span class="pub-links"><a class="pub-link" href="https://haibinling.github.io/publication/CompenHR.pdf" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="wang2023compenhr" data-resource-action="paper" data-research-area="projector-compensation">Paper</a> <a class="pub-link" href="https://github.com/cyxwang/CompenHR" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="wang2023compenhr" data-resource-action="code" data-research-area="projector-compensation">Code</a> <a class="pub-link" href="https://drive.google.com/file/d/1gPNXTwgwTAF5L3cc_YB1PiVeD-pTHWMU/view?usp=share_link" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="wang2023compenhr" data-resource-action="supplementary" data-research-area="projector-compensation">Supplementary</a></span></p>
+
+</li>
+<li class="research-publication" data-publication-key="huang2022endtoend">
+  <p><a href="/compennet" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2022endtoend" data-resource-action="project_page" data-research-area="projector-compensation"><strong>End-to-End Full Projector Compensation</strong></a> <br /> <strong>Bingyao Huang</strong>, Tao Sun, Haibin Ling <br /> IEEE Transactions on Pattern Analysis and Machine Intelligence (<strong>TPAMI</strong>), 2022 <br /> Some preliminary results appear in CVPR 2019 and ICCV 2019. <br /> <span class="pub-links"><a class="pub-link" href="https://arxiv.org/pdf/2008.00965.pdf" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2022endtoend" data-resource-action="paper" data-research-area="projector-compensation">Paper</a> <a class="pub-link" href="/compennet" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2022endtoend" data-resource-action="project_page" data-research-area="projector-compensation">Project</a> <a class="pub-link" href="https://github.com/BingyaoHuang/CompenNeSt-plusplus" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2022endtoend" data-resource-action="code" data-research-area="projector-compensation">Code</a> <a class="pub-link" href="https://drive.google.com/file/d/1Z-fO0EN07yyjRWIfqC0azRMFRU7n8wXE/view?usp=sharing" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2022endtoend" data-resource-action="supplementary" data-research-area="projector-compensation">Supplementary</a></span></p>
+
+</li>
+<li class="research-publication" data-publication-key="huang2021deprocams">
+  <p><a href="https://arxiv.org/pdf/2003.03040.pdf" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2021deprocams" data-resource-action="paper" data-research-area="projector-compensation"><strong>DeProCams: Simultaneous Relighting, Compensation and Shape Reconstruction for Projector-Camera Systems</strong></a> <br /> <strong>Bingyao Huang</strong>, Haibin Ling <br /> IEEE Transactions on Visualization and Computer Graphics (<strong>TVCG</strong>), 2021 <br /> Also in IEEE Conference on Virtual Reality and 3D User Interfaces (<strong>IEEE VR</strong>), 2021 (<a class="publication-award" href="https://ieeevr.org/2021/awards/conference-awards/#journal-best">🏆Best Journal Paper Award</a>) <br /> <span class="pub-links"><a class="pub-link" href="https://arxiv.org/pdf/2003.03040.pdf" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2021deprocams" data-resource-action="paper" data-research-area="projector-compensation">Paper</a> <a class="pub-link" href="https://github.com/BingyaoHuang/DeProCams" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2021deprocams" data-resource-action="code" data-research-area="projector-compensation">Code</a> <a class="pub-link" href="https://drive.google.com/file/d/1kLYa51pW251Qg-OBMmdhcfn_b4GQZ1OV/view?usp=sharing" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2021deprocams" data-resource-action="supplementary" data-research-area="projector-compensation">Supplementary</a> <a class="pub-link" href="https://youtu.be/pQ8k4AOhwlU" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2021deprocams" data-resource-action="video" data-research-area="projector-compensation">Video</a></span></p>
+
+</li>
+<li class="research-publication" data-publication-key="huang2019endtoend">
+  <p><a href="/compennet" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2019endtoend" data-resource-action="project_page" data-research-area="projector-compensation"><strong>End-To-End Projector Photometric Compensation</strong></a> <br /> <strong>Bingyao Huang</strong>, Haibin Ling <br /> IEEE Conference on Computer Vision and Pattern Recognition (<strong>CVPR</strong>) (<strong>oral</strong>), 2019 <br /> <span class="pub-links"><a class="pub-link" href="https://doi.org/10.1109/CVPR.2019.00697" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2019endtoend" data-resource-action="paper" data-research-area="projector-compensation">Paper</a> <a class="pub-link" href="/compennet" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2019endtoend" data-resource-action="project_page" data-research-area="projector-compensation">Project</a> <a class="pub-link" href="https://github.com/BingyaoHuang/CompenNet" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2019endtoend" data-resource-action="code" data-research-area="projector-compensation">Code</a> <a class="pub-link" href="https://openaccess.thecvf.com/content_CVPR_2019/supplemental/Huang_End-To-End_Projector_Photometric_CVPR_2019_supplemental.pdf" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2019endtoend" data-resource-action="supplementary" data-research-area="projector-compensation">Supplementary</a></span></p>
+
+</li>
+<li class="research-publication" data-publication-key="huang2019compennet++">
+  <p><a href="/compennet" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2019compennet++" data-resource-action="project_page" data-research-area="projector-compensation"><strong>CompenNet++: End-to-End Full Projector Compensation</strong></a> <br /> <strong>Bingyao Huang</strong>, Haibin Ling <br /> IEEE International Conference on Computer Vision (<strong>ICCV</strong>), 2019 <br /> <span class="pub-links"><a class="pub-link" href="https://doi.org/10.1109/ICCV.2019.00726" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2019compennet++" data-resource-action="paper" data-research-area="projector-compensation">Paper</a> <a class="pub-link" href="/compennet" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2019compennet++" data-resource-action="project_page" data-research-area="projector-compensation">Project</a> <a class="pub-link" href="https://github.com/BingyaoHuang/CompenNet-plusplus" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2019compennet++" data-resource-action="code" data-research-area="projector-compensation">Code</a> <a class="pub-link" href="https://openaccess.thecvf.com/content_ICCV_2019/supplemental/Huang_CompenNet_End-to-End_Full_ICCV_2019_supplemental.pdf" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2019compennet++" data-resource-action="supplementary" data-research-area="projector-compensation">Supplementary</a></span></p>
 
 </li>
 
@@ -265,59 +280,62 @@
   <section class="research-direction" id="3d-vision-computational-imaging" aria-labelledby="3d-vision-computational-imaging-title">
     <header class="research-direction-header">
         
-        <h2 id="3d-vision-computational-imaging-title"><span class="research-number" aria-hidden="true">02.</span> Physics-Informed 3D Vision &amp; Computational Imaging</h2>
-        <p class="research-question"><span class="research-question-label">Research question</span>How can geometry, optics, and learned representations recover physical scene structure and appearance from visual measurements?</p>
+        <h2 id="3d-vision-computational-imaging-title"><span class="research-number" aria-hidden="true">2.</span> Physics-Informed 3D Vision &amp; Computational Imaging</h2>
+        <p class="research-question"><span class="research-question-label">Research question</span>How can physical models, geometry, and learned priors help recover scene structure, appearance, and 3D representations from visual measurements?</p>
     </header>
-    <div class="research-summary"><p>We combine <strong>physical image formation</strong>, geometric priors, <strong>active sensing</strong>, and learned scene representations to recover scene structure and appearance. Our work includes projector-camera calibration and structured light, joint geometry and appearance reconstruction, event-based depth sensing, <strong>differentiable rendering</strong>, and <strong>neural scene representations</strong>. We explicitly model processes such as projection, reflection, refraction, scattering, and sensor response. These models support reconstruction, novel-view rendering, scene simulation, and downstream XR applications.</p>
+    <div class="research-summary"><p>We study <strong>inverse problems in computer vision</strong>, recovering scene structure and physical properties from incomplete or distorted measurements. Our work combines <strong>active sensing</strong>, geometric constraints, optical image formation, <strong>differentiable rendering</strong>, and learned priors to estimate depth, shape, appearance, and scene representations. Applications include projector-camera calibration, structured-light reconstruction, imaging through challenging optical media, and <strong>neural or explicit 3D scene representations</strong>. We use physical models to constrain and guide these inference problems.</p>
 </div>
+    <nav class="research-projects" aria-label="Projects for Physics-Informed 3D Vision &amp; Computational Imaging"><strong>Explore projects:</strong> <a href="/projects/differentiable-3d-procams/">Differentiable &amp; 3D ProCam Systems</a><a href="/single-shot-pro-cam-calib">Calibration &amp; Active 3D Sensing</a><a href="/projects/physics-informed-imaging/">Physics-Informed Computational Imaging</a></nav>
     
 <h3>Research framework</h3>
 <figure class="research-figure research-trajectory-diagram">
   
-  <ol class="trajectory-grid trajectory-flow trajectory-count-4" aria-label="Research framework">
+  <ol class="trajectory-grid trajectory-framework trajectory-count-4" aria-label="Research framework">
     
     <li class="trajectory-stage">
-      <header><h4><span class="trajectory-number" aria-hidden="true">01.</span> Sensing</h4></header>
+      <header><h4><span class="trajectory-number" aria-hidden="true">1.</span> Active Sensing &amp; Measurement</h4></header>
       <div class="trajectory-media">
         
         
-        <video autoplay muted loop playsinline controls preload="auto" aria-label="Structured-light and event-based depth sensing demonstration."><source src="/images/research-teasers/sensing.mp4" type="video/mp4">Structured-light and event-based depth sensing demonstration.</video>
+        <a href="/images/research-teasers/active-sensing-measurement.png"><img src="/images/research-teasers/active-sensing-measurement.png" alt="Adaptive structured illumination, projector-camera calibration, and recovered surface geometry." loading="lazy" decoding="async"></a>
         
       </div>
       
       <div class="trajectory-papers">
       
-        <a href="https://drive.google.com/file/d/1Q7sIl0N0chb5Q7tt_7dlC-SNGViTTCKS/view?usp=sharing" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="dong2023adaptive" data-resource-action="paper" data-research-area="structured-light"><strong>Adaptive SL</strong> <span>(ISMAR'23)</span></a>
+        <a href="/single-shot-pro-cam-calib" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2021fast" data-resource-action="project_page" data-research-area="structured-light"><strong>ProCamCalib</strong> <span>(TASE'21)</span></a>
       
-        <a href="https://dongxin000.github.io/E2SL/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="dong2026e2sl" data-resource-action="project_page" data-research-area="structured-light"><strong>E²SL</strong> <span>(TVCG'26)</span></a>
+        <a href="/single-shot-pro-cam-calib" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="dong2023adaptive" data-resource-action="project_page" data-research-area="structured-light"><strong>Adaptive SL</strong> <span>(ISMAR'23)</span></a>
       
       </div>
     </li>
     
     <li class="trajectory-stage">
-      <header><h4><span class="trajectory-number" aria-hidden="true">02.</span> Physical Modeling</h4></header>
+      <header><h4><span class="trajectory-number" aria-hidden="true">2.</span> Physics-Based Image Formation</h4></header>
       <div class="trajectory-media">
         
         
-        <video autoplay muted loop playsinline controls preload="auto" aria-label="Physical image formation involving cameras, lighting, geometry, and light paths."><source src="/images/research-teasers/physical-model.mp4" type="video/mp4">Physical image formation involving cameras, lighting, geometry, and light paths.</video>
+        <a href="/images/research-teasers/physics-based-image-formation.jpg"><img src="/images/research-teasers/physics-based-image-formation.jpg" alt="Physics-based underwater image formation and camera rays refracted through housing and water interfaces." loading="lazy" decoding="async"></a>
         
       </div>
       
       <div class="trajectory-papers">
-      
-        <a href="https://jijiangli.github.io/DPCS/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="li2025dpcs" data-resource-action="project_page" data-research-area="projector-compensation"><strong>DPCS</strong> <span>(TVCG'25)</span></a>
       
         <a href="https://ygswu.github.io/NeuroPump.github.io/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="guo2025neuropump" data-resource-action="project_page" data-research-area="underwater-imaging"><strong>NeuroPump</strong> <span>(ACM MM'25)</span></a>
       
+        <a href="https://jijiangli.github.io/DPCS/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="li2025dpcs" data-resource-action="project_page" data-research-area="projector-compensation"><strong>DPCS</strong> <span>(TVCG'25)</span></a>
+      
+        <a href="https://arxiv.org/pdf/2012.11803.pdf" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2021modeling" data-resource-action="paper" data-research-area="visual-security"><strong>Neural-STE</strong> <span>(AAAI'21)</span></a>
+      
       </div>
     </li>
     
     <li class="trajectory-stage">
-      <header><h4><span class="trajectory-number" aria-hidden="true">03.</span> Physics-Guided Inference</h4></header>
+      <header><h4><span class="trajectory-number" aria-hidden="true">3.</span> Physics-Guided Reconstruction</h4></header>
       <div class="trajectory-media">
         
         
-        <a href="/images/research-teasers/inference.jpg"><img src="/images/research-teasers/inference.jpg" alt="Differentiable splatting and inferred geometry and materials." loading="lazy" decoding="async"></a>
+        <video autoplay muted loop playsinline controls preload="auto" aria-label="Physical image formation involving cameras, lighting, geometry, and light paths."><source src="/images/research-teasers/physical-model.webm" type="video/webm"><source src="/images/research-teasers/physical-model.mp4" type="video/mp4">Physical image formation involving cameras, lighting, geometry, and light paths.</video>
         
       </div>
       
@@ -325,11 +343,13 @@
       
         <a href="https://arxiv.org/pdf/2003.03040.pdf" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2021deprocams" data-resource-action="paper" data-research-area="projector-compensation"><strong>DeProCams</strong> <span>(TVCG'21)</span></a>
       
+        <a href="https://ygswu.github.io/NeuroPump.github.io/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="guo2025neuropump" data-resource-action="project_page" data-research-area="underwater-imaging"><strong>NeuroPump</strong> <span>(ACM MM'25)</span></a>
+      
       </div>
     </li>
     
     <li class="trajectory-stage">
-      <header><h4><span class="trajectory-number" aria-hidden="true">04.</span> 3D Representation &amp; Synthesis</h4></header>
+      <header><h4><span class="trajectory-number" aria-hidden="true">4.</span> 3D Representation &amp; Synthesis</h4></header>
       <div class="trajectory-media">
         
         
@@ -339,9 +359,9 @@
       
       <div class="trajectory-papers">
       
-        <a href="https://realqingyue.github.io/GS-ProCams/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="deng2025gsprocams" data-resource-action="project_page" data-research-area="projector-compensation"><strong>GS-ProCams</strong> <span>(TVCG'25)</span></a>
-      
         <a href="https://doi.org/10.1109/VRW66409.2025.00265" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="song2025raybased" data-resource-action="paper" data-research-area="mixed-reality"><strong>MSTD</strong> <span>(VRW'25)</span></a>
+      
+        <a href="https://realqingyue.github.io/GS-ProCams/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="deng2025gsprocams" data-resource-action="project_page" data-research-area="projector-compensation"><strong>GS-ProCams</strong> <span>(TVCG'25)</span></a>
       
       </div>
     </li>
@@ -350,26 +370,14 @@
 </figure>
 
     <details class="research-selected">
-      <summary>Selected publications <span>(7)</span></summary>
+      <summary>Publications <span>(8)</span></summary>
       <ul class="research-publications">
-        <li class="research-publication" data-publication-key="dong2023adaptive">
-  <p><a href="https://drive.google.com/file/d/1Q7sIl0N0chb5Q7tt_7dlC-SNGViTTCKS/view?usp=sharing" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="dong2023adaptive" data-resource-action="paper" data-research-area="structured-light"><strong>Adaptive Color Structured Light for Calibration and Shape Reconstruction</strong></a> <br /> Xin Dong, Haibin Ling, <strong>Bingyao Huang</strong> <br /> IEEE International Symposium on Mixed and Augmented Reality (<strong>ISMAR</strong>), 2023 <br /> <span class="pub-links"><a class="pub-link" href="https://drive.google.com/file/d/1Q7sIl0N0chb5Q7tt_7dlC-SNGViTTCKS/view?usp=sharing" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="dong2023adaptive" data-resource-action="paper" data-research-area="structured-light">Paper</a> <a class="pub-link" href="https://github.com/Dongxin000/Adaptive-color-SL" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="dong2023adaptive" data-resource-action="code" data-research-area="structured-light">Code</a> <a class="pub-link" href="https://drive.google.com/file/d/1i1wQJuzrMFb-G5FE5FbwmTsToBNchpPf/view?usp=sharing" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="dong2023adaptive" data-resource-action="supplementary" data-research-area="structured-light">Supplementary</a></span></p>
-
-</li>
-<li class="research-publication" data-publication-key="huang2021deprocams">
-  <p><a href="https://arxiv.org/pdf/2003.03040.pdf" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2021deprocams" data-resource-action="paper" data-research-area="projector-compensation"><strong>DeProCams: Simultaneous Relighting, Compensation and Shape Reconstruction for Projector-Camera Systems</strong></a> <br /> <strong>Bingyao Huang</strong>, Haibin Ling <br /> IEEE Transactions on Visualization and Computer Graphics (<strong>TVCG</strong>), 2021 <br /> Also in IEEE Conference on Virtual Reality and 3D User Interfaces (<strong>IEEE VR</strong>), 2021 (<a class="publication-award" href="https://ieeevr.org/2021/awards/conference-awards/#journal-best">🏆Best Journal Paper Award</a>) <br /> <span class="pub-links"><a class="pub-link" href="https://arxiv.org/pdf/2003.03040.pdf" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2021deprocams" data-resource-action="paper" data-research-area="projector-compensation">Paper</a> <a class="pub-link" href="https://github.com/BingyaoHuang/DeProCams" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2021deprocams" data-resource-action="code" data-research-area="projector-compensation">Code</a> <a class="pub-link" href="/data/#huang2021deprocams" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2021deprocams" data-resource-action="dataset" data-research-area="projector-compensation">Data</a> <a class="pub-link" href="https://drive.google.com/file/d/1kLYa51pW251Qg-OBMmdhcfn_b4GQZ1OV/view?usp=sharing" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2021deprocams" data-resource-action="supplementary" data-research-area="projector-compensation">Supplementary</a> <a class="pub-link" href="https://youtu.be/pQ8k4AOhwlU" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2021deprocams" data-resource-action="video" data-research-area="projector-compensation">Video</a></span></p>
-
-</li>
-<li class="research-publication" data-publication-key="li2025dpcs">
+        <li class="research-publication" data-publication-key="li2025dpcs">
   <p><a href="https://jijiangli.github.io/DPCS/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="li2025dpcs" data-resource-action="project_page" data-research-area="projector-compensation"><strong>DPCS: Path Tracing-Based Differentiable Projector-Camera Systems</strong></a> <br /> Jijiang Li, Qingyue Deng, Haibin Ling, <strong>Bingyao Huang</strong> <br /> IEEE Transactions on Visualization and Computer Graphics (<strong>TVCG</strong>), 2025 <br /> Also in IEEE Conference on Virtual Reality and 3D User Interfaces (<strong>IEEE VR</strong>), 2025 <br /> <span class="pub-links"><a class="pub-link" href="https://doi.org/10.1109/TVCG.2025.3549890" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="li2025dpcs" data-resource-action="paper" data-research-area="projector-compensation">Paper</a> <a class="pub-link" href="https://jijiangli.github.io/DPCS/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="li2025dpcs" data-resource-action="project_page" data-research-area="projector-compensation">Project</a> <a class="pub-link" href="https://github.com/JijiangLi/DPCS" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="li2025dpcs" data-resource-action="code" data-research-area="projector-compensation">Code</a></span></p>
 
 </li>
 <li class="research-publication" data-publication-key="deng2025gsprocams">
-  <p><a href="https://realqingyue.github.io/GS-ProCams/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="deng2025gsprocams" data-resource-action="project_page" data-research-area="projector-compensation"><strong>GS-ProCams: Gaussian Splatting-Based Projector-Camera Systems</strong></a> <br /> Qingyue Deng, Jijiang Li, Haibin Ling, <strong>Bingyao Huang</strong> <br /> IEEE Transactions on Visualization and Computer Graphics (<strong>TVCG</strong>), 2025 <br /> Also in IEEE International Symposium on Mixed and Augmented Reality (<strong>ISMAR</strong>), 2025 <br /> <span class="pub-links"><a class="pub-link" href="https://doi.org/10.1109/TVCG.2025.3616841" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="deng2025gsprocams" data-resource-action="paper" data-research-area="projector-compensation">Paper</a> <a class="pub-link" href="https://realqingyue.github.io/GS-ProCams/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="deng2025gsprocams" data-resource-action="project_page" data-research-area="projector-compensation">Project</a> <a class="pub-link" href="https://github.com/realqingyue/GS-ProCams" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="deng2025gsprocams" data-resource-action="code" data-research-area="projector-compensation">Code</a> <a class="pub-link" href="https://westlakeu-my.sharepoint.com/:f:/g/personal/dengqingyue_westlake_edu_cn/EojpBYrI3HFMicy9ggZ6zv8BHlG8AlV26FZYQH3vqdBjUA?e=KEKl4x" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="deng2025gsprocams" data-resource-action="dataset" data-research-area="projector-compensation">Data</a></span></p>
-
-</li>
-<li class="research-publication" data-publication-key="dong2026e2sl">
-  <p><a href="https://dongxin000.github.io/E2SL/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="dong2026e2sl" data-resource-action="project_page" data-research-area="structured-light"><strong>E$^2$SL: Efficient Depth Sensing from Event-based Structured Light</strong></a> <br /> Xin Dong, Jiacheng Fu, Yue Li, Wenming Weng, Yueyi Zhang, <strong>Bingyao Huang</strong>, Zhiwei Xiong <br /> IEEE Transactions on Visualization and Computer Graphics (<strong>TVCG</strong>), 2026 <br /> Also in IEEE Conference on Virtual Reality and 3D User Interfaces (<strong>IEEE VR</strong>), 2026 <br /> <span class="pub-links"><a class="pub-link" href="https://doi.org/10.1109/TVCG.2026.3679900" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="dong2026e2sl" data-resource-action="paper" data-research-area="structured-light">Paper</a> <a class="pub-link" href="https://dongxin000.github.io/E2SL/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="dong2026e2sl" data-resource-action="project_page" data-research-area="structured-light">Project</a> <a class="pub-link" href="https://github.com/Dongxin000/E2SL" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="dong2026e2sl" data-resource-action="code" data-research-area="structured-light">Code</a> <a class="pub-link" href="https://pan.baidu.com/s/1eOP0dTxZbJ2Xu4zTOSq2jA?pwd=95aq" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="dong2026e2sl" data-resource-action="dataset" data-research-area="structured-light">Data</a></span></p>
+  <p><a href="https://realqingyue.github.io/GS-ProCams/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="deng2025gsprocams" data-resource-action="project_page" data-research-area="projector-compensation"><strong>GS-ProCams: Gaussian Splatting-Based Projector-Camera Systems</strong></a> <br /> Qingyue Deng, Jijiang Li, Haibin Ling, <strong>Bingyao Huang</strong> <br /> IEEE Transactions on Visualization and Computer Graphics (<strong>TVCG</strong>), 2025 <br /> Also in IEEE International Symposium on Mixed and Augmented Reality (<strong>ISMAR</strong>), 2025 <br /> <span class="pub-links"><a class="pub-link" href="https://doi.org/10.1109/TVCG.2025.3616841" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="deng2025gsprocams" data-resource-action="paper" data-research-area="projector-compensation">Paper</a> <a class="pub-link" href="https://realqingyue.github.io/GS-ProCams/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="deng2025gsprocams" data-resource-action="project_page" data-research-area="projector-compensation">Project</a> <a class="pub-link" href="https://github.com/realqingyue/GS-ProCams" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="deng2025gsprocams" data-resource-action="code" data-research-area="projector-compensation">Code</a></span></p>
 
 </li>
 <li class="research-publication" data-publication-key="song2025raybased">
@@ -377,7 +385,23 @@
 
 </li>
 <li class="research-publication" data-publication-key="guo2025neuropump">
-  <p><a href="https://ygswu.github.io/NeuroPump.github.io/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="guo2025neuropump" data-resource-action="project_page" data-research-area="underwater-imaging"><strong>NeuroPump: Simultaneous Geometric and Color Rectification for Underwater Images</strong></a> <br /> Yue Guo, Haoxiang Liao, Haibin Ling, <strong>Bingyao Huang</strong> <br /> ACM Multimedia Conference (<strong>ACM MM</strong>), 2025 <br /> <span class="pub-links"><a class="pub-link" href="https://arxiv.org/abs/2412.15890" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="guo2025neuropump" data-resource-action="paper" data-research-area="underwater-imaging">Paper</a> <a class="pub-link" href="https://ygswu.github.io/NeuroPump.github.io/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="guo2025neuropump" data-resource-action="project_page" data-research-area="underwater-imaging">Project</a> <a class="pub-link" href="https://github.com/YGswu/NeuroPump" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="guo2025neuropump" data-resource-action="code" data-research-area="underwater-imaging">Code</a> <a class="pub-link" href="https://drive.google.com/file/d/1PBMKolmDQgwf3UG0Nc6kkw8S1GmGEZJR/view?usp=sharing" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="guo2025neuropump" data-resource-action="dataset" data-research-area="underwater-imaging">Data</a> <a class="pub-link" href="https://ygswu.github.io/NeuroPump.github.io/static/pdfs/supp_NeuroPump.pdf" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="guo2025neuropump" data-resource-action="supplementary" data-research-area="underwater-imaging">Supplementary</a></span></p>
+  <p><a href="https://ygswu.github.io/NeuroPump.github.io/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="guo2025neuropump" data-resource-action="project_page" data-research-area="underwater-imaging"><strong>NeuroPump: Simultaneous Geometric and Color Rectification for Underwater Images</strong></a> <br /> Yue Guo, Haoxiang Liao, Haibin Ling, <strong>Bingyao Huang</strong> <br /> ACM Multimedia Conference (<strong>ACM MM</strong>), 2025 <br /> <span class="pub-links"><a class="pub-link" href="https://arxiv.org/abs/2412.15890" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="guo2025neuropump" data-resource-action="paper" data-research-area="underwater-imaging">Paper</a> <a class="pub-link" href="https://ygswu.github.io/NeuroPump.github.io/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="guo2025neuropump" data-resource-action="project_page" data-research-area="underwater-imaging">Project</a> <a class="pub-link" href="https://github.com/YGswu/NeuroPump" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="guo2025neuropump" data-resource-action="code" data-research-area="underwater-imaging">Code</a> <a class="pub-link" href="https://ygswu.github.io/NeuroPump.github.io/static/pdfs/supp_NeuroPump.pdf" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="guo2025neuropump" data-resource-action="supplementary" data-research-area="underwater-imaging">Supplementary</a></span></p>
+
+</li>
+<li class="research-publication" data-publication-key="dong2023adaptive">
+  <p><a href="/single-shot-pro-cam-calib" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="dong2023adaptive" data-resource-action="project_page" data-research-area="structured-light"><strong>Adaptive Color Structured Light for Calibration and Shape Reconstruction</strong></a> <br /> Xin Dong, Haibin Ling, <strong>Bingyao Huang</strong> <br /> IEEE International Symposium on Mixed and Augmented Reality (<strong>ISMAR</strong>), 2023 <br /> <span class="pub-links"><a class="pub-link" href="https://drive.google.com/file/d/1Q7sIl0N0chb5Q7tt_7dlC-SNGViTTCKS/view?usp=sharing" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="dong2023adaptive" data-resource-action="paper" data-research-area="structured-light">Paper</a> <a class="pub-link" href="/single-shot-pro-cam-calib" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="dong2023adaptive" data-resource-action="project_page" data-research-area="structured-light">Project</a> <a class="pub-link" href="https://github.com/Dongxin000/Adaptive-color-SL" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="dong2023adaptive" data-resource-action="code" data-research-area="structured-light">Code</a> <a class="pub-link" href="https://drive.google.com/file/d/1i1wQJuzrMFb-G5FE5FbwmTsToBNchpPf/view?usp=sharing" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="dong2023adaptive" data-resource-action="supplementary" data-research-area="structured-light">Supplementary</a></span></p>
+
+</li>
+<li class="research-publication" data-publication-key="huang2021fast">
+  <p><a href="/single-shot-pro-cam-calib" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2021fast" data-resource-action="project_page" data-research-area="structured-light"><strong>A Fast and Flexible Projector-Camera Calibration System</strong></a> <br /> <strong>Bingyao Huang</strong>, Ying Tang, Samed Ozdemir, Haibin Ling <br /> IEEE Transactions on Automation Science and Engineering (<strong>TASE</strong>), 2021 <br /> <span class="pub-links"><a class="pub-link" href="https://doi.org/10.1109/TASE.2020.2994223" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2021fast" data-resource-action="paper" data-research-area="structured-light">Paper</a> <a class="pub-link" href="/single-shot-pro-cam-calib" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2021fast" data-resource-action="project_page" data-research-area="structured-light">Project</a> <a class="pub-link" href="https://github.com/BingyaoHuang/single-shot-pro-cam-calib" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2021fast" data-resource-action="code" data-research-area="structured-light">Code</a> <a class="pub-link" href="https://youtu.be/fnrVDOhcu7I" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2021fast" data-resource-action="video" data-research-area="structured-light">Video</a></span></p>
+
+</li>
+<li class="research-publication" data-publication-key="huang2021deprocams">
+  <p><a href="https://arxiv.org/pdf/2003.03040.pdf" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2021deprocams" data-resource-action="paper" data-research-area="projector-compensation"><strong>DeProCams: Simultaneous Relighting, Compensation and Shape Reconstruction for Projector-Camera Systems</strong></a> <br /> <strong>Bingyao Huang</strong>, Haibin Ling <br /> IEEE Transactions on Visualization and Computer Graphics (<strong>TVCG</strong>), 2021 <br /> Also in IEEE Conference on Virtual Reality and 3D User Interfaces (<strong>IEEE VR</strong>), 2021 (<a class="publication-award" href="https://ieeevr.org/2021/awards/conference-awards/#journal-best">🏆Best Journal Paper Award</a>) <br /> <span class="pub-links"><a class="pub-link" href="https://arxiv.org/pdf/2003.03040.pdf" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2021deprocams" data-resource-action="paper" data-research-area="projector-compensation">Paper</a> <a class="pub-link" href="https://github.com/BingyaoHuang/DeProCams" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2021deprocams" data-resource-action="code" data-research-area="projector-compensation">Code</a> <a class="pub-link" href="https://drive.google.com/file/d/1kLYa51pW251Qg-OBMmdhcfn_b4GQZ1OV/view?usp=sharing" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2021deprocams" data-resource-action="supplementary" data-research-area="projector-compensation">Supplementary</a> <a class="pub-link" href="https://youtu.be/pQ8k4AOhwlU" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2021deprocams" data-resource-action="video" data-research-area="projector-compensation">Video</a></span></p>
+
+</li>
+<li class="research-publication" data-publication-key="huang2018singleshotperpose">
+  <p><a href="/single-shot-pro-cam-calib" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2018singleshotperpose" data-resource-action="project_page" data-research-area="structured-light"><strong>A Single-Shot-Per-Pose Camera-Projector Calibration System for Imperfect Planar Targets</strong></a> <br /> <strong>Bingyao Huang</strong>, Samed Ozdemir, Ying Tang, Chunyuan Liao, Haibin Ling <br /> IEEE International Symposium on Mixed and Augmented Reality Adjunct (<strong>ISMAR-Adjunct</strong>), 2018 <br /> <span class="pub-links"><a class="pub-link" href="https://doi.org/10.1109/ISMAR-Adjunct.2018.00023" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2018singleshotperpose" data-resource-action="paper" data-research-area="structured-light">Paper</a> <a class="pub-link" href="/single-shot-pro-cam-calib" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2018singleshotperpose" data-resource-action="project_page" data-research-area="structured-light">Project</a> <a class="pub-link" href="https://github.com/BingyaoHuang/single-shot-pro-cam-calib" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2018singleshotperpose" data-resource-action="code" data-research-area="structured-light">Code</a></span></p>
 
 </li>
 
@@ -389,11 +413,12 @@
   <section class="research-direction" id="visual-privacy-security" aria-labelledby="visual-privacy-security-title">
     <header class="research-direction-header">
         
-        <h2 id="visual-privacy-security-title"><span class="research-number" aria-hidden="true">03.</span> Visual Privacy &amp; Physical-World Security</h2>
+        <h2 id="visual-privacy-security-title"><span class="research-number" aria-hidden="true">3.</span> Visual Privacy &amp; Physical-World Security</h2>
         <p class="research-question"><span class="research-question-label">Research question</span>What new attacks and defenses arise when computer vision interacts with physical light transport rather than only digital pixels?</p>
     </header>
     <div class="research-summary"><p>We study privacy and security problems that emerge when machine perception interacts with the physical world. One line investigates <strong>information leakage</strong> through ordinary optical media and privacy risks introduced by learning-based computational imaging. Another studies <strong>projector-based adversarial attacks</strong>, where controllable light modifies the appearance observed by vision systems without permanently altering objects. This work progresses from stealthy projector attacks to <strong>classifier-agnostic and view-invariant attacks</strong>, combining differentiable project-and-capture models with increasingly realistic physical scene representations.</p>
 </div>
+    <nav class="research-projects" aria-label="Projects for Visual Privacy &amp; Physical-World Security"><strong>Explore projects:</strong> <a href="/projects/projector-adversarial-attacks/">Projector-Based Adversarial Attacks</a><a href="/projects/physics-informed-imaging/">Physics-Informed Computational Imaging</a></nav>
     
 <h3>Research trajectory</h3>
 <figure class="research-figure research-trajectory-diagram">
@@ -401,7 +426,7 @@
   <ol class="trajectory-grid trajectory-flow trajectory-count-4" aria-label="Research trajectory">
     
     <li class="trajectory-stage">
-      <header><h4><span class="trajectory-number" aria-hidden="true">01.</span> Physical mail privacy: attack &amp; defense</h4></header>
+      <header><h4><span class="trajectory-number" aria-hidden="true">1.</span> Physical mail privacy: attack &amp; defense</h4></header>
       <div class="trajectory-media">
         
         
@@ -417,7 +442,7 @@
     </li>
     
     <li class="trajectory-stage">
-      <header><h4><span class="trajectory-number" aria-hidden="true">02.</span> Stealthy differentiable projector attack</h4></header>
+      <header><h4><span class="trajectory-number" aria-hidden="true">2.</span> Stealthy differentiable projector attack</h4></header>
       <div class="trajectory-media">
         
         
@@ -433,7 +458,7 @@
     </li>
     
     <li class="trajectory-stage">
-      <header><h4><span class="trajectory-number" aria-hidden="true">03.</span> Classifier-agnostic projector attack</h4></header>
+      <header><h4><span class="trajectory-number" aria-hidden="true">3.</span> Classifier-agnostic projector attack</h4></header>
       <div class="trajectory-media">
         
         
@@ -449,7 +474,7 @@
     </li>
     
     <li class="trajectory-stage">
-      <header><h4><span class="trajectory-number" aria-hidden="true">04.</span> View-invariant &amp; classifier-agnostic physical attack</h4></header>
+      <header><h4><span class="trajectory-number" aria-hidden="true">4.</span> View-invariant &amp; classifier-agnostic physical attack</h4></header>
       <div class="trajectory-media">
         
         
@@ -468,22 +493,22 @@
 </figure>
 
     <details class="research-selected">
-      <summary>Selected publications <span>(4)</span></summary>
+      <summary>Publications <span>(4)</span></summary>
       <ul class="research-publications">
-        <li class="research-publication" data-publication-key="huang2021modeling">
-  <p><a href="https://arxiv.org/pdf/2012.11803.pdf" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2021modeling" data-resource-action="paper" data-research-area="visual-security"><strong>Modeling Deep Learning Based Privacy Attacks on Physical Mail</strong></a> <br /> <strong>Bingyao Huang</strong>, Ruyi Lian, Dimitris Samaras, Haibin Ling <br /> Proc. of AAAI Conference on Artificial Intelligence (<strong>AAAI</strong>), 2021 <br /> <span class="pub-links"><a class="pub-link" href="https://arxiv.org/pdf/2012.11803.pdf" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2021modeling" data-resource-action="paper" data-research-area="visual-security">Paper</a> <a class="pub-link" href="https://github.com/BingyaoHuang/Neural-STE" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2021modeling" data-resource-action="code" data-research-area="visual-security">Code</a> <a class="pub-link" href="/data/#huang2021modeling" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2021modeling" data-resource-action="dataset" data-research-area="visual-security">Data</a> <a class="pub-link" href="https://drive.google.com/file/d/1FBC-A7im_TvMCSp_AUOTWLBRli7XZOvK/view?usp=sharing" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2021modeling" data-resource-action="supplementary" data-research-area="visual-security">Supplementary</a></span></p>
-
-</li>
-<li class="research-publication" data-publication-key="huang2022spaa">
-  <p><a href="https://arxiv.org/pdf/2012.05858.pdf" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2022spaa" data-resource-action="paper" data-research-area="projector-based-adversarial-attack"><strong>SPAA: Stealthy Projector-Based Adversarial Attacks on Deep Image Classifiers</strong></a> <br /> <strong>Bingyao Huang</strong>, Haibin Ling <br /> IEEE Conference on Virtual Reality and 3D User Interfaces (<strong>IEEE VR</strong>), 2022 <br /> <span class="pub-links"><a class="pub-link" href="https://arxiv.org/pdf/2012.05858.pdf" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2022spaa" data-resource-action="paper" data-research-area="projector-based-adversarial-attack">Paper</a> <a class="pub-link" href="https://github.com/BingyaoHuang/SPAA" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2022spaa" data-resource-action="code" data-research-area="projector-based-adversarial-attack">Code</a> <a class="pub-link" href="/data/#huang2022spaa" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2022spaa" data-resource-action="dataset" data-research-area="projector-based-adversarial-attack">Data</a> <a class="pub-link" href="https://www.dropbox.com/s/uqcznaqae3irevc/SPAA_sup.pdf?dl=0" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2022spaa" data-resource-action="supplementary" data-research-area="projector-based-adversarial-attack">Supplementary</a> <a class="pub-link" href="https://youtu.be/7oSh5BmJDJ8?list=PLmkIPPvcHLZgWaBGqwiAe52PLDNnMtIA5&amp;t=477" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2022spaa" data-resource-action="video" data-research-area="projector-based-adversarial-attack">Video</a></span></p>
+        <li class="research-publication" data-publication-key="han2026vipa">
+  <p><a href="https://hhhh-han.github.io/VIPA/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="han2026vipa" data-resource-action="project_page" data-research-area="projector-based-adversarial-attack"><strong>VIPA: View-Invariant Projector-Based Adversarial Attack</strong></a> <br /> Jiyu Han, Qingyue Deng, <strong>Bingyao Huang</strong> <br /> IEEE Transactions on Visualization and Computer Graphics (<strong>TVCG</strong>), 2026 (In press) <br /> Also in IEEE International Symposium on Mixed and Augmented Reality (<strong>ISMAR</strong>), 2026 <br /> <span class="pub-links"><a class="pub-link" href="https://hhhh-han.github.io/VIPA/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="han2026vipa" data-resource-action="project_page" data-research-area="projector-based-adversarial-attack">Project</a></span></p>
 
 </li>
 <li class="research-publication" data-publication-key="li2025capaa">
-  <p><a href="https://doi.org/10.1109/ICME59968.2025.11209575" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="li2025capaa" data-resource-action="paper" data-research-area="projector-based-adversarial-attack"><strong>CAPAA: Classifier-Agnostic Projector-Based Adversarial Attack</strong></a> <br /> Zhan Li<sup>#</sup>, Mingyu Zhao<sup>#</sup>, Xin Dong, Haibin Ling, <strong>Bingyao Huang</strong> <br /> IEEE International Conference on Multimedia and Expo (<strong>ICME</strong>), 2025 <br /> <span class="pub-links"><a class="pub-link" href="https://doi.org/10.1109/ICME59968.2025.11209575" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="li2025capaa" data-resource-action="paper" data-research-area="projector-based-adversarial-attack">Paper</a> <a class="pub-link" href="https://github.com/ZhanLiQxQ/CAPAA" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="li2025capaa" data-resource-action="code" data-research-area="projector-based-adversarial-attack">Code</a> <a class="pub-link" href="https://drive.google.com/file/d/1Kte3lONV2kRgg1hZtRr8ws503jq6JrPU/view?usp=sharing" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="li2025capaa" data-resource-action="dataset" data-research-area="projector-based-adversarial-attack">Data</a></span></p>
+  <p><a href="https://doi.org/10.1109/ICME59968.2025.11209575" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="li2025capaa" data-resource-action="paper" data-research-area="projector-based-adversarial-attack"><strong>CAPAA: Classifier-Agnostic Projector-Based Adversarial Attack</strong></a> <br /> Zhan Li<sup>#</sup>, Mingyu Zhao<sup>#</sup>, Xin Dong, Haibin Ling, <strong>Bingyao Huang</strong> <br /> IEEE International Conference on Multimedia and Expo (<strong>ICME</strong>), 2025 <br /> <span class="pub-links"><a class="pub-link" href="https://doi.org/10.1109/ICME59968.2025.11209575" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="li2025capaa" data-resource-action="paper" data-research-area="projector-based-adversarial-attack">Paper</a> <a class="pub-link" href="https://github.com/ZhanLiQxQ/CAPAA" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="li2025capaa" data-resource-action="code" data-research-area="projector-based-adversarial-attack">Code</a></span></p>
 
 </li>
-<li class="research-publication" data-publication-key="han2026vipa">
-  <p><a href="https://hhhh-han.github.io/VIPA/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="han2026vipa" data-resource-action="project_page" data-research-area="projector-based-adversarial-attack"><strong>VIPA: View-Invariant Projector-Based Adversarial Attack</strong></a> <br /> Jiyu Han, Qingyue Deng, <strong>Bingyao Huang</strong> <br /> IEEE Transactions on Visualization and Computer Graphics (<strong>TVCG</strong>), 2026 (In press) <br /> Also in IEEE International Symposium on Mixed and Augmented Reality (<strong>ISMAR</strong>), 2026 <br /> <span class="pub-links"><a class="pub-link" href="https://hhhh-han.github.io/VIPA/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="han2026vipa" data-resource-action="project_page" data-research-area="projector-based-adversarial-attack">Project</a> <a class="pub-link" href="https://drive.google.com/file/d/1tnVE45cav8DYT4xWRhYFPIWANgKZqN64/view?usp=sharing" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="han2026vipa" data-resource-action="dataset" data-research-area="projector-based-adversarial-attack">Data</a></span></p>
+<li class="research-publication" data-publication-key="huang2022spaa">
+  <p><a href="https://arxiv.org/pdf/2012.05858.pdf" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2022spaa" data-resource-action="paper" data-research-area="projector-based-adversarial-attack"><strong>SPAA: Stealthy Projector-Based Adversarial Attacks on Deep Image Classifiers</strong></a> <br /> <strong>Bingyao Huang</strong>, Haibin Ling <br /> IEEE Conference on Virtual Reality and 3D User Interfaces (<strong>IEEE VR</strong>), 2022 <br /> <span class="pub-links"><a class="pub-link" href="https://arxiv.org/pdf/2012.05858.pdf" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2022spaa" data-resource-action="paper" data-research-area="projector-based-adversarial-attack">Paper</a> <a class="pub-link" href="https://github.com/BingyaoHuang/SPAA" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2022spaa" data-resource-action="code" data-research-area="projector-based-adversarial-attack">Code</a> <a class="pub-link" href="https://www.dropbox.com/s/uqcznaqae3irevc/SPAA_sup.pdf?dl=0" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2022spaa" data-resource-action="supplementary" data-research-area="projector-based-adversarial-attack">Supplementary</a> <a class="pub-link" href="https://youtu.be/7oSh5BmJDJ8?list=PLmkIPPvcHLZgWaBGqwiAe52PLDNnMtIA5&amp;t=477" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2022spaa" data-resource-action="video" data-research-area="projector-based-adversarial-attack">Video</a></span></p>
+
+</li>
+<li class="research-publication" data-publication-key="huang2021modeling">
+  <p><a href="https://arxiv.org/pdf/2012.11803.pdf" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2021modeling" data-resource-action="paper" data-research-area="visual-security"><strong>Modeling Deep Learning Based Privacy Attacks on Physical Mail</strong></a> <br /> <strong>Bingyao Huang</strong>, Ruyi Lian, Dimitris Samaras, Haibin Ling <br /> Proc. of AAAI Conference on Artificial Intelligence (<strong>AAAI</strong>), 2021 <br /> <span class="pub-links"><a class="pub-link" href="https://arxiv.org/pdf/2012.11803.pdf" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2021modeling" data-resource-action="paper" data-research-area="visual-security">Paper</a> <a class="pub-link" href="https://github.com/BingyaoHuang/Neural-STE" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2021modeling" data-resource-action="code" data-research-area="visual-security">Code</a> <a class="pub-link" href="https://drive.google.com/file/d/1FBC-A7im_TvMCSp_AUOTWLBRli7XZOvK/view?usp=sharing" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2021modeling" data-resource-action="supplementary" data-research-area="visual-security">Supplementary</a></span></p>
 
 </li>
 
@@ -495,63 +520,64 @@
   <section class="research-direction research-collaborative" id="scientific-biomedical-vision" aria-labelledby="scientific-biomedical-vision-title">
     <header class="research-direction-header">
         <p class="research-collaboration-label">Interdisciplinary collaborations</p>
-        <h2 id="scientific-biomedical-vision-title"><span class="research-number" aria-hidden="true">04.</span> Scientific &amp; Biomedical Visual Computing</h2>
+        <h2 id="scientific-biomedical-vision-title"><span class="research-number" aria-hidden="true">4.</span> Scientific &amp; Biomedical Visual Computing</h2>
         <p class="research-question"><span class="research-question-label">Research question</span>How can computer vision extract reliable, interpretable, and useful measurements from specialized scientific and biomedical imagery?</p>
     </header>
-    <div class="research-summary"><p>We collaborate with <strong>domain experts</strong> on scientific and biomedical problems whose data, acquisition conditions, and interpretation requirements differ from conventional vision benchmarks. Our work includes <strong>cryo-EM analysis</strong>, <strong>multi-view biological phenotyping</strong>, non-invasive visual classification, and <strong>mixed-reality medical training</strong>. A recurring goal is to turn domain-specific observations into reliable structural measurements or interpretable evidence through representation learning, multi-view analysis, keypoint-based modeling, and human-centered visualization.</p>
+    <div class="research-summary"><p>We collaborate with <strong>domain experts</strong> on scientific and biomedical problems whose data, acquisition conditions, and interpretation requirements differ from conventional vision benchmarks. Our work includes <strong>cryo-EM analysis</strong>, <strong>multi-view biological phenotyping</strong>, noninvasive visual classification, and <strong>mixed-reality medical training</strong>. A recurring goal is to derive reliable structural measurements and interpretable results from these observations through representation learning, multi-view analysis, keypoint-based modeling, and human-centered visualization.</p>
 </div>
     
-<h3>Research themes</h3>
+    
+<h3>Research topics</h3>
 <figure class="research-figure research-trajectory-diagram">
   
-  <ol class="trajectory-grid trajectory-parallel trajectory-count-3" aria-label="Research themes">
+  <ol class="trajectory-grid trajectory-parallel trajectory-count-3" aria-label="Research topics">
     
     <li class="trajectory-stage">
-      <header><h4><span class="trajectory-number" aria-hidden="true">01.</span> Scientific Imaging</h4></header>
+      <header><h4><span class="trajectory-number" aria-hidden="true">1.</span> Scientific Imaging</h4></header>
       <div class="trajectory-media">
         
         
-        <video autoplay muted loop playsinline controls preload="auto" aria-label="Cryo-EM image analysis and molecular structure visualization."><source src="/images/research-teasers/scientific-imaging.mp4" type="video/mp4">Cryo-EM image analysis and molecular structure visualization.</video>
+        <video autoplay muted loop playsinline controls preload="auto" aria-label="Cryo-EM image analysis and molecular structure visualization."><source src="/images/research-teasers/scientific-imaging.webm" type="video/webm"><source src="/images/research-teasers/scientific-imaging.mp4" type="video/mp4">Cryo-EM image analysis and molecular structure visualization.</video>
         
       </div>
-      <p class="trajectory-outcome"><span aria-hidden="true">↓</span>Orientation / Structure</p>
+      <p class="trajectory-outcome">Orientation / Structure</p>
       <div class="trajectory-papers">
       
-        <a href="https://scripts.iucr.org/cgi-bin/paper?S2059798321011761" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="lian2022endtoend" data-resource-action="paper" data-research-area="biomedical-image-analysis"><strong>CryoPoseNet</strong> <span>· 2022</span></a>
+        <a href="https://scripts.iucr.org/cgi-bin/paper?S2059798321011761" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="lian2022endtoend" data-resource-action="paper" data-research-area="biomedical-image-analysis"><strong>CryoPoseNet</strong> <span>(Acta Crystallographica Section D - Structural Biology'22)</span></a>
       
       </div>
     </li>
     
     <li class="trajectory-stage">
-      <header><h4><span class="trajectory-number" aria-hidden="true">02.</span> Biological Phenotyping</h4></header>
+      <header><h4><span class="trajectory-number" aria-hidden="true">2.</span> Biological Phenotyping</h4></header>
       <div class="trajectory-media">
         
         
         <a href="/images/research-teasers/Biological Phenotyping.jpg"><img src="/images/research-teasers/Biological Phenotyping.jpg" alt="Multi-view sturgeon images, attention maps, and morphological landmarks." loading="lazy" decoding="async"></a>
         
       </div>
-      <p class="trajectory-outcome"><span aria-hidden="true">↓</span>Morphology / Biological Traits</p>
+      <p class="trajectory-outcome">Morphology / Biological Traits</p>
       <div class="trajectory-papers">
       
-        <a href="https://doi.org/10.1016/j.watbs.2025.100381" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="gao2025highthroughput" data-resource-action="paper" data-research-area="biomedical-image-analysis"><strong>Phenome</strong> <span>· 2025</span></a>
+        <a href="https://doi.org/10.1016/j.watbs.2025.100381" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="gao2025highthroughput" data-resource-action="paper" data-research-area="biomedical-image-analysis"><strong>Phenome</strong> <span>(Water Biology and Security'25)</span></a>
       
-        <a href="https://doi.org/10.1016/j.aquaculture.2025.743550" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="gao2026noninvasive" data-resource-action="paper" data-research-area="biomedical-image-analysis"><strong>Sturgeon</strong> <span>· 2026</span></a>
+        <a href="https://doi.org/10.1016/j.aquaculture.2025.743550" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="gao2026noninvasive" data-resource-action="paper" data-research-area="biomedical-image-analysis"><strong>Sturgeon sex</strong> <span>(Aquaculture'26)</span></a>
       
       </div>
     </li>
     
     <li class="trajectory-stage">
-      <header><h4><span class="trajectory-number" aria-hidden="true">03.</span> Biomedical MR</h4></header>
+      <header><h4><span class="trajectory-number" aria-hidden="true">3.</span> Biomedical MR</h4></header>
       <div class="trajectory-media">
         
         
         <a href="/images/research-teasers/Biomedical MR.jpg"><img src="/images/research-teasers/Biomedical MR.jpg" alt="The public 2025 mixed-reality acupoint teaching framework: localization, practice, and evaluation." loading="lazy" decoding="async"></a>
         
       </div>
-      <p class="trajectory-outcome"><span aria-hidden="true">↓</span>Interactive Training</p>
+      <p class="trajectory-outcome">Interactive Training</p>
       <div class="trajectory-papers">
       
-        <a href="https://doi.org/10.1109/ISMAR-Adjunct68609.2025.00126" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="liu2025mixed" data-resource-action="paper" data-research-area="mixed-reality"><strong>MR Training</strong> <span>· 2025</span></a>
+        <a href="https://doi.org/10.1109/ISMAR-Adjunct68609.2025.00126" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="liu2025mixed" data-resource-action="paper" data-research-area="mixed-reality"><strong>MR Training</strong> <span>(ISMAR-Adjunct'25)</span></a>
       
       </div>
     </li>
@@ -560,22 +586,22 @@
 </figure>
 
     <details class="research-selected">
-      <summary>Selected publications <span>(4)</span></summary>
+      <summary>Publications <span>(4)</span></summary>
       <ul class="research-publications">
-        <li class="research-publication" data-publication-key="lian2022endtoend">
-  <p><a href="https://scripts.iucr.org/cgi-bin/paper?S2059798321011761" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="lian2022endtoend" data-resource-action="paper" data-research-area="biomedical-image-analysis"><strong>End-to-End Orientation Estimation from 2d Cryo-Em Images</strong></a> <br /> Ruyi Lian, <strong>Bingyao Huang</strong>, Liguo Wang, Qun Liu, Yuewei Lin, Haibin Ling <br /> Acta Crystallographica Section D - Structural Biology, 2022 <br /> <span class="pub-links"><a class="pub-link" href="https://scripts.iucr.org/cgi-bin/paper?S2059798321011761" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="lian2022endtoend" data-resource-action="paper" data-research-area="biomedical-image-analysis">Paper</a></span></p>
+        <li class="research-publication" data-publication-key="gao2026noninvasive">
+  <p><a href="https://doi.org/10.1016/j.aquaculture.2025.743550" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="gao2026noninvasive" data-resource-action="paper" data-research-area="biomedical-image-analysis"><strong>Non-Invasive Early Sex Identification of Hybrid Sturgeon (Huso Dauricus♀ × Acipenser Schrenckii♂) Based on Multi-View Images</strong></a> <br /> He Gao, Qiaokun Liu, Xiao Chen, Rongzhu Zhou, Shanzhong Zhang, Junting Li, Yinhua Zhou, Suxing Fu, Chengjiang He, Tonghan Wu, Siyu Duan, Jia Xu, Luo Lei, Jian Su, Qiming Wang, Zhaofang Han, Chaowei Zhou, <strong>Bingyao Huang</strong>, Haiping Liu <br /> Aquaculture, 2026 <br /> <span class="pub-links"><a class="pub-link" href="https://doi.org/10.1016/j.aquaculture.2025.743550" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="gao2026noninvasive" data-resource-action="paper" data-research-area="biomedical-image-analysis">Paper</a></span></p>
 
 </li>
 <li class="research-publication" data-publication-key="gao2025highthroughput">
   <p><a href="https://doi.org/10.1016/j.watbs.2025.100381" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="gao2025highthroughput" data-resource-action="paper" data-research-area="biomedical-image-analysis"><strong>A High-Throughput Phenome-Based Analysis of Morphological Variation and Environmental Adaptation in Extremely High-Altitude Schizothoracine Fishes</strong></a> <br /> He Gao, Suxing Fu, Meng Xing, Yinhua Zhou, Tonghan Wu, Xiao Chen, Chengjiang He, Qiaokun Liu, Haixu Liu, Luo Lei, Shijun Xiao, Fei Liu, Yan Zhou, Jian Su, Chaowei Zhou, <strong>Bingyao Huang</strong>, Haiping Liu <br /> Water Biology and Security, 2025 <br /> <span class="pub-links"><a class="pub-link" href="https://doi.org/10.1016/j.watbs.2025.100381" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="gao2025highthroughput" data-resource-action="paper" data-research-area="biomedical-image-analysis">Paper</a></span></p>
 
 </li>
-<li class="research-publication" data-publication-key="gao2026noninvasive">
-  <p><a href="https://doi.org/10.1016/j.aquaculture.2025.743550" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="gao2026noninvasive" data-resource-action="paper" data-research-area="biomedical-image-analysis"><strong>Non-Invasive Early Sex Identification of Hybrid Sturgeon (Huso Dauricus♀ × Acipenser Schrenckii♂) Based on Multi-View Images</strong></a> <br /> He Gao, Qiaokun Liu, Xiao Chen, Rongzhu Zhou, Shanzhong Zhang, Junting Li, Yinhua Zhou, Suxing Fu, Chengjiang He, Tonghan Wu, Siyu Duan, Jia Xu, Luo Lei, Jian Su, Qiming Wang, Zhaofang Han, Chaowei Zhou, <strong>Bingyao Huang</strong>, Haiping Liu <br /> Aquaculture, 2026 <br /> <span class="pub-links"><a class="pub-link" href="https://doi.org/10.1016/j.aquaculture.2025.743550" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="gao2026noninvasive" data-resource-action="paper" data-research-area="biomedical-image-analysis">Paper</a></span></p>
-
-</li>
 <li class="research-publication" data-publication-key="liu2025mixed">
   <p><a href="https://doi.org/10.1109/ISMAR-Adjunct68609.2025.00126" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="liu2025mixed" data-resource-action="paper" data-research-area="mixed-reality"><strong>A Mixed Reality Framework for Acupoint Therapy Teaching: Localization, Practice and Evaluation</strong></a> <br /> Jiacheng Liu, Bohan Chen, Weichao Song, Fangfei Ye, Haibin Ling, <strong>Bingyao Huang</strong> <br /> IEEE International Symposium on Mixed and Augmented Reality Adjunct (<strong>ISMAR-Adjunct</strong>), 2025 <br /> <span class="pub-links"><a class="pub-link" href="https://doi.org/10.1109/ISMAR-Adjunct68609.2025.00126" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="liu2025mixed" data-resource-action="paper" data-research-area="mixed-reality">Paper</a></span></p>
+
+</li>
+<li class="research-publication" data-publication-key="lian2022endtoend">
+  <p><a href="https://scripts.iucr.org/cgi-bin/paper?S2059798321011761" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="lian2022endtoend" data-resource-action="paper" data-research-area="biomedical-image-analysis"><strong>End-to-End Orientation Estimation from 2d Cryo-Em Images</strong></a> <br /> Ruyi Lian, <strong>Bingyao Huang</strong>, Liguo Wang, Qun Liu, Yuewei Lin, Haibin Ling <br /> Acta Crystallographica Section D - Structural Biology, 2022 <br /> <span class="pub-links"><a class="pub-link" href="https://scripts.iucr.org/cgi-bin/paper?S2059798321011761" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="lian2022endtoend" data-resource-action="paper" data-research-area="biomedical-image-analysis">Paper</a></span></p>
 
 </li>
 
