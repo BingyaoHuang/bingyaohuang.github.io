@@ -18,7 +18,7 @@
   &lt;/li&gt;
   
   &lt;li&gt;
-    &lt;h3&gt;2. Jointly learn geometry and appearance&lt;/h3&gt;
+    &lt;h3&gt;2. Jointly learn geometry and photometry&lt;/h3&gt;
     &lt;p&gt;Connect geometric correction and photometric compensation in one differentiable model.&lt;/p&gt;
     &lt;div class=&quot;project-phase-papers&quot;&gt;&lt;a href=&quot;#compennet-plusplus&quot;&gt;CompenNet++ (ICCV'19)&lt;/a&gt;&lt;/div&gt;
   &lt;/li&gt;
