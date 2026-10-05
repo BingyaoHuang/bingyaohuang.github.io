@@ -41,7 +41,7 @@
     <div class="wrapper-masthead">
       <div id="site_header" class="container">
         <header class="masthead clearfix">
-          <a href="/" class="site-avatar"><img src="/images/avatar.jpg" alt="Bingyao Huang" /></a>
+          <a href="/" class="site-avatar"><img src="/images/profile/portrait.jpg" alt="Bingyao Huang" /></a>
 
           <div class="site-info">
             <h1 class="site-name"><a href="/">Bingyao Huang</a></h1>
@@ -51,8 +51,8 @@
           <nav aria-label="Main navigation">
             <a href="/" >Home</a>
             <a href="/research/" >Research</a>
-            <a href="/publications/" >Publications</a>
             <a href="/projects/" class="is-active" aria-current="page">Projects</a>
+            <a href="/publications/" >Publications</a>
             <a href="/data/" >Datasets</a>
             <a href="/service/" >Service</a>
             <!-- <a href="/about">About</a> -->
@@ -71,7 +71,7 @@
     <p class="article-meta">Bingyao Huang <span aria-hidden="true">&middot;</span> Posted <time datetime="2018-03-04T00:00:00+08:00">March 4, 2018</time></p>
   </header>
   <div class="entry article-content">
-    <p align="center"><img src="/images/calibration/capture.gif" alt="Calibration captures with a projected checkerboard at several poses" width="60%" /></p>
+    <p align="center"><img src="/images/project-media/kinect-projector-calibration/capture.gif" alt="Calibration captures with a projected checkerboard at several poses" width="60%" /></p>
 
 <ul>
   <li><a href="#projected-checkerboard-image">Projected checkerboard image</a></li>
@@ -85,7 +85,7 @@
 
 <p>In many AR applications, the relative rotation and translation between the Kinect and the projector are fixed. As shown below, we mount them together so that their fields of view (FOVs) overlap.</p>
 
-<p align="center"><img src="/images/calibration/setup.jpg" alt="Rigidly mounted Kinect and projector with overlapping fields of view" width="60%" /></p>
+<p align="center"><img src="/images/project-media/kinect-projector-calibration/setup.jpg" alt="Rigidly mounted Kinect and projector with overlapping fields of view" width="60%" /></p>
 
 <p>In this tutorial, we calibrate the system using <a href="https://docs.opencv.org/4.8.0/d9/d0c/group__calib3d.html">Zhang’s method</a> without a printed checkerboard pattern or a large room. We <strong>project</strong> a checkerboard pattern onto a flat white wall, then move the mounted Kinect-projector pair to capture images from at least three different poses, as shown in the demonstration above.</p>
 
@@ -142,7 +142,7 @@
 
 <p>The generated checkerboard image is shown below. OpenCV’s <a href="https://docs.opencv.org/4.8.0/d9/d0c/group__calib3d.html">findChessboardCorners</a> requires <strong>white borders</strong> around the checkerboard pattern, so we add an offset in both the x and y directions.</p>
 
-<p align="center"><img src="/images/calibration/checkerboard.png" alt="Projected checkerboard pattern with a white border" width="60%" /></p>
+<p align="center"><img src="/images/project-media/kinect-projector-calibration/checkerboard.png" alt="Projected checkerboard pattern with a white border" width="60%" /></p>
 
 <p>We project this checkerboard onto a flat white wall and capture depth and color frames using the Kinect. <a href="https://docs.opencv.org/4.8.0/d9/d0c/group__calib3d.html">Zhang’s method</a> requires at least three different poses.</p>
 
@@ -153,7 +153,7 @@
 
 <p>where $\mathbf{x}_i = [ x_i, y_i, z_i ]$ as the corresponding 3D coordinate of $\mathbf{P}^{\text{2d}}_{\text{c}}[i]$. Note $\mathbf{P}^{\text{2d}}_{\text{c}}$ is only used to extract $\mathbf{P}^\text{3d}$ from the Kinect-capture <strong>depth</strong> image in this article, but if you want to calibrate Kinect color camera keep $\mathbf{P}^{\text{2d}}_{\text{c}}$ for <a href="https://docs.opencv.org/4.8.0/d9/d0c/group__calib3d.html">Zhang’s method</a>.</p>
 
-<p align="center"><img src="/images/calibration/detected_corners.png" alt="Detected checkerboard corners colored in correspondence order" width="60%" /></p>
+<p align="center"><img src="/images/project-media/kinect-projector-calibration/detected-corners.png" alt="Detected checkerboard corners colored in correspondence order" width="60%" /></p>
 
 <p>Make sure the order of $\mathbf{P}^{\text{2d}}_{\text{c}}$ in the image above matches the order of those in $\mathbf{P}^\text{3d}$, basically the corner colors represent the order of the points in $\mathbf{P}^{\text{2d}}_{\text{c}}$, red is the first element in $\mathbf{P}^{\text{2d}}_{\text{c}}$ vector and dark blue is the last one.</p>
 
@@ -161,7 +161,7 @@
 
 <p>The plotted points $\mathbf{P}^\text{3d}$ lie on a plane, but their Z coordinates are nonzero because they are expressed in the Kinect <strong>depth camera’s coordinate system</strong> rather than the projected checkerboard’s coordinate system.</p>
 
-<p align="center"><img src="/images/calibration/pts3d_original.png" alt="Measured checkerboard corners in Kinect depth-camera coordinates" width="60%" /></p>
+<p align="center"><img src="/images/project-media/kinect-projector-calibration/pts3d-original.png" alt="Measured checkerboard corners in Kinect depth-camera coordinates" width="60%" /></p>
 
 <p>For a printed checkerboard, the 3D corner coordinates are known from the board’s geometry. A projected checkerboard is distorted by perspective projection, and its geometry changes with the pose of the projector-Kinect pair relative to the wall. Each projected pattern therefore has an unknown scale and shape.</p>
 
@@ -180,7 +180,7 @@
 
 <p>The two principal directions with the largest variance span the fitted checkerboard plane; the remaining direction is its normal.</p>
 
-<p align="center"><img src="/images/calibration/eigenvectors.gif" alt="Principal directions and plane normal of the measured checkerboard" width="60%" /></p>
+<p align="center"><img src="/images/project-media/kinect-projector-calibration/eigenvectors.gif" alt="Principal directions and plane normal of the measured checkerboard" width="60%" /></p>
 
 <p>Use a $3\times N$ matrix with one measured point per column, $\mathbf{P}=[\mathbf{x}_1,\ldots,\mathbf{x}_N]$. Its centroid and centered coordinates are</p>
 
@@ -197,7 +197,7 @@
   <li>Noise and surface nonplanarity leave small residual Z coordinates. Set the third row of $\mathbf{P}_{\mathrm{obj}}$ to zero to project the measurements onto the fitted plane before planar calibration.</li>
 </ol>
 
-<p align="center"><img src="/images/calibration/pts3d_rotated.png" alt="Centered checkerboard points after rotation into the fitted plane" width="60%" /></p>
+<p align="center"><img src="/images/project-media/kinect-projector-calibration/pts3d-rotated.png" alt="Centered checkerboard points after rotation into the fitted plane" width="60%" /></p>
 
 <p>Consistent in-plane axis sign choices do not change the projector intrinsics; retain the same point ordering in the 3D and 2D correspondence arrays.</p>
 
@@ -237,7 +237,6 @@
 
 <hr />
 
-    
   </div>
   <footer class="article-footer">
     <a href="/projects/">&larr; More projects</a>

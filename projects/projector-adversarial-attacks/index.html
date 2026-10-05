@@ -38,7 +38,7 @@
     <div class="wrapper-masthead">
       <div id="site_header" class="container">
         <header class="masthead clearfix">
-          <a href="/" class="site-avatar"><img src="/images/avatar.jpg" alt="Bingyao Huang" /></a>
+          <a href="/" class="site-avatar"><img src="/images/profile/portrait.jpg" alt="Bingyao Huang" /></a>
 
           <div class="site-info">
             <h1 class="site-name"><a href="/">Bingyao Huang</a></h1>
@@ -48,8 +48,8 @@
           <nav aria-label="Main navigation">
             <a href="/" >Home</a>
             <a href="/research/" >Research</a>
-            <a href="/publications/" >Publications</a>
             <a href="/projects/" class="is-active" aria-current="page">Projects</a>
+            <a href="/publications/" >Publications</a>
             <a href="/data/" >Datasets</a>
             <a href="/service/" >Service</a>
             <!-- <a href="/about">About</a> -->
@@ -71,14 +71,14 @@
     
 <h2 id="the-problem">The problem</h2>
 
-<p>A projected pattern can temporarily change the appearance observed by a camera without modifying the object itself. An adversarial projection seeks to change a classifier’s prediction while keeping the physical perturbation subtle. Surface materials, illumination, device responses, and viewpoint changes make a successful digital perturbation difficult to realize physically.</p>
+<p>A projected pattern can temporarily change the appearance observed by a camera without modifying the object itself. An adversarial projection seeks to change a classifier’s prediction while keeping the physical perturbation subtle and transient. Surface materials, illumination, device responses, and viewpoint changes make a successful digital perturbation difficult to realize physically.</p>
 
 <figure class="project-figure">
   <a href="/images/research-teasers/spaa.jpg"><img src="/images/research-teasers/spaa.jpg" alt="Physical projected adversarial patterns and their effect on image classification." loading="lazy" decoding="async" /></a>
   <figcaption>The physical setup connects a projector input, a real surface, a camera observation, and a classifier prediction.</figcaption>
 </figure>
 
-<h2 id="a-progressively-broader-evaluation-setting">A progressively broader evaluation setting</h2>
+<h2 id="from-stealthy-attacks-to-classifier-and-viewpoint-robustness">From stealthy attacks to classifier and viewpoint robustness</h2>
 
 <ol class="project-development project-development-3" aria-label="Development of Projector-Based Adversarial Attacks">
   
@@ -104,7 +104,7 @@
 
 <h3 id="stealthy-projection">Stealthy physical projection</h3>
 
-<p><strong>SPAA</strong> puts a learned project-and-capture approximation, PCNet, inside the optimization loop. The adversarial pattern is evaluated through a model of what the camera will observe after projection, rather than being optimized only as an image-space perturbation.</p>
+<p><strong>SPAA</strong> uses <strong>PCNet</strong> to predict what the camera will capture after a pattern is projected onto the surface. PCNet learns the forward project-and-capture process as a 2D geometric and photometric mapping for a fixed view. The attack optimizer differentiates through this prediction to account for the physical projection process.</p>
 
 <p>The optimization balances adversarial confidence with appearance changes using adversarial and stealthiness losses. This connects the physical projection constraints with the objective of producing subtle targeted or untargeted attacks.</p>
 
@@ -112,10 +112,8 @@
 
 <p><strong>CAPAA</strong> addresses dependence on an individual classifier. Its optimization aggregates adversarial and stealthiness gradients from multiple classifiers. Attention-based gradient weighting focuses perturbations on regions with high classification activation and supports robustness under camera-pose variation.</p>
 
-<p>This broadens the evaluation setting beyond one fixed classifier: the pattern is developed against multiple decision models, while still accounting for the visibility of the physical perturbation.</p>
-
 <figure class="project-figure">
-  <a href="/images/research-teasers/capaa.jpg"><img src="/images/research-teasers/capaa.jpg" alt="Classifier-agnostic projected attack optimization and physical results." loading="lazy" decoding="async" /></a>
+  <a href="/images/publications/capaa.jpg"><img src="/images/publications/capaa.jpg" alt="Classifier-agnostic projected attack optimization and physical results." loading="lazy" decoding="async" /></a>
   <figcaption>CAPAA connects multiple classifiers with an attention-weighted optimization of the physical projection.</figcaption>
 </figure>
 
@@ -123,51 +121,43 @@
 
 <p><strong>VIPA</strong> adds explicit multi-view simulation of the projector-camera system. It aggregates simulated attack losses from different camera views and jointly optimizes the adversarial pattern across viewpoints and classifiers before physically projecting the result.</p>
 
-<p>This progression changes the conditions under which a pattern is expected to remain effective: from a stealthy physical attack, to reduced classifier dependence, to jointly considering classifier and viewpoint variation. Each method has its own assumptions and evaluation, documented in the linked papers.</p>
-
 <figure class="project-figure">
   <a href="/images/research-teasers/vipa.jpg"><img src="/images/research-teasers/vipa.jpg" alt="Multi-view projector-camera simulation and view-invariant adversarial projection." loading="lazy" decoding="async" /></a>
   <figcaption>VIPA uses a scene model to evaluate projected patterns from multiple viewpoints.</figcaption>
 </figure>
 
-<h2 id="demonstrations-and-evaluation">Demonstrations and evaluation</h2>
-
-<p>The figures show the physical projection setup and the later optimization frameworks. SPAA provides a video demonstration; CAPAA provides an implementation and dataset; VIPA provides a project website and dataset. Papers and available resources are listed below.</p>
-
 <section class="project-papers" aria-labelledby="project-papers-title">
   <h2 id="project-papers-title">Papers and implementations</h2>
-  <p>These papers document the methods and developments described above. Their authors, publication details, and available resources are listed together here.</p>
   
 <div class="project-publication" data-publication-key="huang2022spaa">
-  <p><a href="https://arxiv.org/pdf/2012.05858.pdf" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2022spaa" data-resource-action="paper" data-research-area="projector-based-adversarial-attack"><strong>SPAA: Stealthy Projector-Based Adversarial Attacks on Deep Image Classifiers</strong></a> <br /> <strong>Bingyao Huang</strong>, Haibin Ling <br /> IEEE Conference on Virtual Reality and 3D User Interfaces (<strong>IEEE VR</strong>), 2022 <br /> <span class="pub-links"><a class="pub-link" href="https://arxiv.org/pdf/2012.05858.pdf" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2022spaa" data-resource-action="paper" data-research-area="projector-based-adversarial-attack">Paper</a> <a class="pub-link" href="https://github.com/BingyaoHuang/SPAA" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2022spaa" data-resource-action="code" data-research-area="projector-based-adversarial-attack">Code</a> <a class="pub-link" href="https://www.dropbox.com/s/uqcznaqae3irevc/SPAA_sup.pdf?dl=0" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2022spaa" data-resource-action="supplementary" data-research-area="projector-based-adversarial-attack">Supplementary</a> <a class="pub-link" href="https://youtu.be/7oSh5BmJDJ8?list=PLmkIPPvcHLZgWaBGqwiAe52PLDNnMtIA5&amp;t=477" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2022spaa" data-resource-action="video" data-research-area="projector-based-adversarial-attack">Video</a></span></p>
-
+  <a class="project-publication-teaser" href="https://arxiv.org/pdf/2012.05858.pdf" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2022spaa" data-resource-action="paper" data-research-area="projector-based-adversarial-attack"><img src="/images/publications/spaa.png" alt="Teaser for SPAA: Stealthy Projector-Based Adversarial Attacks on Deep Image Classifiers" loading="lazy" decoding="async" /></a>
+  <div class="project-publication-details"><p><a href="https://arxiv.org/pdf/2012.05858.pdf" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2022spaa" data-resource-action="paper" data-research-area="projector-based-adversarial-attack"><strong>SPAA: Stealthy Projector-Based Adversarial Attacks on Deep Image Classifiers</strong></a> <br /> <strong>Bingyao Huang</strong>, Haibin Ling <br /> IEEE Conference on Virtual Reality and 3D User Interfaces (<strong>IEEE VR</strong>), 2022 <br /> <span class="pub-links"><a class="pub-link" href="https://arxiv.org/pdf/2012.05858.pdf" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2022spaa" data-resource-action="paper" data-research-area="projector-based-adversarial-attack">Paper</a> <a class="pub-link" href="https://github.com/BingyaoHuang/SPAA" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2022spaa" data-resource-action="code" data-research-area="projector-based-adversarial-attack">Code</a> <a class="pub-link" href="https://www.dropbox.com/s/uqcznaqae3irevc/SPAA_sup.pdf?dl=0" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2022spaa" data-resource-action="supplementary" data-research-area="projector-based-adversarial-attack">Supplementary</a> <a class="pub-link" href="https://youtu.be/7oSh5BmJDJ8?list=PLmkIPPvcHLZgWaBGqwiAe52PLDNnMtIA5&amp;t=477" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2022spaa" data-resource-action="video" data-research-area="projector-based-adversarial-attack">Video</a></span></p>
+</div>
 </div>
 
 <div class="project-publication" data-publication-key="li2025capaa">
-  <p><a href="https://doi.org/10.1109/ICME59968.2025.11209575" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="li2025capaa" data-resource-action="paper" data-research-area="projector-based-adversarial-attack"><strong>CAPAA: Classifier-Agnostic Projector-Based Adversarial Attack</strong></a> <br /> Zhan Li<sup>#</sup>, Mingyu Zhao<sup>#</sup>, Xin Dong, Haibin Ling, <strong>Bingyao Huang</strong> <br /> IEEE International Conference on Multimedia and Expo (<strong>ICME</strong>), 2025 <br /> <span class="pub-links"><a class="pub-link" href="https://doi.org/10.1109/ICME59968.2025.11209575" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="li2025capaa" data-resource-action="paper" data-research-area="projector-based-adversarial-attack">Paper</a> <a class="pub-link" href="https://github.com/ZhanLiQxQ/CAPAA" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="li2025capaa" data-resource-action="code" data-research-area="projector-based-adversarial-attack">Code</a></span></p>
-
+  <a class="project-publication-teaser" href="https://doi.org/10.1109/ICME59968.2025.11209575" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="li2025capaa" data-resource-action="paper" data-research-area="projector-based-adversarial-attack"><img src="/images/publications/capaa.jpg" alt="Teaser for CAPAA: Classifier-Agnostic Projector-Based Adversarial Attack" loading="lazy" decoding="async" /></a>
+  <div class="project-publication-details"><p><a href="https://doi.org/10.1109/ICME59968.2025.11209575" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="li2025capaa" data-resource-action="paper" data-research-area="projector-based-adversarial-attack"><strong>CAPAA: Classifier-Agnostic Projector-Based Adversarial Attack</strong></a> <br /> Zhan Li<sup>#</sup>, Mingyu Zhao<sup>#</sup>, Xin Dong, Haibin Ling, <strong>Bingyao Huang</strong> <br /> IEEE International Conference on Multimedia and Expo (<strong>ICME</strong>), 2025 <br /> <span class="pub-links"><a class="pub-link" href="https://doi.org/10.1109/ICME59968.2025.11209575" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="li2025capaa" data-resource-action="paper" data-research-area="projector-based-adversarial-attack">Paper</a> <a class="pub-link" href="https://github.com/ZhanLiQxQ/CAPAA" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="li2025capaa" data-resource-action="code" data-research-area="projector-based-adversarial-attack">Code</a></span></p>
+</div>
 </div>
 
 <div class="project-publication" data-publication-key="han2026vipa">
-  <p><a href="https://hhhh-han.github.io/VIPA/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="han2026vipa" data-resource-action="project_page" data-research-area="projector-based-adversarial-attack"><strong>VIPA: View-Invariant Projector-Based Adversarial Attack</strong></a> <br /> Jiyu Han, Qingyue Deng, <strong>Bingyao Huang</strong> <br /> IEEE Transactions on Visualization and Computer Graphics (<strong>TVCG</strong>), 2026 (In press) <br /> Also in IEEE International Symposium on Mixed and Augmented Reality (<strong>ISMAR</strong>), 2026 <br /> <span class="pub-links"><a class="pub-link" href="https://hhhh-han.github.io/VIPA/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="han2026vipa" data-resource-action="project_page" data-research-area="projector-based-adversarial-attack">Project</a></span></p>
-
+  <a class="project-publication-teaser" href="https://hhhh-han.github.io/VIPA/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="han2026vipa" data-resource-action="project_page" data-research-area="projector-based-adversarial-attack"><img src="/images/publications/vipa.jpg" alt="Teaser for VIPA: View-Invariant Projector-Based Adversarial Attack" loading="lazy" decoding="async" /></a>
+  <div class="project-publication-details"><p><a href="https://hhhh-han.github.io/VIPA/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="han2026vipa" data-resource-action="project_page" data-research-area="projector-based-adversarial-attack"><strong>VIPA: View-Invariant Projector-Based Adversarial Attack</strong></a> <br /> Jiyu Han, Qingyue Deng, <strong>Bingyao Huang</strong> <br /> IEEE Transactions on Visualization and Computer Graphics (<strong>TVCG</strong>), 2026 (In press) <br /> Also in IEEE International Symposium on Mixed and Augmented Reality (<strong>ISMAR</strong>), 2026 <br /> <span class="pub-links"><a class="pub-link" href="https://hhhh-han.github.io/VIPA/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="han2026vipa" data-resource-action="project_page" data-research-area="projector-based-adversarial-attack">Project</a> <a class="pub-link" href="https://github.com/Hhhh-han/VIPA" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="han2026vipa" data-resource-action="code" data-research-area="projector-based-adversarial-attack">Code</a></span></p>
+</div>
 </div>
 
-  
-  <h3>Datasets</h3>
-  <ul class="project-datasets"><li><a href="/data/#huang2022spaa" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2022spaa" data-resource-action="dataset" data-research-area="projector-based-adversarial-attack">SPAA dataset</a></li><li><a href="https://drive.google.com/file/d/1Kte3lONV2kRgg1hZtRr8ws503jq6JrPU/view?usp=sharing" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="li2025capaa" data-resource-action="dataset" data-research-area="projector-based-adversarial-attack">CAPAA dataset</a></li><li><a href="https://drive.google.com/file/d/1tnVE45cav8DYT4xWRhYFPIWANgKZqN64/view?usp=sharing" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="han2026vipa" data-resource-action="dataset" data-research-area="projector-based-adversarial-attack">VIPA dataset</a></li></ul>
-  
 </section>
 
-<h2 id="related-work">Related work</h2>
-
+<section class="project-connections" aria-labelledby="project-connections-title">
+  <h2 id="project-connections-title">Related research topics and projects</h2>
+  
 <p>Differentiable &amp; 3D ProCam Systems develops the forward simulation models that connect a projector pattern to camera observations. Physics-Informed Computational Imaging includes <strong>Neural-STE</strong>, which studies passive optical information leakage through envelopes. That privacy problem complements this work, but does not belong to the active projector-attack progression.</p>
 
-    <section class="project-connections" aria-labelledby="project-connections-title">
-  <h2 id="project-connections-title">Related research topics and projects</h2>
   <p class="project-directions">Research topics: <a href="/research/#visual-privacy-security">Visual Privacy &amp; Security</a></p>
-  <ul class="project-related-families"><li><a href="/projects/differentiable-3d-procams/">Differentiable &amp; 3D ProCam Systems</a><p>Build differentiable scene models that connect projector inputs, light transport, surface geometry, and captured appearance.</p></li><li><a href="/projects/physics-informed-imaging/">Physics-Informed Computational Imaging</a><p>Recover structure and appearance by modeling how optical media distort the measurements reaching a camera.</p></li></ul>
+  <ul class="project-related-families"><li><a href="/projects/differentiable-3d-procams/">Differentiable &amp; 3D ProCam Systems</a></li><li><a href="/projects/physics-informed-imaging/">Physics-Informed Computational Imaging</a></li></ul>
 </section>
+
 
   </div>
   <footer class="article-footer">

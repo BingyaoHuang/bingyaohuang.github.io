@@ -38,7 +38,7 @@
     <div class="wrapper-masthead">
       <div id="site_header" class="container">
         <header class="masthead clearfix">
-          <a href="/" class="site-avatar"><img src="/images/avatar.jpg" alt="Bingyao Huang" /></a>
+          <a href="/" class="site-avatar"><img src="/images/profile/portrait.jpg" alt="Bingyao Huang" /></a>
 
           <div class="site-info">
             <h1 class="site-name"><a href="/">Bingyao Huang</a></h1>
@@ -48,8 +48,8 @@
           <nav aria-label="Main navigation">
             <a href="/" >Home</a>
             <a href="/research/" >Research</a>
-            <a href="/publications/" >Publications</a>
             <a href="/projects/" class="is-active" aria-current="page">Projects</a>
+            <a href="/publications/" >Publications</a>
             <a href="/data/" >Datasets</a>
             <a href="/service/" >Service</a>
             <!-- <a href="/about">About</a> -->
@@ -71,46 +71,58 @@
     
 <h2 id="the-problem">The problem</h2>
 
-<p>A projector-camera system needs a forward model: given a projector image and a scene, what will the camera observe? A useful model must connect device responses, surface geometry and materials, occlusion, and indirect illumination. Differentiability makes it possible to estimate unknown scene parameters and optimize projector inputs through that same model.</p>
+<p>A projector-camera system needs a forward model: given a projector image and a scene, what will the camera observe? Our models range from learned 2D geometric and photometric mappings to explicit 3D representations of geometry, materials, and light transport. Differentiability allows the model to guide projector-input optimization and, when it represents scene parameters, their estimation from captured images.</p>
 
 <figure class="project-figure">
   <a href="/images/research-teasers/physics-and-3d-aware-procams.jpg"><img src="/images/research-teasers/physics-and-3d-aware-procams.jpg" alt="Differentiable projector-camera simulation and applications using explicit scene geometry and materials." loading="lazy" decoding="async" /></a>
   <figcaption>One scene model connects physical projection, captured appearance, and downstream ProCam applications.</figcaption>
 </figure>
 
-<h2 id="from-unified-mappings-to-explicit-3d-scenes">From unified mappings to explicit 3D scenes</h2>
+<h2 id="from-image-mappings-to-explicit-3d-scenes">From image mappings to explicit 3D scenes</h2>
 
-<ol class="project-development project-development-3" aria-label="Development of Differentiable &amp; 3D ProCam Systems">
+<ol class="project-development project-development-4" aria-label="Development of Differentiable &amp; 3D ProCam Systems">
   
   <li>
-    <h3>1. Unify project-and-capture tasks</h3>
+    <h3>1. Learn a 2D forward mapping</h3>
+    <p>Predict camera appearance from projector inputs using learned geometry and photometry in a fixed view.</p>
+    <div class="project-phase-papers"><a href="#pcnet-forward-model">PCNet / SPAA (IEEE VR'22)</a></div>
+  </li>
+  
+  <li>
+    <h3>2. Unify project-and-capture tasks</h3>
     <p>Learn geometric and photometric mappings for relighting, compensation, and reconstruction.</p>
     <div class="project-phase-papers"><a href="#unified-model">DeProCams (TVCG'21)</a></div>
   </li>
   
   <li>
-    <h3>2. Make light transport explicit</h3>
+    <h3>3. Make light transport explicit</h3>
     <p>Use differentiable path tracing to separate scene parameters and simulate multi-bounce illumination.</p>
     <div class="project-phase-papers"><a href="#physical-rendering">DPCS (TVCG'25)</a></div>
   </li>
   
   <li>
-    <h3>3. Represent the scene in 3D</h3>
+    <h3>4. Represent the scene in 3D</h3>
     <p>Use Gaussian geometry and materials for efficient simulation across viewpoints.</p>
     <div class="project-phase-papers"><a href="#gaussian-scene">GS-ProCams (TVCG'25)</a></div>
   </li>
   
 </ol>
 
+<h3 id="pcnet-forward-model">A 2D forward project-and-capture model</h3>
+
+<p><strong>PCNet</strong>, introduced in <strong>SPAA</strong>, predicts the camera-captured appearance of a projector input using learned geometric warping and photometric interactions with a surface image. It models the forward project-and-capture process in 2D image coordinates for a fixed camera view, without reconstructing explicit 3D geometry or materials.</p>
+
+<p>SPAA differentiates through PCNet to optimize adversarial projector inputs before physical projection. This is a forward-modeling application alongside relighting and compensation; the attack objective is described in Projector-Based Adversarial Attacks.</p>
+
 <h3 id="unified-model">A shared model for relighting, compensation, and reconstruction</h3>
 
 <p><strong>DeProCams</strong> learns the projector-camera geometric and photometric mappings in one end-to-end model. It decomposes the forward process into shading-attribute estimation, rough direct-light estimation, and neural rendering. An epipolar-constrained differentiable projector light mask handles occlusion, while geometric and photometric constraints encourage plausible intermediate estimates.</p>
 
-<p>Once fitted, the model supports three tasks that were often handled separately: relighting, projector compensation, and depth/normal reconstruction. This establishes a shared system model rather than a compensation-only inverse mapping.</p>
+<p>Once fitted, the same model supports relighting, projector compensation, and depth/normal reconstruction.</p>
 
 <figure class="project-figure">
   
-  <video autoplay="" muted="" loop="" playsinline="" controls="" preload="metadata" aria-label="A trained DeProCams model used for relighting and geometric reconstruction."><source src="/images/research-teasers/unified-procam-modeling.webm" type="video/webm" /><source src="/images/research-teasers/unified-procam-modeling.mp4" type="video/mp4" />A trained DeProCams model used for relighting and geometric reconstruction.</video>
+  <video autoplay="" muted="" loop="" playsinline="" controls="" preload="metadata" aria-label="A trained DeProCams model used for relighting and geometric reconstruction."><source src="/images/research-teasers/unified-procam-modeling.webm" type="video/webm" />A trained DeProCams model used for relighting and geometric reconstruction.</video>
   
   <figcaption>DeProCams connects learned projection mappings with appearance and scene-recovery tasks.</figcaption>
 </figure>
@@ -119,54 +131,52 @@
 
 <p><strong>DPCS</strong> explicitly models scene parameters and light paths. Its differentiable path-tracing model includes multi-bounce light transport, allowing interreflection and soft shadows to be simulated through physically based rendering. Geometry, materials, and device-related parameters can be estimated from projection observations and then reused to simulate new scenes.</p>
 
-<p>The model separates scene parameters that can be inspected and adjusted. The same forward model supports relighting and compensation.</p>
+<p>The estimated scene parameters can be inspected and adjusted for relighting and compensation.</p>
 
 <h3 id="gaussian-scene">A scene representation that supports different viewpoints</h3>
 
 <p><strong>GS-ProCams</strong> uses 2D Gaussians to represent scene geometry and materials. It jointly estimates these properties, projector responses, and a global-illumination component from captured multi-view projections using differentiable physically based rendering.</p>
 
-<p>An explicit 3D representation allows ProCam simulation beyond the single view used by image-to-image mappings. Its goal is efficient view-agnostic projection mapping without an additional co-located light source. The project website linked below contains the full method, comparisons, implementation, and data.</p>
-
-<h2 id="system-and-applications">System and applications</h2>
-
-<p>The common workflow is <strong>project known inputs → capture observations → estimate the forward scene model → use that model for rendering or optimization</strong>. The representations differ: DeProCams combines explicit geometric/photometric components with learned rendering, DPCS models physical light paths, and GS-ProCams adds an efficient explicit 3D scene representation.</p>
-
-<p>The overview figure above shows reconstruction and simulation alongside downstream projection tasks. These applications connect this project to both ProCam/SAR and physics-informed 3D vision.</p>
+<p>An explicit 3D representation allows ProCam simulation beyond the single view used by image-to-image mappings. Its goal is efficient view-agnostic projection mapping without an additional co-located light source.</p>
 
 <section class="project-papers" aria-labelledby="project-papers-title">
   <h2 id="project-papers-title">Papers and implementations</h2>
-  <p>These papers document the methods and developments described above. Their authors, publication details, and available resources are listed together here.</p>
   
-<div class="project-publication" data-publication-key="huang2021deprocams">
-  <p><a href="https://arxiv.org/pdf/2003.03040.pdf" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2021deprocams" data-resource-action="paper" data-research-area="projector-compensation"><strong>DeProCams: Simultaneous Relighting, Compensation and Shape Reconstruction for Projector-Camera Systems</strong></a> <br /> <strong>Bingyao Huang</strong>, Haibin Ling <br /> IEEE Transactions on Visualization and Computer Graphics (<strong>TVCG</strong>), 2021 <br /> Also in IEEE Conference on Virtual Reality and 3D User Interfaces (<strong>IEEE VR</strong>), 2021 (<a class="publication-award" href="https://ieeevr.org/2021/awards/conference-awards/#journal-best">🏆Best Journal Paper Award</a>) <br /> <span class="pub-links"><a class="pub-link" href="https://arxiv.org/pdf/2003.03040.pdf" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2021deprocams" data-resource-action="paper" data-research-area="projector-compensation">Paper</a> <a class="pub-link" href="https://github.com/BingyaoHuang/DeProCams" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2021deprocams" data-resource-action="code" data-research-area="projector-compensation">Code</a> <a class="pub-link" href="https://drive.google.com/file/d/1kLYa51pW251Qg-OBMmdhcfn_b4GQZ1OV/view?usp=sharing" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2021deprocams" data-resource-action="supplementary" data-research-area="projector-compensation">Supplementary</a> <a class="pub-link" href="https://youtu.be/pQ8k4AOhwlU" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2021deprocams" data-resource-action="video" data-research-area="projector-compensation">Video</a></span></p>
+<div class="project-publication" data-publication-key="huang2022spaa">
+  <a class="project-publication-teaser" href="https://arxiv.org/pdf/2012.05858.pdf" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2022spaa" data-resource-action="paper" data-research-area="projector-based-adversarial-attack"><img src="/images/publications/spaa.png" alt="Teaser for SPAA: Stealthy Projector-Based Adversarial Attacks on Deep Image Classifiers" loading="lazy" decoding="async" /></a>
+  <div class="project-publication-details"><p><a href="https://arxiv.org/pdf/2012.05858.pdf" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2022spaa" data-resource-action="paper" data-research-area="projector-based-adversarial-attack"><strong>SPAA: Stealthy Projector-Based Adversarial Attacks on Deep Image Classifiers</strong></a> <br /> <strong>Bingyao Huang</strong>, Haibin Ling <br /> IEEE Conference on Virtual Reality and 3D User Interfaces (<strong>IEEE VR</strong>), 2022 <br /> <span class="pub-links"><a class="pub-link" href="https://arxiv.org/pdf/2012.05858.pdf" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2022spaa" data-resource-action="paper" data-research-area="projector-based-adversarial-attack">Paper</a> <a class="pub-link" href="https://github.com/BingyaoHuang/SPAA" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2022spaa" data-resource-action="code" data-research-area="projector-based-adversarial-attack">Code</a> <a class="pub-link" href="https://www.dropbox.com/s/uqcznaqae3irevc/SPAA_sup.pdf?dl=0" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2022spaa" data-resource-action="supplementary" data-research-area="projector-based-adversarial-attack">Supplementary</a> <a class="pub-link" href="https://youtu.be/7oSh5BmJDJ8?list=PLmkIPPvcHLZgWaBGqwiAe52PLDNnMtIA5&amp;t=477" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2022spaa" data-resource-action="video" data-research-area="projector-based-adversarial-attack">Video</a></span></p>
+</div>
+</div>
 
+<div class="project-publication" data-publication-key="huang2021deprocams">
+  <a class="project-publication-teaser" href="https://arxiv.org/pdf/2003.03040.pdf" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2021deprocams" data-resource-action="paper" data-research-area="projector-compensation"><img src="/images/publications/deprocams.gif" alt="Teaser for DeProCams: Simultaneous Relighting, Compensation and Shape Reconstruction for Projector-Camera Systems" loading="lazy" decoding="async" /></a>
+  <div class="project-publication-details"><p><a href="https://arxiv.org/pdf/2003.03040.pdf" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2021deprocams" data-resource-action="paper" data-research-area="projector-compensation"><strong>DeProCams: Simultaneous Relighting, Compensation and Shape Reconstruction for Projector-Camera Systems</strong></a> <br /> <strong>Bingyao Huang</strong>, Haibin Ling <br /> IEEE Transactions on Visualization and Computer Graphics (<strong>TVCG</strong>), 2021 <br /> Also in IEEE Conference on Virtual Reality and 3D User Interfaces (<strong>IEEE VR</strong>), 2021 (<a class="publication-award" href="https://ieeevr.org/2021/awards/conference-awards/#journal-best">🏆Best Journal Paper Award</a>) <br /> <span class="pub-links"><a class="pub-link" href="https://arxiv.org/pdf/2003.03040.pdf" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2021deprocams" data-resource-action="paper" data-research-area="projector-compensation">Paper</a> <a class="pub-link" href="https://github.com/BingyaoHuang/DeProCams" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2021deprocams" data-resource-action="code" data-research-area="projector-compensation">Code</a> <a class="pub-link" href="https://drive.google.com/file/d/1kLYa51pW251Qg-OBMmdhcfn_b4GQZ1OV/view?usp=sharing" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2021deprocams" data-resource-action="supplementary" data-research-area="projector-compensation">Supplementary</a> <a class="pub-link" href="https://youtu.be/pQ8k4AOhwlU" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2021deprocams" data-resource-action="video" data-research-area="projector-compensation">Video</a></span></p>
+</div>
 </div>
 
 <div class="project-publication" data-publication-key="li2025dpcs">
-  <p><a href="https://jijiangli.github.io/DPCS/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="li2025dpcs" data-resource-action="project_page" data-research-area="projector-compensation"><strong>DPCS: Path Tracing-Based Differentiable Projector-Camera Systems</strong></a> <br /> Jijiang Li, Qingyue Deng, Haibin Ling, <strong>Bingyao Huang</strong> <br /> IEEE Transactions on Visualization and Computer Graphics (<strong>TVCG</strong>), 2025 <br /> Also in IEEE Conference on Virtual Reality and 3D User Interfaces (<strong>IEEE VR</strong>), 2025 <br /> <span class="pub-links"><a class="pub-link" href="https://doi.org/10.1109/TVCG.2025.3549890" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="li2025dpcs" data-resource-action="paper" data-research-area="projector-compensation">Paper</a> <a class="pub-link" href="https://jijiangli.github.io/DPCS/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="li2025dpcs" data-resource-action="project_page" data-research-area="projector-compensation">Project</a> <a class="pub-link" href="https://github.com/JijiangLi/DPCS" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="li2025dpcs" data-resource-action="code" data-research-area="projector-compensation">Code</a></span></p>
-
+  <a class="project-publication-teaser" href="https://jijiangli.github.io/DPCS/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="li2025dpcs" data-resource-action="project_page" data-research-area="projector-compensation"><img src="/images/publications/dpcs.jpg" alt="Teaser for DPCS: Path Tracing-Based Differentiable Projector-Camera Systems" loading="lazy" decoding="async" /></a>
+  <div class="project-publication-details"><p><a href="https://jijiangli.github.io/DPCS/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="li2025dpcs" data-resource-action="project_page" data-research-area="projector-compensation"><strong>DPCS: Path Tracing-Based Differentiable Projector-Camera Systems</strong></a> <br /> Jijiang Li, Qingyue Deng, Haibin Ling, <strong>Bingyao Huang</strong> <br /> IEEE Transactions on Visualization and Computer Graphics (<strong>TVCG</strong>), 2025 <br /> Also in IEEE Conference on Virtual Reality and 3D User Interfaces (<strong>IEEE VR</strong>), 2025 <br /> <span class="pub-links"><a class="pub-link" href="https://doi.org/10.1109/TVCG.2025.3549890" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="li2025dpcs" data-resource-action="paper" data-research-area="projector-compensation">Paper</a> <a class="pub-link" href="https://jijiangli.github.io/DPCS/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="li2025dpcs" data-resource-action="project_page" data-research-area="projector-compensation">Project</a> <a class="pub-link" href="https://github.com/JijiangLi/DPCS" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="li2025dpcs" data-resource-action="code" data-research-area="projector-compensation">Code</a></span></p>
+</div>
 </div>
 
 <div class="project-publication" data-publication-key="deng2025gsprocams">
-  <p><a href="https://realqingyue.github.io/GS-ProCams/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="deng2025gsprocams" data-resource-action="project_page" data-research-area="projector-compensation"><strong>GS-ProCams: Gaussian Splatting-Based Projector-Camera Systems</strong></a> <br /> Qingyue Deng, Jijiang Li, Haibin Ling, <strong>Bingyao Huang</strong> <br /> IEEE Transactions on Visualization and Computer Graphics (<strong>TVCG</strong>), 2025 <br /> Also in IEEE International Symposium on Mixed and Augmented Reality (<strong>ISMAR</strong>), 2025 <br /> <span class="pub-links"><a class="pub-link" href="https://doi.org/10.1109/TVCG.2025.3616841" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="deng2025gsprocams" data-resource-action="paper" data-research-area="projector-compensation">Paper</a> <a class="pub-link" href="https://realqingyue.github.io/GS-ProCams/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="deng2025gsprocams" data-resource-action="project_page" data-research-area="projector-compensation">Project</a> <a class="pub-link" href="https://github.com/realqingyue/GS-ProCams" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="deng2025gsprocams" data-resource-action="code" data-research-area="projector-compensation">Code</a></span></p>
-
+  <a class="project-publication-teaser" href="https://realqingyue.github.io/GS-ProCams/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="deng2025gsprocams" data-resource-action="project_page" data-research-area="projector-compensation"><img src="/images/publications/gs-procams.jpg" alt="Teaser for GS-ProCams: Gaussian Splatting-Based Projector-Camera Systems" loading="lazy" decoding="async" /></a>
+  <div class="project-publication-details"><p><a href="https://realqingyue.github.io/GS-ProCams/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="deng2025gsprocams" data-resource-action="project_page" data-research-area="projector-compensation"><strong>GS-ProCams: Gaussian Splatting-Based Projector-Camera Systems</strong></a> <br /> Qingyue Deng, Jijiang Li, Haibin Ling, <strong>Bingyao Huang</strong> <br /> IEEE Transactions on Visualization and Computer Graphics (<strong>TVCG</strong>), 2025 <br /> Also in IEEE International Symposium on Mixed and Augmented Reality (<strong>ISMAR</strong>), 2025 <br /> <span class="pub-links"><a class="pub-link" href="https://doi.org/10.1109/TVCG.2025.3616841" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="deng2025gsprocams" data-resource-action="paper" data-research-area="projector-compensation">Paper</a> <a class="pub-link" href="https://realqingyue.github.io/GS-ProCams/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="deng2025gsprocams" data-resource-action="project_page" data-research-area="projector-compensation">Project</a> <a class="pub-link" href="https://github.com/realqingyue/GS-ProCams" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="deng2025gsprocams" data-resource-action="code" data-research-area="projector-compensation">Code</a></span></p>
+</div>
 </div>
 
-  
-  <h3>Datasets</h3>
-  <ul class="project-datasets"><li><a href="/data/#huang2021deprocams" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="huang2021deprocams" data-resource-action="dataset" data-research-area="projector-compensation">DeProCams dataset</a></li><li><a href="https://westlakeu-my.sharepoint.com/:f:/g/personal/dengqingyue_westlake_edu_cn/EojpBYrI3HFMicy9ggZ6zv8BHlG8AlV26FZYQH3vqdBjUA?e=KEKl4x" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="deng2025gsprocams" data-resource-action="dataset" data-research-area="projector-compensation">GS-ProCams dataset</a></li></ul>
-  
 </section>
 
-<h2 id="related-work">Related work</h2>
-
-<p>Projector Compensation solves the inverse appearance-control problem and can use a forward scene model during optimization. Physics-Informed Computational Imaging uses explicit optical models for inference through difficult media. Projector-Based Adversarial Attacks uses differentiable projection simulation to evaluate and optimize patterns before physical projection.</p>
-
-    <section class="project-connections" aria-labelledby="project-connections-title">
+<section class="project-connections" aria-labelledby="project-connections-title">
   <h2 id="project-connections-title">Related research topics and projects</h2>
+  
+<p>Projector Compensation solves the inverse appearance-control problem and can use a forward model during optimization. Physics-Informed Computational Imaging extends physical modeling to inference through water and paper envelopes. Projector-Based Adversarial Attacks applies forward models to optimize patterns that change classifier predictions, using PCNet in SPAA and multi-view simulation in VIPA.</p>
+
   <p class="project-directions">Research topics: <a href="/research/#procam-spatial-ar">ProCam &amp; SAR</a> · <a href="/research/#3d-vision-computational-imaging">3D Vision &amp; Computational Imaging</a></p>
-  <ul class="project-related-families"><li><a href="/projects/projector-compensation/">Projector Compensation</a><p>Project a desired appearance onto non-planar, textured surfaces by compensating for geometric and photometric distortions.</p></li><li><a href="/projects/physics-informed-imaging/">Physics-Informed Computational Imaging</a><p>Recover structure and appearance by modeling how optical media distort the measurements reaching a camera.</p></li><li><a href="/projects/projector-adversarial-attacks/">Projector-Based Adversarial Attacks</a><p>Study how physically projected patterns affect image classifiers, from stealthy perturbations to robustness across classifiers and viewpoints.</p></li></ul>
+  <ul class="project-related-families"><li><a href="/projects/projector-compensation/">Projector Compensation</a></li><li><a href="/projects/physics-informed-imaging/">Physics-Informed Computational Imaging</a></li><li><a href="/projects/projector-adversarial-attacks/">Projector-Based Adversarial Attacks</a></li></ul>
 </section>
+
 
   </div>
   <footer class="article-footer">
