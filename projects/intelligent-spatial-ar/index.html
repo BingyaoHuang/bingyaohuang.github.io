@@ -38,7 +38,7 @@
     <div class="wrapper-masthead">
       <div id="site_header" class="container">
         <header class="masthead clearfix">
-          <a href="/" class="site-avatar"><img src="/images/profile/portrait.jpg" alt="Bingyao Huang" /></a>
+          <a href="/" class="site-avatar"><img src="/images/profile/portrait-avatar.jpg" srcset="/images/profile/portrait-avatar-2x.jpg 2x" width="104" height="104" alt="Bingyao Huang" /></a>
 
           <div class="site-info">
             <h1 class="site-name"><a href="/">Bingyao Huang</a></h1>
@@ -86,8 +86,8 @@
   
   <li>
     <h3>1. Generate content for the surface</h3>
-    <p>Turn a language prompt into projected stylization while accounting for surface texture and projector limits.</p>
-    <div class="project-phase-papers"><a href="#surface-generation">LAPIG (TVCG'25)</a></div>
+    <p>Turn a language prompt into projected stylization while accounting for surface texture and projector limits. GS-ProCams also explores preliminary diffusion-based appearance editing from text.</p>
+    <div class="project-phase-papers"><a href="#surface-generation">LAPIG (TVCG'25)</a><a href="#surface-generation">GS-ProCams (TVCG'25)</a></div>
   </li>
   
   <li>
@@ -104,11 +104,26 @@
 
 <p>Projection surface adaptation addresses this constraint during generation. Learned compensation and project-and-capture models make it possible to optimize the image without physically projecting every candidate. Content and saturation losses guide the result toward the requested style while reducing surface-related artifacts. The generated image is then projected to produce the surface stylization.</p>
 
+<p><strong>GS-ProCams</strong> also includes a preliminary exploration of combining a diffusion model with its projector-camera scene model for <strong>text-based appearance editing</strong>.</p>
+
+<figure class="project-figure">
+  <video controls="" muted="" playsinline="" preload="metadata" aria-label="GS-ProCams preliminary text-based appearance editing, 3:34 to 3:49" onplay="if (this.currentTime &lt; 214 || this.currentTime &gt;= 228) this.currentTime = 214;" ontimeupdate="if (this.currentTime &gt;= 228) { this.pause(); if (this.currentTime &gt; 228) this.currentTime = 228; }" onseeked="if (this.currentTime &lt; 214 || this.currentTime &gt; 228) this.currentTime = 214;">
+    <source src="https://realqingyue.github.io/GS-ProCams/static/videos/teaser-video.mp4#t=214,228" type="video/mp4" />
+    <a href="https://realqingyue.github.io/GS-ProCams/static/videos/teaser-video.mp4#t=214,228">Watch the GS-ProCams appearance-editing excerpt (3:34–3:49).</a>
+  </video>
+  <figcaption>Preliminary text-based appearance editing with GS-ProCams and a diffusion model (3:34–3:49).</figcaption>
+</figure>
+
 <h3 id="projection-understanding">Distinguishing the projection from the physical scene</h3>
 
 <p><strong>ProCap</strong> studies the complementary interpretation problem. A standard vision-language model may describe projected content as if it were part of the physical scene. ProCap separates virtual and physical layers through automated segmentation, then uses region-aware retrieval to reduce ambiguous semantic context caused by projection distortion.</p>
 
-<p>The framework produces separate descriptions of the physical scene and projected content. Its RGBP benchmark provides annotations for both layers, and dual-captioning evaluation measures how well the generated descriptions distinguish them.</p>
+<p>The framework produces separate descriptions of the physical scene and projected content. Its <strong>RGBP (RGB + Projections) benchmark</strong> provides 65 diverse physical scenes and over 180,000 projections with dense, decoupled annotations for both layers, and dual-captioning evaluation measures how well the generated descriptions distinguish them.</p>
+
+<figure class="project-figure">
+  <a href="/images/project-media/intelligent-sar/ProCap.jpg"><img src="/images/project-media/intelligent-sar/ProCap.jpg" alt="ProCap examples separating captions for projected surfing, car, and billiards images from captions for the physical scene." loading="lazy" decoding="async" /></a>
+  <figcaption>ProCap distinguishes projected content from the underlying physical scene in its descriptions.</figcaption>
+</figure>
 
 <section class="project-papers" aria-labelledby="project-papers-title">
   <h2 id="project-papers-title">Papers and implementations</h2>
@@ -116,6 +131,12 @@
 <div class="project-publication" data-publication-key="deng2025lapig">
   <a class="project-publication-teaser" href="https://yuchendeng.com/LAPIG/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="deng2025lapig" data-resource-action="project_page" data-research-area="spatial-augmented-reality"><img src="/images/publications/lapig.gif" alt="Teaser for LAPIG: Language Guided Projector Image Generation with Surface Adaptation and Stylization" loading="lazy" decoding="async" /></a>
   <div class="project-publication-details"><p><a href="https://yuchendeng.com/LAPIG/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="deng2025lapig" data-resource-action="project_page" data-research-area="spatial-augmented-reality"><strong>LAPIG: Language Guided Projector Image Generation with Surface Adaptation and Stylization</strong></a> <br /> Yuchen Deng, Haibin Ling, <strong>Bingyao Huang</strong> <br /> IEEE Transactions on Visualization and Computer Graphics (<strong>TVCG</strong>), 2025 <br /> Also in IEEE Conference on Virtual Reality and 3D User Interfaces (<strong>IEEE VR</strong>), 2025 <br /> <span class="pub-links"><a class="pub-link" href="https://doi.org/10.1109/TVCG.2025.3549859" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="deng2025lapig" data-resource-action="paper" data-research-area="spatial-augmented-reality">Paper</a> <a class="pub-link" href="https://yuchendeng.com/LAPIG/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="deng2025lapig" data-resource-action="project_page" data-research-area="spatial-augmented-reality">Project</a> <a class="pub-link" href="https://github.com/Yu-chen-Deng/LAPIG" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="deng2025lapig" data-resource-action="code" data-research-area="spatial-augmented-reality">Code</a></span></p>
+</div>
+</div>
+
+<div class="project-publication" data-publication-key="deng2025gsprocams">
+  <a class="project-publication-teaser" href="https://realqingyue.github.io/GS-ProCams/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="deng2025gsprocams" data-resource-action="project_page" data-research-area="projector-compensation"><img src="/images/publications/gs-procams.jpg" alt="Teaser for GS-ProCams: Gaussian Splatting-Based Projector-Camera Systems" loading="lazy" decoding="async" /></a>
+  <div class="project-publication-details"><p><a href="https://realqingyue.github.io/GS-ProCams/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="deng2025gsprocams" data-resource-action="project_page" data-research-area="projector-compensation"><strong>GS-ProCams: Gaussian Splatting-Based Projector-Camera Systems</strong></a> <br /> Qingyue Deng, Jijiang Li, Haibin Ling, <strong>Bingyao Huang</strong> <br /> IEEE Transactions on Visualization and Computer Graphics (<strong>TVCG</strong>), 2025 <br /> Also in IEEE International Symposium on Mixed and Augmented Reality (<strong>ISMAR</strong>), 2025 <br /> <span class="pub-links"><a class="pub-link" href="https://doi.org/10.1109/TVCG.2025.3616841" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="deng2025gsprocams" data-resource-action="paper" data-research-area="projector-compensation">Paper</a> <a class="pub-link" href="https://realqingyue.github.io/GS-ProCams/" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="deng2025gsprocams" data-resource-action="project_page" data-research-area="projector-compensation">Project</a> <a class="pub-link" href="https://github.com/realqingyue/GS-ProCams" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="deng2025gsprocams" data-resource-action="code" data-research-area="projector-compensation">Code</a></span></p>
 </div>
 </div>
 

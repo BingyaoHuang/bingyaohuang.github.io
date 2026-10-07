@@ -38,7 +38,7 @@
     <div class="wrapper-masthead">
       <div id="site_header" class="container">
         <header class="masthead clearfix">
-          <a href="/" class="site-avatar"><img src="/images/profile/portrait.jpg" alt="Bingyao Huang" /></a>
+          <a href="/" class="site-avatar"><img src="/images/profile/portrait-avatar.jpg" srcset="/images/profile/portrait-avatar-2x.jpg 2x" width="104" height="104" alt="Bingyao Huang" /></a>
 
           <div class="site-info">
             <h1 class="site-name"><a href="/">Bingyao Huang</a></h1>
@@ -74,6 +74,189 @@
 <p>A projector input rarely appears unchanged on a real surface. Surface texture, geometry, ambient light, and device responses alter the image seen by a viewer or camera. Compensation asks for the projector input that will produce the desired captured appearance. This project follows that inverse problem from learned photometric correction to full compensation, practical deployment, and generalization.</p>
 
 <figure class="project-figure">
+  
+  <video autoplay="" muted="" loop="" playsinline="" controls="" preload="metadata" aria-label="Learning-based projector compensation demonstration."><source src="/images/research-teasers/learning-based-compensation.webm" type="video/webm" />Learning-based projector compensation demonstration.</video>
+  
+  <figcaption>Learning-based projector compensation.</figcaption>
+</figure>
+
+<link rel="stylesheet" href="/assets/projector-compensation-demo.css" />
+
+<details class="pc-demo-details" id="interactive-demo">
+<summary>Try it yourself</summary>
+<section class="pc-demo" id="pc-demo" data-selected="surface" aria-label="Interactive projector compensation demo">
+  <p class="pc-intro">Photometric compensation corrects colors; geometric compensation aligns pixels.</p>
+
+  <section class="pc-projection" id="pc-projection" aria-labelledby="pc-projection-title">
+<div class="pc-section-heading">
+  <h3 id="pc-projection-title">Follow the projection process</h3>
+  <span class="pc-badge pc-badge-real">Six real images</span>
+</div>
+<p class="pc-hint">Select an image to highlight its path and symbols. Blue: original projection. Red: target mapping $\require{HTML}\class{pc-math-target}{x'}=\phi(\class{pc-math-original}{x};A)$ and compensation.</p>
+<details class="pc-model-details" id="pc-model-assumptions">
+  <summary>Forward model and demo assumptions</summary>
+  <p>The forward model is $\tilde{x}=\mathcal{T}(\mathcal{F}(x,\tilde{s}))$: photometry $\mathcal{F}$ changes intensities; geometry $\mathcal{T}$ maps them into the camera frame. Map the target $x'=\phi(x;A)$, then compensate it so $\tilde{x}^*\approx x'$.</p>
+  <p>The browser uses linear RGB, $\mathcal{F}(x,\tilde{s})=r_{\tilde{s}}\odot x+a$, and a four-corner warp for $\mathcal{T}$. Here $r_{\tilde{s}}$ is a surface-response proxy, $\odot$ multiplies channels, and $a$ denotes ambient light. Correction inverts this response, clips available light, and pre-warps pixels.</p>
+  <p>The projected-gray capture supplies an illustrative response proxy, not calibrated reflectance. Fabric curvature, shadows, scattering, and device responses are omitted. These views are browser simulations; the research networks are not run here.</p>
+</details>
+<div class="pc-device-key" aria-hidden="true">
+  <span><svg viewBox="-12 -10 24 20"><use href="#pc-projector-icon"></use></svg>Projector</span>
+  <span><svg viewBox="-12 -10 24 20"><use href="#pc-camera-icon"></use></svg>Camera</span>
+</div>
+<div class="pc-formulation" id="pc-formulation" data-path="surface" aria-label="Interactive shared-formulation diagram">
+  <svg class="pc-wires" id="pc-wires" viewBox="0 0 1000 760" aria-hidden="true" focusable="false">
+    <defs>
+      <marker id="pc-blue-arrow" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#009fd7"></path></marker>
+      <marker id="pc-red-arrow" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#ca453e"></path></marker>
+      <marker id="pc-purple-arrow" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#785797"></path></marker>
+      <g id="pc-projector-icon" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="-9" y="-5" width="15" height="10" rx="2"></rect><circle cx="3" cy="0" r="3"></circle><path d="M7,-3 L11,-5 M7,3 L11,5 M-5,6 L-5,8 M3,6 L3,8"></path></g>
+      <g id="pc-camera-icon" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="-9" y="-5" width="18" height="11" rx="2"></rect><circle cx="1" cy="0" r="3.5"></circle><path d="M-5,-5 L-3,-8 L3,-8 L5,-5"></path></g>
+    </defs>
+    <path class="pc-wire pc-wire-raw" data-from="original" data-to="surface" d="M200,110 L440,310" marker-end="url(#pc-blue-arrow)"></path>
+    <path class="pc-wire pc-wire-raw" data-from="surface" data-to="uncompensated" d="M560,310 L800,110" marker-end="url(#pc-blue-arrow)"></path>
+    <path class="pc-wire pc-wire-comp" data-from="compensated-input" data-to="surface" d="M200,510 L440,370" marker-end="url(#pc-red-arrow)"></path>
+    <path class="pc-wire pc-wire-comp" data-from="surface" data-to="compensated-capture" d="M560,370 L800,510" marker-end="url(#pc-red-arrow)"></path>
+    <path class="pc-wire pc-wire-comp pc-wire-map" data-from="original" data-to="target" d="M100,140 L100,210" marker-end="url(#pc-red-arrow)"></path>
+    <path class="pc-wire pc-wire-comp pc-wire-inverse" data-from="target" data-to="compensated-input" d="M100,310 L100,380" marker-end="url(#pc-red-arrow)"></path>
+    <path class="pc-wire pc-wire-train" data-from="uncompensated" data-to="original" d="M800,35 L100,35" marker-end="url(#pc-purple-arrow)"></path>
+    <text class="pc-wire-caption pc-training-caption" id="pc-training-label" text-anchor="middle">Train inverse mapping (surrogate compensation)</text>
+    <text class="pc-wire-caption pc-mapping-caption" id="pc-target-map-label">Map target</text>
+    <text class="pc-wire-caption" id="pc-compensate-label">Compensate</text>
+    <g class="pc-path-label pc-path-raw" data-path-from="original" data-path-to="surface"><rect x="-36" y="-10" width="72" height="20" rx="4"></rect><use href="#pc-projector-icon" x="-22"></use><text x="-8" y="3">Projector</text></g>
+    <g class="pc-path-label pc-path-raw" data-path-from="surface" data-path-to="uncompensated"><rect x="-33" y="-10" width="66" height="20" rx="4"></rect><use href="#pc-camera-icon" x="-19"></use><text x="-5" y="3">Camera</text></g>
+    <g class="pc-path-label pc-path-comp" data-path-from="compensated-input" data-path-to="surface"><rect x="-36" y="-10" width="72" height="20" rx="4"></rect><use href="#pc-projector-icon" x="-22"></use><text x="-8" y="3">Projector</text></g>
+    <g class="pc-path-label pc-path-comp" data-path-from="surface" data-path-to="compensated-capture"><rect x="-33" y="-10" width="66" height="20" rx="4"></rect><use href="#pc-camera-icon" x="-19"></use><text x="-5" y="3">Camera</text></g>
+  </svg>
+  <button type="button" class="pc-node pc-node-original" data-diagram-node="original" data-path="raw" data-description="Projecting $x$ produces the camera capture $\tilde{x}$. Map the desired appearance into camera coordinates as $x'=\phi(x;A)$." aria-pressed="false">
+    <span class="pc-node-symbol">$x$</span>
+    <img src="/images/project-media/projector-compensation/demo/x.png" width="256" height="256" alt="Original projector input" decoding="async" />
+    <span class="pc-node-label">Original input</span>
+  </button>
+  <div class="pc-diagram-equation pc-equation-raw">
+    <span>$\require{HTML}\class{pc-math-uncompensated}{\tilde{x}}=\mathcal{T}(\mathcal{F}(\class{pc-math-original}{x},\class{pc-math-surface}{\tilde{s}}))$</span>
+    <span class="pc-equation-key"><span>Geometry $\mathcal{T}$</span><span>Photometry $\mathcal{F}$</span></span>
+  </div>
+  <button type="button" class="pc-node pc-node-uncompensated" data-diagram-node="uncompensated" data-path="raw" data-description="$\tilde{x}$ is the camera capture of projected $x$. The surface alters colors; projector–camera geometry distorts position and shape." aria-pressed="false">
+    <span class="pc-node-symbol">$\tilde{x}$</span>
+    <img src="/images/project-media/projector-compensation/demo/x_tilde.png" width="640" height="480" alt="Uncompensated camera capture" decoding="async" />
+    <span class="pc-node-label">Uncompensated capture</span>
+  </button>
+  <button type="button" class="pc-node pc-node-surface" data-diagram-node="surface" data-path="surface" data-description="$\tilde{s}$ is the surface under projected gray illumination—the reference for photometric compensation." aria-pressed="true">
+    <span class="pc-node-symbol">$\tilde{s}$</span>
+    <img id="pc-surface-photo" src="/images/project-media/projector-compensation/demo/s_tilde.png" width="640" height="480" alt="Surface reference under projected gray illumination" decoding="async" />
+    <span class="pc-node-label">Surface under projected gray</span>
+  </button>
+  <button type="button" class="pc-node pc-node-compensated-input" data-diagram-node="compensated-input" data-path="comp" data-description="$x^*=\pi_\theta^\dagger(x',\tilde{s})$ pre-corrects colors and geometry so its camera capture $\tilde{x}^*$ approaches the target $x'$." aria-pressed="false">
+    <span class="pc-node-symbol">$x^*$</span>
+    <img src="/images/project-media/projector-compensation/demo/x_star.png" width="256" height="256" alt="Compensated projector input" decoding="async" />
+    <span class="pc-node-label">Compensated input</span>
+  </button>
+  <div class="pc-diagram-equation pc-equation-comp">
+    <span>$\require{HTML}\class{pc-math-compensated-capture}{\tilde{x}^*}=\mathcal{T}(\mathcal{F}(\class{pc-math-compensated-input}{x^*},\class{pc-math-surface}{\tilde{s}}))$</span>
+    <span>Ideally, $\require{HTML}\class{pc-math-compensated-capture}{\tilde{x}^*}\approx\class{pc-math-target}{x'}$</span>
+  </div>
+  <button type="button" class="pc-node pc-node-compensated-capture" data-diagram-node="compensated-capture" data-path="comp" data-description="$\tilde{x}^*$ is the camera capture of compensated $x^*$. Compare its appearance and alignment with the target $x'$." aria-pressed="false">
+    <span class="pc-node-symbol">$\tilde{x}^*$</span>
+    <img src="/images/project-media/projector-compensation/demo/x_star_tilde.png" width="640" height="480" alt="Compensated camera capture" decoding="async" />
+    <span class="pc-node-label">Compensated capture</span>
+  </button>
+  <button type="button" class="pc-node pc-node-target" data-diagram-node="target" data-path="target" data-description="$x'=\phi(x;A)$ sets the desired camera appearance. The learned inverse turns this target into the compensated projector input $x^*$." aria-pressed="false">
+    <span class="pc-node-symbol">$x'$</span>
+    <img id="pc-target-photo" src="/images/project-media/projector-compensation/demo/x%27.png" width="640" height="480" alt="Desired appearance in camera coordinates" decoding="async" />
+    <span class="pc-node-label">Camera-space target</span>
+  </button>
+</div>
+<details class="pc-inspector-details" id="pc-inspector-details">
+  <summary>Inspect the selected image</summary>
+  <div class="pc-inspector" aria-label="Selected diagram image">
+  <img id="pc-inspect-photo" src="/images/project-media/projector-compensation/demo/s_tilde.png" width="640" height="480" alt="Surface reference under projected gray illumination" decoding="async" />
+  <div>
+    <h4 id="pc-inspect-title">Surface under projected gray</h4>
+    <p id="pc-inspect-description">$\tilde{s}$ is the surface under projected gray illumination—the reference for photometric compensation.</p>
+  </div>
+  </div>
+</details>
+<details class="pc-training-details" id="pc-training-details">
+  <summary>How is the inverse trained?</summary>
+  <p>Project known inputs $x_i$ and record captures $\tilde{x}_i$. The inverse predicts $\hat{x}_i=\pi_\theta^\dagger(\tilde{x}_i,\tilde{s})$. Minimize a reconstruction loss comparing $\hat{x}_i$ with $x_i$—the dashed purple return path.</p>
+  <p>After training, compensate the target with $x^*=\pi_\theta^\dagger(x',\tilde{s})$. Input–capture pairs provide supervision; ground-truth compensated images are not required.</p>
+</details>
+</section>
+
+
+  <div class="pc-section-heading">
+    <h3>Explore the two corrections</h3>
+    <span class="pc-badge">Illustrative model</span>
+  </div>
+  <p class="pc-hint">Try each correction, then combine them to approach the target.</p>
+
+  <fieldset class="pc-controls" disabled="">
+    <legend class="pc-sr-only">Compensation controls</legend>
+    <div class="pc-presets" aria-label="Correction presets">
+      <button type="button" data-photo="0" data-geo="0" aria-pressed="true">No correction</button>
+      <button type="button" data-photo="100" data-geo="0" aria-pressed="false">Photometry only</button>
+      <button type="button" data-photo="0" data-geo="100" aria-pressed="false">Geometry only</button>
+      <button type="button" data-photo="100" data-geo="100" aria-pressed="false">Both corrections</button>
+    </div>
+    <div class="pc-sliders">
+      <label for="pc-photo">Photometric correction <output id="pc-photo-value" for="pc-photo">0%</output>
+        <input id="pc-photo" type="range" min="0" max="100" value="0" aria-describedby="pc-photo-help" />
+        <span id="pc-photo-help">Adjust intensities to counter the surface appearance.</span>
+      </label>
+      <label for="pc-geo">Geometric correction <output id="pc-geo-value" for="pc-geo">0%</output>
+        <input id="pc-geo" type="range" min="0" max="100" value="0" aria-describedby="pc-geo-help" />
+        <span id="pc-geo-help">Pre-warp the input to align the captured image.</span>
+      </label>
+    </div>
+    <label class="pc-check"><input id="pc-outline" type="checkbox" checked="" /> Show the target boundary in the camera view</label>
+  </fieldset>
+
+  <div class="pc-pipeline">
+    <figure>
+      <figcaption><span class="pc-step">1</span> Surface $\tilde{s}$ <span>Under projected gray</span></figcaption>
+      <div class="pc-screen"><img src="/images/project-media/projector-compensation/demo/s_tilde.png" width="640" height="480" alt="Surface reference under projected gray illumination" decoding="async" /></div>
+    </figure>
+    <figure>
+      <figcaption><span class="pc-step">2</span> Desired appearance $x'$ <span>Camera coordinates</span></figcaption>
+      <div class="pc-screen"><canvas id="pc-target" width="320" height="240" role="img" aria-label="Desired camera appearance at the selected brightness">Desired camera appearance</canvas></div>
+    </figure>
+    <figure>
+      <figcaption><span class="pc-step">3</span> Projector input <span id="pc-input-original-symbol">$x$</span><span id="pc-input-compensated-symbol" hidden="">$x^*$</span> <span>Sent to the projector</span></figcaption>
+      <div class="pc-screen pc-input-screen"><canvas id="pc-input" width="256" height="256" role="img" aria-label="Simulated projector input with the selected corrections">Simulated projector input</canvas></div>
+    </figure>
+    <figure>
+      <figcaption><span class="pc-step">4</span> Predicted capture <span id="pc-capture-original-symbol">$\tilde{x}$</span><span id="pc-capture-compensated-symbol" hidden="">$\tilde{x}^*$</span> <span>After projection onto the surface</span></figcaption>
+      <div class="pc-screen"><canvas id="pc-camera" width="320" height="240" role="img" aria-label="Simulated camera view with the selected corrections">Simulated camera result</canvas></div>
+    </figure>
+  </div>
+  <p class="pc-status" id="pc-status" role="status" aria-live="polite">The simulation requires JavaScript. The six real images above remain available.</p>
+  <p class="pc-limits" id="pc-limits"></p>
+
+  <details class="pc-model-details">
+    <summary>Explore the limits of projected light</summary>
+    <p>Projectors have limited brightness and cannot remove ambient light. Enable both corrections, then raise brightness or ambient light to explore these limits.</p>
+    <fieldset class="pc-controls pc-extra-controls" disabled="">
+      <legend class="pc-sr-only">Lighting controls</legend>
+      <div class="pc-sliders">
+        <label for="pc-brightness">Target brightness <output id="pc-brightness-value" for="pc-brightness">55%</output>
+          <input id="pc-brightness" type="range" min="25" max="100" value="55" />
+          <span>Scales the target in linear light.</span>
+        </label>
+        <label for="pc-ambient">Ambient light <output id="pc-ambient-value" for="pc-ambient">0.02</output>
+          <input id="pc-ambient" type="range" min="0" max="15" value="2" />
+          <span>Additive intensity in linear light, from 0 to 0.15.</span>
+        </label>
+      </div>
+      <label class="pc-check"><input id="pc-clipping" type="checkbox" /> Mark pixels requiring light outside the projector range</label>
+      <button type="button" id="pc-reset" class="pc-reset">Reset the model</button>
+    </fieldset>
+  </details>
+
+</section>
+</details>
+<script src="/assets/js/projector-compensation-demo.js" defer=""></script>
+
+<figure class="project-figure" hidden="">
   <img src="/images/project-media/projector-compensation/surrogate-train.png" alt="Projector compensation as an end-to-end learning problem." loading="lazy" decoding="async" />
   <figcaption>A shared formulation: learn the inverse of the project-and-capture process to compensate the projected image.</figcaption>
 </figure>
@@ -126,13 +309,42 @@
 
 <p>The starting point is <strong>CompenNet</strong>: an end-to-end formulation of projector photometric compensation. A U-Net-like backbone and a surface-image subnet learn interactions between the projected content and the camera-captured surface. Multi-level connections carry appearance information through the network. At this stage, the learning problem focuses on photometry, with images geometrically registered.</p>
 
+<figure class="project-figure">
+  <a href="/images/project-media/projector-compensation/CompenNet.jpg"><img src="/images/project-media/projector-compensation/CompenNet.jpg" alt="CompenNet architecture for training and photometric compensation." loading="lazy" decoding="async" /></a>
+  <figcaption>CompenNet: training and photometric compensation.</figcaption>
+</figure>
+
 <h3 id="compennet-plusplus">Bringing geometry into the same model</h3>
 
 <p><strong>CompenNet++</strong> extends this formulation to full compensation. A cascaded coarse-to-fine geometric correction subnet learns a sampling grid from projected and captured images, and is connected to the photometric network. Joint training connects alignment and appearance correction in one differentiable pipeline. After training, network simplification improves inference efficiency.</p>
 
+<figure class="project-figure">
+  <a href="/images/project-media/projector-compensation/WarpingNet.jpg"><img src="/images/project-media/projector-compensation/WarpingNet.jpg" alt="WarpingNet combines affine and thin-plate-spline transforms with grid refinement for geometric correction." loading="lazy" decoding="async" /></a>
+  <figcaption>WarpingNet: coarse-to-fine geometric correction.</figcaption>
+</figure>
+
 <h3 id="compennest-plusplus">Improving photometry and practical training</h3>
 
-<p>The journal extension, <strong>CompenNeSt++</strong>, retains the joint formulation and refines its two components: <strong>WarpingNet</strong> handles geometric correction, while <strong>CompenNeSt</strong> uses a siamese architecture to model the interaction between the surface and projected content. Synthetic-data pre-training reduces the required setup-specific training images and training time. Together, these developments improve the same compensation framework’s model and practical training process.</p>
+<p>The journal extension, <strong>CompenNeSt++</strong>, retains the joint formulation and refines its two components: <strong>WarpingNet</strong> handles geometric correction, while <strong>CompenNeSt</strong> uses a <strong>siamese</strong> architecture to model the interaction between the surface and projected content. <strong>Synthetic-data pre-training</strong> reduces the required setup-specific training images and training time. Together, these developments improve the same compensation framework’s model and practical training process.</p>
+
+<figure class="project-figure">
+  <a href="/images/project-media/projector-compensation/CompenNeSt++_improvement.jpg"><img src="/images/project-media/projector-compensation/CompenNeSt++_improvement.jpg" alt="CompenNeSt++ compensation architecture and projector-input versus camera-captured examples." loading="lazy" decoding="async" /></a>
+  <figcaption>CompenNeSt++: refined photometric compensation and synthetic-data pre-training.</figcaption>
+</figure>
+
+<p>During training, projected sampling images and their camera captures provide supervision for the inverse mapping. WarpingNet aligns the observations, and the photometric subnet estimates the projector input. The shared project-and-capture formulation avoids requiring ground-truth compensation images for every desired appearance.</p>
+
+<figure class="project-figure">
+  <img src="/images/project-media/projector-compensation/net-train.png" alt="Joint training of WarpingNet and CompenNeSt from projected sampling images and camera captures." loading="lazy" decoding="async" />
+  <figcaption>The developed framework: data preparation and joint geometric-photometric training.</figcaption>
+</figure>
+
+<p>After training, the simplified model transforms a desired image into a compensated projector input.</p>
+
+<figure class="project-figure">
+  <img src="/images/project-media/projector-compensation/net-test.png" alt="The simplified compensation framework generates a projector input from a desired image." loading="lazy" decoding="async" />
+  <figcaption>Inference with the simplified compensation model.</figcaption>
+</figure>
 
 <h3 id="practical-deployment">High-resolution, online, and real-time deployment</h3>
 
@@ -156,27 +368,16 @@
 
 <p><strong>DiffPC</strong> explores a diffusion-based solution to the photometric component. It represents projection-induced photometric distortion as environment-dependent additive noise and generates compensation images through physically constrained denoising. The noise estimator combines photometric features and content conditions, connecting the physical projection process with perceptual image generation. Its scope is photometric compensation; the full geometric correction problem remains a separate consideration.</p>
 
-<h2 id="joint-compensation-pipeline">Joint compensation pipeline</h2>
-
-<p>During training, projected sampling images and their camera captures provide supervision for the inverse mapping. WarpingNet aligns the observations, and the photometric subnet estimates the projector input. The shared project-and-capture formulation avoids requiring ground-truth compensation images for every desired appearance.</p>
-
 <figure class="project-figure">
-  <img src="/images/project-media/projector-compensation/net-train.png" alt="Joint training of WarpingNet and CompenNeSt from projected sampling images and camera captures." loading="lazy" decoding="async" />
-  <figcaption>The developed framework: data preparation and joint geometric-photometric training.</figcaption>
-</figure>
-
-<p>After training, the simplified model transforms a desired image into a compensated projector input.</p>
-
-<figure class="project-figure">
-  <img src="/images/project-media/projector-compensation/net-test.png" alt="The simplified compensation framework generates a projector input from a desired image." loading="lazy" decoding="async" />
-  <figcaption>Inference with the simplified compensation model.</figcaption>
+  <a href="/images/project-media/projector-compensation/DiffPC.jpg"><img src="/images/project-media/projector-compensation/DiffPC.jpg" alt="DiffPC reverse-time denoising process and noise estimation network for photometric compensation." loading="lazy" decoding="async" /></a>
+  <figcaption>DiffPC: photometric compensation through physically constrained denoising.</figcaption>
 </figure>
 
 <h2 id="projected-results">Projected results</h2>
 
 <figure class="project-figure">
   <img src="/images/project-media/projector-compensation/real-projection.webp" alt="Real projected images with and without compensation." loading="lazy" decoding="async" />
-  <figcaption>Compensation results on real projection surfaces.</figcaption>
+  <figcaption>Compensation results on real projection surfaces (CompenNeSt++, TPAMI'22).</figcaption>
 </figure>
 
 <section class="project-papers" aria-labelledby="project-papers-title">

@@ -38,7 +38,7 @@
     <div class="wrapper-masthead">
       <div id="site_header" class="container">
         <header class="masthead clearfix">
-          <a href="/" class="site-avatar"><img src="/images/profile/portrait.jpg" alt="Bingyao Huang" /></a>
+          <a href="/" class="site-avatar"><img src="/images/profile/portrait-avatar.jpg" srcset="/images/profile/portrait-avatar-2x.jpg 2x" width="104" height="104" alt="Bingyao Huang" /></a>
 
           <div class="site-info">
             <h1 class="site-name"><a href="/">Bingyao Huang</a></h1>
@@ -71,7 +71,7 @@
     
 <h2 id="the-problem">The problem</h2>
 
-<p>A projector-camera system needs a forward model: given a projector image and a scene, what will the camera observe? Our models range from learned 2D geometric and photometric mappings to explicit 3D representations of geometry, materials, and light transport. Differentiability allows the model to guide projector-input optimization and, when it represents scene parameters, their estimation from captured images.</p>
+<p>A projector-camera system needs a <strong>forward model</strong>: given a projector image and a scene, what will the camera observe? Our models range from learned 2D geometric and photometric mappings to explicit 3D representations of geometry, materials, and light transport. Differentiability allows the model to guide projector-input optimization and, when it represents scene parameters, their estimation from captured images.</p>
 
 <figure class="project-figure">
   <a href="/images/research-teasers/physics-and-3d-aware-procams.jpg"><img src="/images/research-teasers/physics-and-3d-aware-procams.jpg" alt="Differentiable projector-camera simulation and applications using explicit scene geometry and materials." loading="lazy" decoding="async" /></a>
@@ -110,9 +110,14 @@
 
 <h3 id="pcnet-forward-model">A 2D forward project-and-capture model</h3>
 
-<p><strong>PCNet</strong>, introduced in <strong>SPAA</strong>, predicts the camera-captured appearance of a projector input using learned geometric warping and photometric interactions with a surface image. It models the forward project-and-capture process in 2D image coordinates for a fixed camera view, without reconstructing explicit 3D geometry or materials.</p>
+<p><strong>PCNet</strong>, introduced in <strong>SPAA</strong>, predicts the camera-captured appearance of a projector input using learned <strong>2D</strong> geometric warping and photometric interactions with a surface image. It models the forward project-and-capture process in 2D image coordinates for a fixed camera view, without reconstructing explicit 3D geometry or materials.</p>
 
 <p>SPAA differentiates through PCNet to optimize adversarial projector inputs before physical projection. This is a forward-modeling application alongside relighting and compensation; the attack objective is described in Projector-Based Adversarial Attacks.</p>
+
+<figure class="project-figure">
+  <a href="/images/project-media/differentiable-and-3d-procam-systems/PCNet.jpg"><img src="/images/project-media/differentiable-and-3d-procam-systems/PCNet.jpg" alt="PCNet combines learned geometric warping and photometric modeling to predict camera appearance." loading="lazy" decoding="async" /></a>
+  <figcaption>PCNet: a learned 2D forward project-and-capture model.</figcaption>
+</figure>
 
 <h3 id="unified-model">A shared model for relighting, compensation, and reconstruction</h3>
 
@@ -129,15 +134,27 @@
 
 <h3 id="physical-rendering">Explicit physical light transport</h3>
 
-<p><strong>DPCS</strong> explicitly models scene parameters and light paths. Its differentiable path-tracing model includes multi-bounce light transport, allowing interreflection and soft shadows to be simulated through physically based rendering. Geometry, materials, and device-related parameters can be estimated from projection observations and then reused to simulate new scenes.</p>
+<p><strong>DPCS</strong> explicitly models scene parameters and light paths. Its <strong>differentiable path-tracing</strong> model includes multi-bounce light transport, allowing interreflection and soft shadows to be simulated through physically based rendering. Geometry, materials, and device-related parameters can be estimated from projection observations and then reused to simulate new scenes.</p>
+
+<figure class="project-figure">
+  <a href="/images/project-media/differentiable-and-3d-procam-systems/dpcs.jpg"><img src="/images/project-media/differentiable-and-3d-procam-systems/dpcs.jpg" alt="DPCS estimates scene and device parameters through differentiable physical rendering." loading="lazy" decoding="async" /></a>
+  <figcaption>DPCS: differentiable scene parameters and physical light transport.</figcaption>
+</figure>
 
 <p>The estimated scene parameters can be inspected and adjusted for relighting and compensation.</p>
 
 <h3 id="gaussian-scene">A scene representation that supports different viewpoints</h3>
 
-<p><strong>GS-ProCams</strong> uses 2D Gaussians to represent scene geometry and materials. It jointly estimates these properties, projector responses, and a global-illumination component from captured multi-view projections using differentiable physically based rendering.</p>
+<p><strong>GS-ProCams</strong> uses <strong>2D Gaussians</strong> to represent scene geometry and materials. It jointly estimates these properties, projector responses, and a global-illumination component from captured multi-view projections using differentiable physically based rendering.</p>
 
 <p>An explicit 3D representation allows ProCam simulation beyond the single view used by image-to-image mappings. Its goal is efficient view-agnostic projection mapping without an additional co-located light source.</p>
+
+<figure class="project-figure">
+  
+  <video autoplay="" muted="" loop="" playsinline="" controls="" preload="metadata" aria-label="GS-ProCams demonstration of scene modeling and projection simulation across viewpoints."><source src="/images/project-media/differentiable-and-3d-procam-systems/gs-procams.webm" type="video/webm" />GS-ProCams demonstration of scene modeling and projection simulation across viewpoints.</video>
+  
+  <figcaption>GS-ProCams demonstration.</figcaption>
+</figure>
 
 <section class="project-papers" aria-labelledby="project-papers-title">
   <h2 id="project-papers-title">Papers and implementations</h2>

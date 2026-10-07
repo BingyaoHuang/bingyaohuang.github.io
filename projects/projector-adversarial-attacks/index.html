@@ -38,7 +38,7 @@
     <div class="wrapper-masthead">
       <div id="site_header" class="container">
         <header class="masthead clearfix">
-          <a href="/" class="site-avatar"><img src="/images/profile/portrait.jpg" alt="Bingyao Huang" /></a>
+          <a href="/" class="site-avatar"><img src="/images/profile/portrait-avatar.jpg" srcset="/images/profile/portrait-avatar-2x.jpg 2x" width="104" height="104" alt="Bingyao Huang" /></a>
 
           <div class="site-info">
             <h1 class="site-name"><a href="/">Bingyao Huang</a></h1>
@@ -108,6 +108,14 @@
 
 <p>The optimization balances adversarial confidence with appearance changes using adversarial and stealthiness losses. This connects the physical projection constraints with the objective of producing subtle targeted or untargeted attacks.</p>
 
+<figure class="project-figure">
+  <video id="spaa-presentation" controls="" playsinline="" preload="none" width="1920" height="1080" poster="/images/project-media/projector-based-adversarial-attacks/spaa-poster.jpg" aria-label="SPAA presentation">
+    <source src="/images/project-media/projector-based-adversarial-attacks/spaa-web.mp4" type="video/mp4" />
+    <a href="/images/project-media/projector-based-adversarial-attacks/spaa-web.mp4">Watch the SPAA presentation.</a>
+  </video>
+  <figcaption>SPAA presentation (short).</figcaption>
+</figure>
+
 <h3 id="classifier-robustness">Robustness across classifiers</h3>
 
 <p><strong>CAPAA</strong> addresses dependence on an individual classifier. Its optimization aggregates adversarial and stealthiness gradients from multiple classifiers. Attention-based gradient weighting focuses perturbations on regions with high classification activation and supports robustness under camera-pose variation.</p>
@@ -123,7 +131,7 @@
 
 <figure class="project-figure">
   <a href="/images/research-teasers/vipa.jpg"><img src="/images/research-teasers/vipa.jpg" alt="Multi-view projector-camera simulation and view-invariant adversarial projection." loading="lazy" decoding="async" /></a>
-  <figcaption>VIPA uses a scene model to evaluate projected patterns from multiple viewpoints.</figcaption>
+  <figcaption>VIPA generates adversarial projections for multiple viewpoints attack.</figcaption>
 </figure>
 
 <section class="project-papers" aria-labelledby="project-papers-title">

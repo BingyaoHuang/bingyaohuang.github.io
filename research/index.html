@@ -38,7 +38,7 @@
     <div class="wrapper-masthead">
       <div id="site_header" class="container">
         <header class="masthead clearfix">
-          <a href="/" class="site-avatar"><img src="/images/profile/portrait.jpg" alt="Bingyao Huang" /></a>
+          <a href="/" class="site-avatar"><img src="/images/profile/portrait-avatar.jpg" srcset="/images/profile/portrait-avatar-2x.jpg 2x" width="104" height="104" alt="Bingyao Huang" /></a>
 
           <div class="site-info">
             <h1 class="site-name"><a href="/">Bingyao Huang</a></h1>
@@ -67,7 +67,7 @@
     <h1>Research</h1>
     <div class="research-intro-text"><p>My research focuses on <strong>AR/VR/MR, computer vision and computational imaging</strong>. I study how light, geometry, materials, imaging devices, and learned representations interact with the physical world. I develop projector-camera (ProCam) and <strong>spatial augmented reality (SAR)</strong> systems that can perceive, simulate, and modify the appearance of real scenes. Related research addresses 3D vision, visual privacy and security, and interdisciplinary visual computing.</p>
 </div>
-    <p class="research-bridge">This research uses physical image formation to control appearance, recover scene structure, study privacy and security risks, and analyze scientific and biomedical images.</p>
+    
   </header>
   <nav class="research-index" aria-label="Research topics">
     <a href="#procam-spatial-ar">ProCam &amp; SAR</a><a href="#3d-vision-computational-imaging">3D Vision &amp; Computational Imaging</a><a href="#visual-privacy-security">Visual Privacy &amp; Security</a><a href="#scientific-biomedical-vision">Scientific &amp; Biomedical Visual Computing</a>
@@ -138,8 +138,6 @@
         <a href="https://ieeexplore.ieee.org/document/10458313" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="wang2024vicomp" data-resource-action="paper" data-research-area="projector-compensation"><strong>ViComp</strong> <span>(TVCG'24)</span></a>
       
         <a href="https://haibinling.github.io/publication/CompenHR.pdf" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="wang2023compenhr" data-resource-action="paper" data-research-area="projector-compensation"><strong>CompenHR</strong> <span>(IEEE VR'23)</span></a>
-      
-        <a href="https://doi.org/10.1109/ICME59968.2025.11209810" data-ga-event="resource_click" data-resource-type="publication" data-resource-id="chen2025compenrt" data-resource-action="paper" data-research-area="projector-compensation"><strong>CompenRT</strong> <span>(ICME'25)</span></a>
       
       </div>
     </li>
@@ -264,7 +262,7 @@
         <h2 id="3d-vision-computational-imaging-title"><span class="research-number" aria-hidden="true">2.</span> Physics-Informed 3D Vision &amp; Computational Imaging</h2>
         <p class="research-question"><span class="research-question-label">Research question</span>How can physical models, geometry, and learned priors help recover scene structure, appearance, and 3D representations from visual measurements?</p>
     </header>
-    <div class="research-summary"><p>We study <strong>inverse problems in computer vision</strong>, recovering scene structure and physical properties from incomplete or distorted measurements. Our work combines <strong>active sensing</strong>, geometric constraints, optical image formation, <strong>differentiable rendering</strong>, and learned priors to estimate depth, shape, appearance, and scene representations. Applications include projector-camera calibration, structured-light reconstruction, imaging through challenging optical media, and <strong>neural or explicit 3D scene representations</strong>. We use physical models to constrain and guide these inference problems.</p>
+    <div class="research-summary"><p>We study <strong>inverse problems in computer vision</strong>, recovering scene structure and physical properties from incomplete or distorted measurements. Our work combines <strong>active sensing</strong>, geometric constraints, optical image formation, <strong>differentiable rendering</strong>, and learned priors to estimate depth, shape, appearance, and scene representations. Applications include projector-camera calibration, structured-light reconstruction, imaging through challenging optical media, and <strong>neural or explicit 3D scene representations</strong>. We use physical models to constrain and guide these inference problems. These models also address <strong>Spatial Augmented Reality (SAR)</strong> problems, supporting scene-aware projection, appearance control, and alignment of digital content with real surfaces.</p>
 </div>
     <nav class="research-projects" aria-label="Projects for Physics-Informed 3D Vision &amp; Computational Imaging"><strong>Explore projects:</strong> <a href="/projects/differentiable-3d-procams/">Differentiable &amp; 3D ProCam Systems</a><a href="/projects/calibration-active-sensing/">Calibration &amp; Active 3D Sensing</a><a href="/projects/physics-informed-imaging/">Physics-Informed Computational Imaging</a></nav>
     
@@ -397,7 +395,7 @@
         <h2 id="visual-privacy-security-title"><span class="research-number" aria-hidden="true">3.</span> Visual Privacy &amp; Physical-World Security</h2>
         <p class="research-question"><span class="research-question-label">Research question</span>What new attacks and defenses arise when computer vision interacts with physical light transport rather than only digital pixels?</p>
     </header>
-    <div class="research-summary"><p>We study privacy and security problems that emerge when machine perception interacts with the physical world. One line investigates <strong>information leakage</strong> through ordinary optical media and privacy risks introduced by learning-based computational imaging. Another studies <strong>projector-based adversarial attacks</strong>, where controllable light modifies the appearance observed by vision systems without permanently altering objects. This work progresses from stealthy projector attacks to <strong>classifier-agnostic and view-invariant attacks</strong>, combining differentiable project-and-capture models with increasingly realistic physical scene representations.</p>
+    <div class="research-summary"><p>We study privacy and security problems that emerge when machine perception interacts with the physical world. One line investigates <strong>information leakage</strong> through ordinary optical media and privacy risks introduced by learning-based computational imaging. Another studies <strong>projector-based adversarial attacks</strong>, where controllable light modifies the appearance observed by vision systems without permanently altering objects. This work progresses from stealthy projector attacks to <strong>classifier-agnostic and view-invariant attacks</strong>, combining differentiable project-and-capture models with increasingly realistic physical scene representations. This research also informs <strong>Spatial Augmented Reality (SAR)</strong>, where projected content can influence machine perception of the underlying physical scene.</p>
 </div>
     <nav class="research-projects" aria-label="Projects for Visual Privacy &amp; Physical-World Security"><strong>Explore projects:</strong> <a href="/projects/projector-adversarial-attacks/">Projector-Based Adversarial Attacks</a><a href="/projects/physics-informed-imaging/">Physics-Informed Computational Imaging</a></nav>
     
